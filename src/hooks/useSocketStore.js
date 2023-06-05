@@ -9,7 +9,7 @@ import { SocketContext } from '../contexts/SocketContext';
 import { getLocal, setLocalChats } from '../helpers/localStorage';
 
 import { onNewInvites } from '../store/slice/usersSlice';
-import { onUpdateUser } from '../store/slice/authSlice';
+import { onLogoutUser, onUpdateUser } from '../store/slice/authSlice';
 import { onReconnectLimit, onSendMsg, onConnected, onConnecting, onConnectError, onDisconnect, onReconnect, onReconnectAttempt, onReconnectFailed, onSending, onLoadChats, onJoinChat, onUpdateID, onNewChats, onChatActive } from '../store/slice/socketSlice';
 
 
@@ -95,7 +95,7 @@ export const useSocketStore = () => {
                         break;
 
                     case 'logout':
-                        user = {};
+                        dispatch(onLogoutUser());
                         break;
                 }
 
