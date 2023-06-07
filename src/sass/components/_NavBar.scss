@@ -1,11 +1,16 @@
 // @import '../base/settings';
 
-nav {    
-    background-color: $bg-nav;    
+nav {
+    background-color: $bg-nav;
+    // position: absolute;
+    // width: 100%;
+
 
     .divNavContainer {
         @include grid(0.25fr 0.4fr 0.35fr, left, center, 0, 0);
         height: $navBar-height;
+        // width: 100%;
+        // position: fixed;
         padding-left: pixels-rem(5);
 
         .divBtnMenu {
@@ -61,11 +66,14 @@ nav {
     .divChat {
         margin-top: pixels-rem(1);
         @import '../pages/user/components/Friends';
-        position: fixed;
-        padding: pixels-rem(5);
-        box-shadow: 0 0 5px 1px black;
+        position: absolute;
+        padding: pixels-rem(1);
+        // box-shadow: 0 0 5px 1px black;
+        height: 60vh;
+        // min-width: 360px ;
+        overflow-y: scroll;
         width: 100%;
-        background-color: $bg;
+        // background-color: $bg;
 
         transform: translate3d(-105%, 0px, 0px);
         transition: transform 0.20s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
@@ -78,8 +86,7 @@ nav {
     }
 
     .divNav {
-
-        position: fixed;
+        position: absolute;
         padding: pixels-rem(5);
         box-shadow: 0 0 5px 1px black;
         width: 100%;

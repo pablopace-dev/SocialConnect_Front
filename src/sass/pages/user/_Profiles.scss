@@ -5,7 +5,8 @@
     @include container(95%, 0);
 
     h2 {
-        font-size: pixels-rem(25);
+        font-size: pixels-rem(25);        
+        font-weight: 300;
         margin-top: pixels-rem(10);
         padding: pixels-rem(10);
         border-bottom: 1px dotted $bg;
@@ -13,7 +14,8 @@
 
     .divRoot {
         margin-top: pixels-rem(15);
-        font-weight: bold;
+        font-weight: bold;        
+        font-weight: 400;
 
         a {
             text-decoration: none;

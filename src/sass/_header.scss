@@ -3,7 +3,9 @@
 .header {
 
     height: $header-height;
-    background-color: $bg;    
+    background-color: $bg;
+    width: 100%;    
+    // position: fixed;
 
     @include grid(0.7fr 0.3fr, left, center, 0, 0);
 

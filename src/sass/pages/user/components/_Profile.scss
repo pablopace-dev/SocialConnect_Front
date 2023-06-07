@@ -39,23 +39,32 @@
         }
 
         .divUserImage {
-            border-radius: 100px;
+            border-radius: 100%;
             box-shadow: 0px 3px 10px black;
-            // position: relative;
-            // transform: translate(pixels-rem(-5), pixels-rem(-50));
-            float: right;
-            // right: pixels-rem(15);
+            position: absolute;
+            transform: translate(pixels-rem(-5), pixels-rem(-50));
+
+            right: pixels-rem(15);
             width: pixels-rem(80);
             height: pixels-rem(80);
+
+            transition: height 200ms, width 200ms, box-shadow 200ms, right 200ms;
 
             a {
                 text-decoration: none;
 
                 img {
                     @include border($bg, 100);
-                    @include image(contain);
+                    @include image(cover);
                 }
             }
+        }
+
+        .divUserImage:hover {
+            box-shadow: 0px 0px 1px black; 
+            width: pixels-rem(90);
+            height: pixels-rem(90);
+            right: pixels-rem(10);
         }
 
     }
@@ -77,8 +86,8 @@
                 .pTitle {
                     margin: pixels-rem(20) auto 0;
                     width: 80%;
-                    // background-color: $bg-title;
-                    background-image: linear-gradient(to Right, transparent, $form-title, transparent);
+                    background-color: $bg-title;
+                    // background-image: linear-gradient(to Right, transparent, $form-title, transparent);
                     border-left: 2px solid $bg;
                     border-right: 2px solid $bg;
                     box-shadow: 0 2px 5px $bg;
@@ -87,6 +96,7 @@
                     font-weight: bold;
                     text-align: center;
                     font-size: pixels-rem(20);
+                    font-weight: 400;
                     color: $prof-title;
                 }
 
@@ -102,12 +112,14 @@
                 .divImageContainer {
                     margin: pixels-rem(30) auto;
                     @include border($user-name, 5);
-                    background-color: transparent;
+                    background-color: $bg-img;
+                    color: $prof-title;
                     width: 98%;
                     height: pixels-rem(250);
 
                     img {
                         @include image(contain);
+                        border-radius: pixels-rem(10);
                         padding: pixels-rem(5);
                     }
 

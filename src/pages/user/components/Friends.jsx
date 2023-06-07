@@ -26,38 +26,39 @@ export const Friends = () => {
 
   return (
 
-
     <section className="secUserFriends">
 
       {
         friends.map(fr =>
+          <>
+            <article key={`fr-${Date.now() + fr.name}`} >
+              <LittlePeople name={fr.name} image={fr.image} />
 
-          <article key={`fr-${Date.now() + fr.name}`} >
-            <LittlePeople name={fr.name} image={fr.image} />
+              {
+                (fr.name) &&
+                <div className="divBtnsChat">
+                  {/* <button onClick={() => handleRemoveFriend(fr._id)}><i class="fa-solid fa-heart-crack"></i> Romper vínculo</button> */}
 
-            {
-              (fr.name) &&
-              <div className="divBtnsChat">
-                {/* <button onClick={() => handleRemoveFriend(fr._id)}><i class="fa-solid fa-heart-crack"></i> Romper vínculo</button> */}
-
-                {(fr.show)
-                  ?
-                  <button onClick={() => handleOnOpenChat(fr._id, false)}><i className="fa-solid fa-rectangle-xmark"></i></button>
-                  :
-                  <button onClick={() => handleOnOpenChat(fr._id, true)}><i className="fa-solid fa-comment-dots"></i></button>
-                }
-              </div>
-            }
+                  {(fr.show)
+                    ?
+                    <button onClick={() => handleOnOpenChat(fr._id, false)}><i className="fa-solid fa-rectangle-xmark"></i></button>
+                    :
+                    <button onClick={() => handleOnOpenChat(fr._id, true)}><i className="fa-solid fa-comment-dots"></i></button>
+                  }
+                </div>
+              }
 
 
-            <p className="pChatMsg">{msg}</p>
+              <p className="pChatMsg">{msg}</p>
+
+
+
+            </article>
 
             {
               (fr.show) && <ChatBox {...fr} />
             }
-
-          </article>
-
+          </>
         )
       }
     </ section>

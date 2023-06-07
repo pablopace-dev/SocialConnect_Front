@@ -5,6 +5,7 @@ import { SocketContext } from './contexts/SocketContext';
 import { useContext, useEffect, useState } from 'react';
 import { useSocketStore } from './hooks/useSocketStore';
 import { io } from 'socket.io-client';
+import { NavLink } from 'react-router-dom';
 
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
   const { socket, setSocket } = useContext(SocketContext);
   const { operations, onConnect } = useSocketStore();
   const [reconnect, setReconnect] = useState(false);
+
+  const url = 'https://pablopace-portfolio.netlify.app'
 
 
   const [theme, setTheme] = useState(false);
@@ -142,7 +145,11 @@ function App() {
 
 
       <footer className='footer'>
-        <p>© Pablo Pace - 2023 {`- (${(socket) && socket.id})`} </p>
+        <p>
+          <NavLink
+            to={url}
+            target='_blank'
+          >© Pablo Pace</NavLink> - 2023 {`- (${(socket) && socket.id})`} </p>
       </footer>
 
     </>

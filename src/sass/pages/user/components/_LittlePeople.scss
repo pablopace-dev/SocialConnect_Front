@@ -1,7 +1,6 @@
 // @import '../../../base/settings';
 
 .divLittlePeople {
-
     @include flexbox(center, column, 0);
     background-color: transparent;
     padding: pixels-rem(10);

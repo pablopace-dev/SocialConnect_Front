@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Profile } from "./components/Profile";
 import { NavLink } from 'react-router-dom';
 import { useProfiles } from "./hooks/useProfiles";
+import { PrivateProfile } from "./components";
 
 export const EditPrivateProfile = () => {
 
@@ -213,7 +213,7 @@ export const EditPrivateProfile = () => {
 
             <h2>Previsualización:</h2>
 
-            <Profile profile={form} />
+            <PrivateProfile profile={form} {...user} />
 
         </section>
 

@@ -49,15 +49,16 @@
 
 body {
   font-size: 0.9375rem;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   min-width: 360px;
-  background-color: rgb(236, 250, 253);
+  background-color: #fafafa;
   width: 100vw;
 }
 
 .header {
   height: 4.6875rem;
   background-color: rgb(33, 57, 75);
+  width: 100%;
   display: grid;
   grid-template-columns: 0.7fr 0.3fr;
   justify-items: left;
@@ -172,25 +173,25 @@ nav .divNavContainer .divStatus div img {
 }
 nav .divChat {
   margin-top: 0.0625rem;
-  position: fixed;
-  padding: 0.3125rem;
-  box-shadow: 0 0 5px 1px black;
+  position: absolute;
+  padding: 0.0625rem;
+  height: 60vh;
+  overflow-y: scroll;
   width: 100%;
-  background-color: rgb(33, 57, 75);
   transform: translate3d(-105%, 0px, 0px);
   transition: transform 0.2s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
   z-index: 1001;
 }
 nav .divChat .secUserFriends {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  flex-direction: row;
-  gap: 0rem;
-  background-color: rgb(20, 20, 20);
+  background-color: rgba(0, 0, 0, 0.7);
+  border-top-right-radius: 0.9375rem;
+  border-bottom-right-radius: 0.9375rem;
+  border: 1px solid rgb(79, 210, 242);
+  width: 100px;
 }
 nav .divChat .secUserFriends article {
   cursor: pointer;
+  width: 100%;
 }
 nav .divChat .secUserFriends article .divLittlePeople {
   display: flex;
@@ -228,7 +229,7 @@ nav .divChat .secUserFriends article .divLittlePeople div img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border: 1px solid rgb(236, 250, 253);
+  border: 1px solid #fafafa;
   border-radius: 6.25rem;
 }
 nav .divChat .secUserFriends .divBtnsChat {
@@ -250,14 +251,15 @@ nav .divChat .secUserFriends .divBtnsChat button:hover {
 }
 nav .divChat .secUserFriends .divChatBox {
   position: fixed;
+  right: 0;
+  top: 0;
   padding: 0.3125rem;
-  box-shadow: 0 0 5px 1px black;
-  width: 100%;
-  left: 0;
-  margin-top: 0.625rem;
+  width: 260px;
   background-color: rgb(33, 57, 75);
+  height: 59vh;
+  transform: translate3d(-105%, 0px, 0px);
+  transition: transform 0.2s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
   z-index: 900;
-  height: 18.75rem;
   border: 1px solid rgb(169, 204, 216);
   border-radius: 0.3125rem;
 }
@@ -269,13 +271,11 @@ nav .divChat .secUserFriends .divChatBox p {
   font-size: 0.9375rem;
 }
 nav .divChat .secUserFriends .divChatBox div {
-  height: 14.375rem;
-  overflow-y: scroll;
+  min-height: 50vh;
+  background-color: #fafafa;
+  margin: 2px auto;
 }
 nav .divChat .secUserFriends .divChatBox div table {
-  border: 1px solid rgb(33, 57, 75);
-  border-radius: 0.3125rem;
-  background-color: rgb(237, 237, 237);
   width: 98%;
   margin: 0rem auto;
 }
@@ -318,14 +318,14 @@ nav .divChat .secUserFriends .divChatBox form {
 nav .divChat .secUserFriends .divChatBox form input {
   padding: 0.1875rem;
 }
-nav .divChat .secUserFriends .divChatBox.ocultar {
-  display: none;
+nav .divChat .secUserFriends .divChatBox.mostrarChatBox {
+  transform: translate3d(0px, 0px, 0px);
 }
 nav .divChat.mostrarChat {
   transform: translate3d(0px, 0px, 0px);
 }
 nav .divNav {
-  position: fixed;
+  position: absolute;
   padding: 0.3125rem;
   box-shadow: 0 0 5px 1px black;
   width: 100%;
@@ -390,10 +390,10 @@ nav .divNav.mostrar {
 .secHomePage div:first-child img {
   opacity: 0.9;
   filter: blur(3px);
-  mask-image: linear-gradient(transparent, rgb(236, 250, 253), transparent);
-  mask-image: linear-gradient(to Right, transparent, rgb(236, 250, 253), transparent);
-  -webkit-mask-image: linear-gradient(transparent, rgb(236, 250, 253), transparent);
-  -webkit-mask-image: linear-gradient(to Right, transparent, rgb(236, 250, 253), transparent);
+  mask-image: linear-gradient(transparent, #fafafa, transparent);
+  mask-image: linear-gradient(to Right, transparent, #fafafa, transparent);
+  -webkit-mask-image: linear-gradient(transparent, #fafafa, transparent);
+  -webkit-mask-image: linear-gradient(to Right, transparent, #fafafa, transparent);
   transition: 500ms ease;
 }
 .secHomePage div:first-child img:hover {
@@ -453,11 +453,14 @@ nav .divNav.mostrar {
 }
 .secPublicProfiles .secProfile .profHeader .divUserImage,
 .secPublicProfiles .secPrivateProfile .profHeader .divUserImage {
-  border-radius: 100px;
+  border-radius: 100%;
   box-shadow: 0px 3px 10px black;
-  float: right;
+  position: absolute;
+  transform: translate(-0.3125rem, -3.125rem);
+  right: 0.9375rem;
   width: 5rem;
   height: 5rem;
+  transition: height 200ms, width 200ms, box-shadow 200ms, right 200ms;
 }
 .secPublicProfiles .secProfile .profHeader .divUserImage a,
 .secPublicProfiles .secPrivateProfile .profHeader .divUserImage a {
@@ -469,7 +472,14 @@ nav .divNav.mostrar {
   border-radius: 6.25rem;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+}
+.secPublicProfiles .secProfile .profHeader .divUserImage:hover,
+.secPublicProfiles .secPrivateProfile .profHeader .divUserImage:hover {
+  box-shadow: 0px 0px 1px black;
+  width: 5.625rem;
+  height: 5.625rem;
+  right: 0.625rem;
 }
 .secPublicProfiles .secProfile .profMain .divProfile article .pText,
 .secPublicProfiles .secPrivateProfile .profMain .divProfile article .pText {
@@ -483,7 +493,7 @@ nav .divNav.mostrar {
 .secPublicProfiles .secPrivateProfile .profMain .divProfile article .pTitle {
   margin: 1.25rem auto 0;
   width: 80%;
-  background-image: linear-gradient(to Right, transparent, rgb(120, 214, 221), transparent);
+  background-color: rgb(242, 242, 242);
   border-left: 2px solid rgb(33, 57, 75);
   border-right: 2px solid rgb(33, 57, 75);
   box-shadow: 0 2px 5px rgb(33, 57, 75);
@@ -492,7 +502,8 @@ nav .divNav.mostrar {
   font-weight: bold;
   text-align: center;
   font-size: 1.25rem;
-  color: rgb(46, 64, 68);
+  font-weight: 400;
+  color: rgb(88, 91, 91);
 }
 .secPublicProfiles .secProfile .profMain .divProfile article .pParagraph,
 .secPublicProfiles .secPrivateProfile .profMain .divProfile article .pParagraph {
@@ -508,7 +519,8 @@ nav .divNav.mostrar {
   margin: 1.875rem auto;
   border: 1px solid rgb(9, 68, 136);
   border-radius: 0.3125rem;
-  background-color: transparent;
+  background-color: rgb(26, 25, 25);
+  color: rgb(88, 91, 91);
   width: 98%;
   height: 15.625rem;
 }
@@ -517,6 +529,7 @@ nav .divNav.mostrar {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  border-radius: 0.625rem;
   padding: 0.3125rem;
 }
 .secPublicProfiles .secPrivateProfile {
@@ -822,11 +835,14 @@ nav .divNav.mostrar {
 }
 .secUsers .artUser main .divUser .secProfile .profHeader .divUserImage,
 .secUsers .artUser main .divUser .secPrivateProfile .profHeader .divUserImage {
-  border-radius: 100px;
+  border-radius: 100%;
   box-shadow: 0px 3px 10px black;
-  float: right;
+  position: absolute;
+  transform: translate(-0.3125rem, -3.125rem);
+  right: 0.9375rem;
   width: 5rem;
   height: 5rem;
+  transition: height 200ms, width 200ms, box-shadow 200ms, right 200ms;
 }
 .secUsers .artUser main .divUser .secProfile .profHeader .divUserImage a,
 .secUsers .artUser main .divUser .secPrivateProfile .profHeader .divUserImage a {
@@ -838,7 +854,14 @@ nav .divNav.mostrar {
   border-radius: 6.25rem;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+}
+.secUsers .artUser main .divUser .secProfile .profHeader .divUserImage:hover,
+.secUsers .artUser main .divUser .secPrivateProfile .profHeader .divUserImage:hover {
+  box-shadow: 0px 0px 1px black;
+  width: 5.625rem;
+  height: 5.625rem;
+  right: 0.625rem;
 }
 .secUsers .artUser main .divUser .secProfile .profMain .divProfile article .pText,
 .secUsers .artUser main .divUser .secPrivateProfile .profMain .divProfile article .pText {
@@ -852,7 +875,7 @@ nav .divNav.mostrar {
 .secUsers .artUser main .divUser .secPrivateProfile .profMain .divProfile article .pTitle {
   margin: 1.25rem auto 0;
   width: 80%;
-  background-image: linear-gradient(to Right, transparent, rgb(120, 214, 221), transparent);
+  background-color: rgb(242, 242, 242);
   border-left: 2px solid rgb(33, 57, 75);
   border-right: 2px solid rgb(33, 57, 75);
   box-shadow: 0 2px 5px rgb(33, 57, 75);
@@ -861,7 +884,8 @@ nav .divNav.mostrar {
   font-weight: bold;
   text-align: center;
   font-size: 1.25rem;
-  color: rgb(46, 64, 68);
+  font-weight: 400;
+  color: rgb(88, 91, 91);
 }
 .secUsers .artUser main .divUser .secProfile .profMain .divProfile article .pParagraph,
 .secUsers .artUser main .divUser .secPrivateProfile .profMain .divProfile article .pParagraph {
@@ -877,7 +901,8 @@ nav .divNav.mostrar {
   margin: 1.875rem auto;
   border: 1px solid rgb(9, 68, 136);
   border-radius: 0.3125rem;
-  background-color: transparent;
+  background-color: rgb(26, 25, 25);
+  color: rgb(88, 91, 91);
   width: 98%;
   height: 15.625rem;
 }
@@ -886,6 +911,7 @@ nav .divNav.mostrar {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  border-radius: 0.625rem;
   padding: 0.3125rem;
 }
 .secUsers .artUser main .divUser .secPrivateProfile {
@@ -1175,11 +1201,14 @@ nav .divNav.mostrar {
 }
 .secUserDetailAdmin .artUser main .divUser .secProfile .profHeader .divUserImage,
 .secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profHeader .divUserImage {
-  border-radius: 100px;
+  border-radius: 100%;
   box-shadow: 0px 3px 10px black;
-  float: right;
+  position: absolute;
+  transform: translate(-0.3125rem, -3.125rem);
+  right: 0.9375rem;
   width: 5rem;
   height: 5rem;
+  transition: height 200ms, width 200ms, box-shadow 200ms, right 200ms;
 }
 .secUserDetailAdmin .artUser main .divUser .secProfile .profHeader .divUserImage a,
 .secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profHeader .divUserImage a {
@@ -1191,7 +1220,14 @@ nav .divNav.mostrar {
   border-radius: 6.25rem;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profHeader .divUserImage:hover,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profHeader .divUserImage:hover {
+  box-shadow: 0px 0px 1px black;
+  width: 5.625rem;
+  height: 5.625rem;
+  right: 0.625rem;
 }
 .secUserDetailAdmin .artUser main .divUser .secProfile .profMain .divProfile article .pText,
 .secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profMain .divProfile article .pText {
@@ -1205,7 +1241,7 @@ nav .divNav.mostrar {
 .secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profMain .divProfile article .pTitle {
   margin: 1.25rem auto 0;
   width: 80%;
-  background-image: linear-gradient(to Right, transparent, rgb(120, 214, 221), transparent);
+  background-color: rgb(242, 242, 242);
   border-left: 2px solid rgb(33, 57, 75);
   border-right: 2px solid rgb(33, 57, 75);
   box-shadow: 0 2px 5px rgb(33, 57, 75);
@@ -1214,7 +1250,8 @@ nav .divNav.mostrar {
   font-weight: bold;
   text-align: center;
   font-size: 1.25rem;
-  color: rgb(46, 64, 68);
+  font-weight: 400;
+  color: rgb(88, 91, 91);
 }
 .secUserDetailAdmin .artUser main .divUser .secProfile .profMain .divProfile article .pParagraph,
 .secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profMain .divProfile article .pParagraph {
@@ -1230,7 +1267,8 @@ nav .divNav.mostrar {
   margin: 1.875rem auto;
   border: 1px solid rgb(9, 68, 136);
   border-radius: 0.3125rem;
-  background-color: transparent;
+  background-color: rgb(26, 25, 25);
+  color: rgb(88, 91, 91);
   width: 98%;
   height: 15.625rem;
 }
@@ -1239,6 +1277,7 @@ nav .divNav.mostrar {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  border-radius: 0.625rem;
   padding: 0.3125rem;
 }
 .secUserDetailAdmin .artUser main .divUser .secPrivateProfile {
@@ -1381,11 +1420,14 @@ nav .divNav.mostrar {
 }
 .secUserDetailAdmin .secProfile .profHeader .divUserImage,
 .secUserDetailAdmin .secPrivateProfile .profHeader .divUserImage {
-  border-radius: 100px;
+  border-radius: 100%;
   box-shadow: 0px 3px 10px black;
-  float: right;
+  position: absolute;
+  transform: translate(-0.3125rem, -3.125rem);
+  right: 0.9375rem;
   width: 5rem;
   height: 5rem;
+  transition: height 200ms, width 200ms, box-shadow 200ms, right 200ms;
 }
 .secUserDetailAdmin .secProfile .profHeader .divUserImage a,
 .secUserDetailAdmin .secPrivateProfile .profHeader .divUserImage a {
@@ -1397,7 +1439,14 @@ nav .divNav.mostrar {
   border-radius: 6.25rem;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+}
+.secUserDetailAdmin .secProfile .profHeader .divUserImage:hover,
+.secUserDetailAdmin .secPrivateProfile .profHeader .divUserImage:hover {
+  box-shadow: 0px 0px 1px black;
+  width: 5.625rem;
+  height: 5.625rem;
+  right: 0.625rem;
 }
 .secUserDetailAdmin .secProfile .profMain .divProfile article .pText,
 .secUserDetailAdmin .secPrivateProfile .profMain .divProfile article .pText {
@@ -1411,7 +1460,7 @@ nav .divNav.mostrar {
 .secUserDetailAdmin .secPrivateProfile .profMain .divProfile article .pTitle {
   margin: 1.25rem auto 0;
   width: 80%;
-  background-image: linear-gradient(to Right, transparent, rgb(120, 214, 221), transparent);
+  background-color: rgb(242, 242, 242);
   border-left: 2px solid rgb(33, 57, 75);
   border-right: 2px solid rgb(33, 57, 75);
   box-shadow: 0 2px 5px rgb(33, 57, 75);
@@ -1420,7 +1469,8 @@ nav .divNav.mostrar {
   font-weight: bold;
   text-align: center;
   font-size: 1.25rem;
-  color: rgb(46, 64, 68);
+  font-weight: 400;
+  color: rgb(88, 91, 91);
 }
 .secUserDetailAdmin .secProfile .profMain .divProfile article .pParagraph,
 .secUserDetailAdmin .secPrivateProfile .profMain .divProfile article .pParagraph {
@@ -1436,7 +1486,8 @@ nav .divNav.mostrar {
   margin: 1.875rem auto;
   border: 1px solid rgb(9, 68, 136);
   border-radius: 0.3125rem;
-  background-color: transparent;
+  background-color: rgb(26, 25, 25);
+  color: rgb(88, 91, 91);
   width: 98%;
   height: 15.625rem;
 }
@@ -1445,6 +1496,7 @@ nav .divNav.mostrar {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  border-radius: 0.625rem;
   padding: 0.3125rem;
 }
 .secUserDetailAdmin .secPrivateProfile {
@@ -1461,16 +1513,18 @@ nav .divNav.mostrar {
 }
 .secHomeUser .divRoot {
   margin-top: 0.9375rem;
-  font-weight: bold;
+  font-weight: 400;
 }
 .secHomeUser h1 {
+  text-align: center;
   margin-top: 0.9375rem;
   font-size: 1.875rem;
   color: rgb(9, 68, 136);
 }
 .secHomeUser .secUserProfiles h2 {
-  font-size: 1.5625rem;
-  margin-top: 0.625rem;
+  font-size: 1.375rem;
+  font-weight: 300;
+  margin-top: 1.25rem;
   padding: 0.625rem;
   border-bottom: 1px dotted rgb(33, 57, 75);
 }
@@ -1479,12 +1533,13 @@ nav .divNav.mostrar {
   margin-bottom: 0.9375rem;
   padding-bottom: 0.3125rem;
 }
-.secHomeUser .secUserProfiles .secUserProfile h3 {
+.secHomeUser .secUserProfiles .secUserProfile .h3HomeUser {
   font-size: 1.25rem;
+  font-weight: 500;
   font-style: italic;
   margin-top: 0.9375rem;
 }
-.secHomeUser .secUserProfiles .secUserProfile a {
+.secHomeUser .secUserProfiles .secUserProfile .aHomeUser {
   background-color: rgb(33, 57, 75);
   border-radius: 5px;
   border: none;
@@ -1497,7 +1552,7 @@ nav .divNav.mostrar {
   padding: 0.625rem;
   text-decoration: none;
 }
-.secHomeUser .secUserProfiles .secUserProfile a:hover {
+.secHomeUser .secUserProfiles .secUserProfile .aHomeUser:hover {
   color: rgb(16, 63, 75);
   background-color: rgb(134, 184, 196);
   box-shadow: 0 0 1px rgb(33, 57, 75);
@@ -1534,11 +1589,14 @@ nav .divNav.mostrar {
 }
 .secHomeUser .secUserProfiles .secUserProfile .secProfile .profHeader .divUserImage,
 .secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profHeader .divUserImage {
-  border-radius: 100px;
+  border-radius: 100%;
   box-shadow: 0px 3px 10px black;
-  float: right;
+  position: absolute;
+  transform: translate(-0.3125rem, -3.125rem);
+  right: 0.9375rem;
   width: 5rem;
   height: 5rem;
+  transition: height 200ms, width 200ms, box-shadow 200ms, right 200ms;
 }
 .secHomeUser .secUserProfiles .secUserProfile .secProfile .profHeader .divUserImage a,
 .secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profHeader .divUserImage a {
@@ -1550,7 +1608,14 @@ nav .divNav.mostrar {
   border-radius: 6.25rem;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profHeader .divUserImage:hover,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profHeader .divUserImage:hover {
+  box-shadow: 0px 0px 1px black;
+  width: 5.625rem;
+  height: 5.625rem;
+  right: 0.625rem;
 }
 .secHomeUser .secUserProfiles .secUserProfile .secProfile .profMain .divProfile article .pText,
 .secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profMain .divProfile article .pText {
@@ -1564,7 +1629,7 @@ nav .divNav.mostrar {
 .secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profMain .divProfile article .pTitle {
   margin: 1.25rem auto 0;
   width: 80%;
-  background-image: linear-gradient(to Right, transparent, rgb(120, 214, 221), transparent);
+  background-color: rgb(242, 242, 242);
   border-left: 2px solid rgb(33, 57, 75);
   border-right: 2px solid rgb(33, 57, 75);
   box-shadow: 0 2px 5px rgb(33, 57, 75);
@@ -1573,7 +1638,8 @@ nav .divNav.mostrar {
   font-weight: bold;
   text-align: center;
   font-size: 1.25rem;
-  color: rgb(46, 64, 68);
+  font-weight: 400;
+  color: rgb(88, 91, 91);
 }
 .secHomeUser .secUserProfiles .secUserProfile .secProfile .profMain .divProfile article .pParagraph,
 .secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profMain .divProfile article .pParagraph {
@@ -1589,7 +1655,8 @@ nav .divNav.mostrar {
   margin: 1.875rem auto;
   border: 1px solid rgb(9, 68, 136);
   border-radius: 0.3125rem;
-  background-color: transparent;
+  background-color: rgb(26, 25, 25);
+  color: rgb(88, 91, 91);
   width: 98%;
   height: 15.625rem;
 }
@@ -1598,6 +1665,7 @@ nav .divNav.mostrar {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  border-radius: 0.625rem;
   padding: 0.3125rem;
 }
 .secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile {
@@ -1613,7 +1681,8 @@ nav .divNav.mostrar {
 .secHomeUser .secInvites h2 {
   text-align: center;
   font-size: 1.75rem;
-  margin-top: 0.625rem;
+  font-weight: 500;
+  margin-top: 1.5625rem;
   padding: 0.625rem;
   border-bottom: 1px dotted rgb(33, 57, 75);
 }
@@ -1624,6 +1693,7 @@ nav .divNav.mostrar {
 .secHomeUser .secInvites .divInvSent h3,
 .secHomeUser .secInvites .divInvReceived h3 {
   font-size: 1.375rem;
+  font-weight: 400;
   color: rgb(9, 68, 136);
   border-bottom: 1px dotted rgb(33, 57, 75);
 }
@@ -1670,7 +1740,7 @@ nav .divNav.mostrar {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border: 1px solid rgb(236, 250, 253);
+  border: 1px solid #fafafa;
   border-radius: 6.25rem;
 }
 .secHomeUser .secInvites .divInvSent article .divBtns,
@@ -1749,6 +1819,7 @@ nav .divNav.mostrar {
 }
 .secProfiles h2 {
   font-size: 1.5625rem;
+  font-weight: 300;
   margin-top: 0.625rem;
   padding: 0.625rem;
   border-bottom: 1px dotted rgb(33, 57, 75);
@@ -1756,6 +1827,7 @@ nav .divNav.mostrar {
 .secProfiles .divRoot {
   margin-top: 0.9375rem;
   font-weight: bold;
+  font-weight: 400;
 }
 .secProfiles .divRoot a {
   text-decoration: none;
@@ -1764,8 +1836,6 @@ nav .divNav.mostrar {
 .secProfiles .imgContainer {
   width: 100%;
   margin: 0rem auto;
-  position: absolute;
-  z-index: -1;
 }
 .secProfiles .imgContainer img {
   width: 100%;
@@ -1773,10 +1843,10 @@ nav .divNav.mostrar {
   object-fit: contain;
   opacity: 0.9;
   filter: blur(3px);
-  mask-image: linear-gradient(transparent, rgb(236, 250, 253), transparent);
-  mask-image: linear-gradient(to Right, transparent, rgb(236, 250, 253), transparent);
-  -webkit-mask-image: linear-gradient(transparent, rgb(236, 250, 253), transparent);
-  -webkit-mask-image: linear-gradient(to Right, transparent, rgb(236, 250, 253), transparent);
+  mask-image: linear-gradient(transparent, #fafafa, transparent);
+  mask-image: linear-gradient(to Right, transparent, #fafafa, transparent);
+  -webkit-mask-image: linear-gradient(transparent, #fafafa, transparent);
+  -webkit-mask-image: linear-gradient(to Right, transparent, #fafafa, transparent);
   transition: 500ms ease;
 }
 .secProfiles .secProfile,
@@ -1811,11 +1881,14 @@ nav .divNav.mostrar {
 }
 .secProfiles .secProfile .profHeader .divUserImage,
 .secProfiles .secPrivateProfile .profHeader .divUserImage {
-  border-radius: 100px;
+  border-radius: 100%;
   box-shadow: 0px 3px 10px black;
-  float: right;
+  position: absolute;
+  transform: translate(-0.3125rem, -3.125rem);
+  right: 0.9375rem;
   width: 5rem;
   height: 5rem;
+  transition: height 200ms, width 200ms, box-shadow 200ms, right 200ms;
 }
 .secProfiles .secProfile .profHeader .divUserImage a,
 .secProfiles .secPrivateProfile .profHeader .divUserImage a {
@@ -1827,7 +1900,14 @@ nav .divNav.mostrar {
   border-radius: 6.25rem;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+}
+.secProfiles .secProfile .profHeader .divUserImage:hover,
+.secProfiles .secPrivateProfile .profHeader .divUserImage:hover {
+  box-shadow: 0px 0px 1px black;
+  width: 5.625rem;
+  height: 5.625rem;
+  right: 0.625rem;
 }
 .secProfiles .secProfile .profMain .divProfile article .pText,
 .secProfiles .secPrivateProfile .profMain .divProfile article .pText {
@@ -1841,7 +1921,7 @@ nav .divNav.mostrar {
 .secProfiles .secPrivateProfile .profMain .divProfile article .pTitle {
   margin: 1.25rem auto 0;
   width: 80%;
-  background-image: linear-gradient(to Right, transparent, rgb(120, 214, 221), transparent);
+  background-color: rgb(242, 242, 242);
   border-left: 2px solid rgb(33, 57, 75);
   border-right: 2px solid rgb(33, 57, 75);
   box-shadow: 0 2px 5px rgb(33, 57, 75);
@@ -1850,7 +1930,8 @@ nav .divNav.mostrar {
   font-weight: bold;
   text-align: center;
   font-size: 1.25rem;
-  color: rgb(46, 64, 68);
+  font-weight: 400;
+  color: rgb(88, 91, 91);
 }
 .secProfiles .secProfile .profMain .divProfile article .pParagraph,
 .secProfiles .secPrivateProfile .profMain .divProfile article .pParagraph {
@@ -1866,7 +1947,8 @@ nav .divNav.mostrar {
   margin: 1.875rem auto;
   border: 1px solid rgb(9, 68, 136);
   border-radius: 0.3125rem;
-  background-color: transparent;
+  background-color: rgb(26, 25, 25);
+  color: rgb(88, 91, 91);
   width: 98%;
   height: 15.625rem;
 }
@@ -1875,6 +1957,7 @@ nav .divNav.mostrar {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  border-radius: 0.625rem;
   padding: 0.3125rem;
 }
 .secProfiles .secPrivateProfile {
@@ -1906,8 +1989,6 @@ nav .divNav.mostrar {
 .secEditProfile .imgContainer {
   width: 100%;
   margin: 0rem auto;
-  position: absolute;
-  z-index: -1;
 }
 .secEditProfile .imgContainer img {
   width: 100%;
@@ -1915,10 +1996,10 @@ nav .divNav.mostrar {
   object-fit: contain;
   opacity: 0.9;
   filter: blur(3px);
-  mask-image: linear-gradient(transparent, rgb(236, 250, 253), transparent);
-  mask-image: linear-gradient(to Right, transparent, rgb(236, 250, 253), transparent);
-  -webkit-mask-image: linear-gradient(transparent, rgb(236, 250, 253), transparent);
-  -webkit-mask-image: linear-gradient(to Right, transparent, rgb(236, 250, 253), transparent);
+  mask-image: linear-gradient(transparent, #fafafa, transparent);
+  mask-image: linear-gradient(to Right, transparent, #fafafa, transparent);
+  -webkit-mask-image: linear-gradient(transparent, #fafafa, transparent);
+  -webkit-mask-image: linear-gradient(to Right, transparent, #fafafa, transparent);
   transition: 500ms ease;
 }
 .secEditProfile .errorProfile {
@@ -2105,11 +2186,14 @@ nav .divNav.mostrar {
 }
 .secEditProfile .secProfile .profHeader .divUserImage,
 .secEditProfile .secPrivateProfile .profHeader .divUserImage {
-  border-radius: 100px;
+  border-radius: 100%;
   box-shadow: 0px 3px 10px black;
-  float: right;
+  position: absolute;
+  transform: translate(-0.3125rem, -3.125rem);
+  right: 0.9375rem;
   width: 5rem;
   height: 5rem;
+  transition: height 200ms, width 200ms, box-shadow 200ms, right 200ms;
 }
 .secEditProfile .secProfile .profHeader .divUserImage a,
 .secEditProfile .secPrivateProfile .profHeader .divUserImage a {
@@ -2121,7 +2205,14 @@ nav .divNav.mostrar {
   border-radius: 6.25rem;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+}
+.secEditProfile .secProfile .profHeader .divUserImage:hover,
+.secEditProfile .secPrivateProfile .profHeader .divUserImage:hover {
+  box-shadow: 0px 0px 1px black;
+  width: 5.625rem;
+  height: 5.625rem;
+  right: 0.625rem;
 }
 .secEditProfile .secProfile .profMain .divProfile article .pText,
 .secEditProfile .secPrivateProfile .profMain .divProfile article .pText {
@@ -2135,7 +2226,7 @@ nav .divNav.mostrar {
 .secEditProfile .secPrivateProfile .profMain .divProfile article .pTitle {
   margin: 1.25rem auto 0;
   width: 80%;
-  background-image: linear-gradient(to Right, transparent, rgb(120, 214, 221), transparent);
+  background-color: rgb(242, 242, 242);
   border-left: 2px solid rgb(33, 57, 75);
   border-right: 2px solid rgb(33, 57, 75);
   box-shadow: 0 2px 5px rgb(33, 57, 75);
@@ -2144,7 +2235,8 @@ nav .divNav.mostrar {
   font-weight: bold;
   text-align: center;
   font-size: 1.25rem;
-  color: rgb(46, 64, 68);
+  font-weight: 400;
+  color: rgb(88, 91, 91);
 }
 .secEditProfile .secProfile .profMain .divProfile article .pParagraph,
 .secEditProfile .secPrivateProfile .profMain .divProfile article .pParagraph {
@@ -2160,7 +2252,8 @@ nav .divNav.mostrar {
   margin: 1.875rem auto;
   border: 1px solid rgb(9, 68, 136);
   border-radius: 0.3125rem;
-  background-color: transparent;
+  background-color: rgb(26, 25, 25);
+  color: rgb(88, 91, 91);
   width: 98%;
   height: 15.625rem;
 }
@@ -2169,6 +2262,7 @@ nav .divNav.mostrar {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  border-radius: 0.625rem;
   padding: 0.3125rem;
 }
 .secEditProfile .secPrivateProfile {
@@ -2199,8 +2293,6 @@ nav .divNav.mostrar {
 .secMeet .imgContainer {
   width: 100%;
   margin: 0rem auto;
-  position: absolute;
-  z-index: -1;
 }
 .secMeet .imgContainer img {
   width: 100%;
@@ -2208,17 +2300,17 @@ nav .divNav.mostrar {
   object-fit: contain;
   opacity: 0.9;
   filter: blur(3px);
-  mask-image: linear-gradient(transparent, rgb(236, 250, 253), transparent);
-  mask-image: linear-gradient(to Right, transparent, rgb(236, 250, 253), transparent);
-  -webkit-mask-image: linear-gradient(transparent, rgb(236, 250, 253), transparent);
-  -webkit-mask-image: linear-gradient(to Right, transparent, rgb(236, 250, 253), transparent);
+  mask-image: linear-gradient(transparent, #fafafa, transparent);
+  mask-image: linear-gradient(to Right, transparent, #fafafa, transparent);
+  -webkit-mask-image: linear-gradient(transparent, #fafafa, transparent);
+  -webkit-mask-image: linear-gradient(to Right, transparent, #fafafa, transparent);
   transition: 500ms ease;
 }
 .secMeet h3 {
   font-size: 1.125rem;
   background-color: rgb(90, 175, 196);
   text-align: center;
-  box-shadow: 0 0 10px rgb(44, 44, 44);
+  box-shadow: 0 0 10px rgb(242, 242, 242);
   color: rgb(33, 57, 75);
   margin: 1.875rem 0;
   padding: 0.3125rem;
@@ -2229,7 +2321,7 @@ nav .divNav.mostrar {
   margin-bottom: 0.9375rem;
   border: 1px solid rgb(90, 175, 196);
   border-radius: 0.9375rem;
-  background-color: rgb(44, 44, 44);
+  background-color: rgb(242, 242, 242);
 }
 .secMeet article .divLittlePeople {
   display: flex;
@@ -2267,7 +2359,7 @@ nav .divNav.mostrar {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border: 1px solid rgb(236, 250, 253);
+  border: 1px solid #fafafa;
   border-radius: 6.25rem;
 }
 .secMeet article div {
@@ -2399,8 +2491,6 @@ nav .divNav.mostrar {
 .secRelations .imgContainer {
   width: 100%;
   margin: 0rem auto;
-  position: absolute;
-  z-index: -1;
 }
 .secRelations .imgContainer img {
   width: 100%;
@@ -2408,10 +2498,10 @@ nav .divNav.mostrar {
   object-fit: contain;
   opacity: 0.9;
   filter: blur(3px);
-  mask-image: linear-gradient(transparent, rgb(236, 250, 253), transparent);
-  mask-image: linear-gradient(to Right, transparent, rgb(236, 250, 253), transparent);
-  -webkit-mask-image: linear-gradient(transparent, rgb(236, 250, 253), transparent);
-  -webkit-mask-image: linear-gradient(to Right, transparent, rgb(236, 250, 253), transparent);
+  mask-image: linear-gradient(transparent, #fafafa, transparent);
+  mask-image: linear-gradient(to Right, transparent, #fafafa, transparent);
+  -webkit-mask-image: linear-gradient(transparent, #fafafa, transparent);
+  -webkit-mask-image: linear-gradient(to Right, transparent, #fafafa, transparent);
   transition: 500ms ease;
 }
 .secRelations .secBigPeople {
@@ -2433,7 +2523,7 @@ nav .divNav.mostrar {
   width: 100%;
 }
 .secRelations .secBigPeople .divPersonal div:first-child h3 {
-  color: rgb(46, 64, 68);
+  color: rgb(88, 91, 91);
   font-size: 1.5625rem;
 }
 .secRelations .secBigPeople .divPersonal div:first-child p {
@@ -2499,11 +2589,14 @@ nav .divNav.mostrar {
 .secRelations .secBigPeople .divProfile .secPrivateProfile .profHeader .divUserImage,
 .secRelations .secBigPeople .divPrivateProfile .secProfile .profHeader .divUserImage,
 .secRelations .secBigPeople .divPrivateProfile .secPrivateProfile .profHeader .divUserImage {
-  border-radius: 100px;
+  border-radius: 100%;
   box-shadow: 0px 3px 10px black;
-  float: right;
+  position: absolute;
+  transform: translate(-0.3125rem, -3.125rem);
+  right: 0.9375rem;
   width: 5rem;
   height: 5rem;
+  transition: height 200ms, width 200ms, box-shadow 200ms, right 200ms;
 }
 .secRelations .secBigPeople .divProfile .secProfile .profHeader .divUserImage a,
 .secRelations .secBigPeople .divProfile .secPrivateProfile .profHeader .divUserImage a,
@@ -2519,7 +2612,16 @@ nav .divNav.mostrar {
   border-radius: 6.25rem;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+}
+.secRelations .secBigPeople .divProfile .secProfile .profHeader .divUserImage:hover,
+.secRelations .secBigPeople .divProfile .secPrivateProfile .profHeader .divUserImage:hover,
+.secRelations .secBigPeople .divPrivateProfile .secProfile .profHeader .divUserImage:hover,
+.secRelations .secBigPeople .divPrivateProfile .secPrivateProfile .profHeader .divUserImage:hover {
+  box-shadow: 0px 0px 1px black;
+  width: 5.625rem;
+  height: 5.625rem;
+  right: 0.625rem;
 }
 .secRelations .secBigPeople .divProfile .secProfile .profMain .divProfile article .pText,
 .secRelations .secBigPeople .divProfile .secPrivateProfile .profMain .divProfile article .pText,
@@ -2537,7 +2639,7 @@ nav .divNav.mostrar {
 .secRelations .secBigPeople .divPrivateProfile .secPrivateProfile .profMain .divProfile article .pTitle {
   margin: 1.25rem auto 0;
   width: 80%;
-  background-image: linear-gradient(to Right, transparent, rgb(120, 214, 221), transparent);
+  background-color: rgb(242, 242, 242);
   border-left: 2px solid rgb(33, 57, 75);
   border-right: 2px solid rgb(33, 57, 75);
   box-shadow: 0 2px 5px rgb(33, 57, 75);
@@ -2546,7 +2648,8 @@ nav .divNav.mostrar {
   font-weight: bold;
   text-align: center;
   font-size: 1.25rem;
-  color: rgb(46, 64, 68);
+  font-weight: 400;
+  color: rgb(88, 91, 91);
 }
 .secRelations .secBigPeople .divProfile .secProfile .profMain .divProfile article .pParagraph,
 .secRelations .secBigPeople .divProfile .secPrivateProfile .profMain .divProfile article .pParagraph,
@@ -2566,7 +2669,8 @@ nav .divNav.mostrar {
   margin: 1.875rem auto;
   border: 1px solid rgb(9, 68, 136);
   border-radius: 0.3125rem;
-  background-color: transparent;
+  background-color: rgb(26, 25, 25);
+  color: rgb(88, 91, 91);
   width: 98%;
   height: 15.625rem;
 }
@@ -2577,6 +2681,7 @@ nav .divNav.mostrar {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  border-radius: 0.625rem;
   padding: 0.3125rem;
 }
 .secRelations .secBigPeople .divProfile .secPrivateProfile,
@@ -2714,14 +2819,15 @@ nav .divNav.mostrar {
 }
 .secRelations .secBigPeople .divChatBox {
   position: fixed;
+  right: 0;
+  top: 0;
   padding: 0.3125rem;
-  box-shadow: 0 0 5px 1px black;
-  width: 100%;
-  left: 0;
-  margin-top: 0.625rem;
+  width: 260px;
   background-color: rgb(33, 57, 75);
+  height: 59vh;
+  transform: translate3d(-105%, 0px, 0px);
+  transition: transform 0.2s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
   z-index: 900;
-  height: 18.75rem;
   border: 1px solid rgb(169, 204, 216);
   border-radius: 0.3125rem;
 }
@@ -2733,13 +2839,11 @@ nav .divNav.mostrar {
   font-size: 0.9375rem;
 }
 .secRelations .secBigPeople .divChatBox div {
-  height: 14.375rem;
-  overflow-y: scroll;
+  min-height: 50vh;
+  background-color: #fafafa;
+  margin: 2px auto;
 }
 .secRelations .secBigPeople .divChatBox div table {
-  border: 1px solid rgb(33, 57, 75);
-  border-radius: 0.3125rem;
-  background-color: rgb(237, 237, 237);
   width: 98%;
   margin: 0rem auto;
 }
@@ -2782,8 +2886,8 @@ nav .divNav.mostrar {
 .secRelations .secBigPeople .divChatBox form input {
   padding: 0.1875rem;
 }
-.secRelations .secBigPeople .divChatBox.ocultar {
-  display: none;
+.secRelations .secBigPeople .divChatBox.mostrarChatBox {
+  transform: translate3d(0px, 0px, 0px);
 }
 .secRelations .secBigPeople .divChatBox {
   width: 98%;
@@ -2834,8 +2938,6 @@ nav .divNav.mostrar {
 .secMessages .imgContainer {
   width: 100%;
   margin: 0rem auto;
-  position: absolute;
-  z-index: -1;
 }
 .secMessages .imgContainer img {
   width: 100%;
@@ -2843,17 +2945,17 @@ nav .divNav.mostrar {
   object-fit: contain;
   opacity: 0.9;
   filter: blur(3px);
-  mask-image: linear-gradient(transparent, rgb(236, 250, 253), transparent);
-  mask-image: linear-gradient(to Right, transparent, rgb(236, 250, 253), transparent);
-  -webkit-mask-image: linear-gradient(transparent, rgb(236, 250, 253), transparent);
-  -webkit-mask-image: linear-gradient(to Right, transparent, rgb(236, 250, 253), transparent);
+  mask-image: linear-gradient(transparent, #fafafa, transparent);
+  mask-image: linear-gradient(to Right, transparent, #fafafa, transparent);
+  -webkit-mask-image: linear-gradient(transparent, #fafafa, transparent);
+  -webkit-mask-image: linear-gradient(to Right, transparent, #fafafa, transparent);
   transition: 500ms ease;
 }
 .secMessages h3 {
   font-size: 1.125rem;
   background-color: rgb(90, 175, 196);
   text-align: center;
-  box-shadow: 0 0 10px rgb(44, 44, 44);
+  box-shadow: 0 0 10px rgb(242, 242, 242);
   color: rgb(33, 57, 75);
   margin: 1.875rem 0;
   padding: 0.3125rem;
@@ -2913,7 +3015,7 @@ nav .divNav.mostrar {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border: 1px solid rgb(236, 250, 253);
+  border: 1px solid #fafafa;
   border-radius: 6.25rem;
 }
 .secMessages .divCont .divChild1 button {
@@ -3047,8 +3149,6 @@ nav .divNav.mostrar {
   width: 98%;
   margin: 0rem auto;
   max-width: 992px;
-  height: calc(100vh - 8.75rem);
-  overflow-y: scroll;
 }
 .main .divReconnect {
   width: 100%;
@@ -3091,6 +3191,14 @@ nav .divNav.mostrar {
   font-size: 0.75rem;
   color: rgb(169, 204, 216);
   margin-left: 0.3125rem;
+}
+.footer p a {
+  text-decoration: none;
+  color: rgb(169, 204, 216);
+  font-weight: 500;
+}
+.footer p a:hover {
+  color: yellowgreen;
 }
 
 /*# sourceMappingURL=styles.css.map */

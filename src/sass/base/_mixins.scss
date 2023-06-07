@@ -115,8 +115,8 @@
 
     .imgContainer {
         @include container(100%, 0);
-        position: absolute;
-        z-index: -1;
+        // position: absolute;
+        // z-index: -1;
 
         img {
             @include image(contain);

@@ -4,7 +4,7 @@ import { useSocketStore } from "../../../hooks/useSocketStore";
 import ScrollToBottom from "react-scroll-to-bottom";
 
 
-export const ChatBox = ({ _id, name }) => {
+export const ChatBox = ({ _id, name, show }) => {
 
   const { chats, chatActive } = useSelector((state) => state.socket);
   const { user } = useSelector((state) => state.auth);
@@ -153,14 +153,14 @@ export const ChatBox = ({ _id, name }) => {
 
   return (
 
-    <div className="divChatBox" >
+    <div className={`divChatBox ${show && 'mostrarChatBox'}`} >
 
       {/* <div className={`divChatBox${(chatActive != chat._id) ? " ocultar" : ""}`}> */}
 
       <p>{name}</p>
       <div>
 
-        <ScrollToBottom className="stb">
+        {/* <ScrollToBottom className="stb"> */}
           < table >
 
             <thead>
@@ -193,7 +193,7 @@ export const ChatBox = ({ _id, name }) => {
 
           </table >
 
-        </ScrollToBottom>
+        {/* </ScrollToBottom> */}
       </div>
 
       <form onSubmit={handleOnSubmit}>

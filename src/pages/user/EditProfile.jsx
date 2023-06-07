@@ -207,7 +207,7 @@ export const EditProfile = () => {
                 }
             </form>
 
-            
+
             {validate &&
                 <p className="errorProfile">{validate}</p>
             }
@@ -215,7 +215,7 @@ export const EditProfile = () => {
 
             <h2>Previsualización:</h2>
 
-            <Profile profile={form} />
+            <Profile profile={form} {...user} />
 
         </section>
 

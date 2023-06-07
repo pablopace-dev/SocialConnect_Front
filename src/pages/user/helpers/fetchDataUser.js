@@ -205,9 +205,7 @@ export const fetchDataEmail = async (email) => {
 
     if (ok) {
 
-        user.alt = `Imagen de ${user.name}`;
-        user.date = new Date(user.date).toLocaleDateString();
-
+        user.alt = `Imagen de ${user.name}`;     
         return {
             ok: true,
             user

@@ -4,8 +4,8 @@
     @include flexbox(start, column, 0);
     @include container(98%, 0);
     max-width: 992px;
-    height: calc($viewport-height - ($header-height + $navBar-height + $footer-height));
-    overflow-y: scroll;
+    // height: calc($viewport-height - ($header-height + $navBar-height + $footer-height));
+    // overflow-y: scroll;
 
     .divReconnect {
         width: 100%;

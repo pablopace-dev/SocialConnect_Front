@@ -1,11 +1,20 @@
 // @import '../../../base/settings';
 
-.secUserFriends {    
-    @include flexbox(left, row, 0);
-    background-color: $bg-chat;
+.secUserFriends {
+    // @include flexbox(left, row, 0);
+    // flex-wrap: wrap;
+    // background-color: $bg-chat;
+    // @include grid(auto, center, start, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);        
+    border-top-right-radius: pixels-rem(15);
+    border-bottom-right-radius: pixels-rem(15);
+    border: 1px solid rgb(79, 210, 242);
+    width: 100px;
 
     article {
+        // grid-column: 1 / 2;        
         cursor: pointer;
+        width: 100%;
 
         @import './LittlePeople';
     }
@@ -24,6 +33,5 @@
     }
 
     @import './ChatBox';
-
 
 }
