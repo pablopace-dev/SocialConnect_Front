@@ -1,4 +1,3 @@
-// @import '../../base/settings';
 
 .secEditProfile {
     @include container(95%, 10);
@@ -6,7 +5,7 @@
 
     .divRoot {
         margin-top: pixels-rem(15);
-        font-weight: bold;
+        font-weight: 400;
 
         a {
             text-decoration: none;
@@ -18,6 +17,7 @@
     h2 {
         font-size: pixels-rem(25);
         margin-top: pixels-rem(10);
+        font-weight: 500;
         padding: pixels-rem(10);
         border-bottom: 1px dotted $bg;
     }
@@ -51,9 +51,10 @@
                 margin: pixels-rem(10) 0;
                 padding: pixels-rem(5);
                 border-radius: pixels-rem(5);
-                font-size: pixels-rem(12);
+                font-size: pixels-rem(12);                
                 text-indent: pixels-rem(5);
                 @include border($bg, 5);
+                resize: none;
             }
 
             label {
@@ -65,7 +66,7 @@
                 justify-self: left;
 
                 button {
-                    @include boton-ico();
+                    @include boton-ico(prof-btn);
                     color: $bg;
                     padding: 0 pixels-rem(2);
                 }
@@ -118,10 +119,13 @@
                 button {
                     @include boton-multi();
                     width: pixels-rem(120);
+                    font-size: pixels-rem(13);
+                    font-weight: 500;
                     padding: pixels-rem(5);
+                    transition: all 300ms ease-out;
 
                     i {
-                        color: $error-bad;
+                        color: $button-multi-icon;
                     }
                 }
 

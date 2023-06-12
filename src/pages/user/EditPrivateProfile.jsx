@@ -212,8 +212,8 @@ export const EditPrivateProfile = () => {
             }
 
             <h2>Previsualización:</h2>
-
-            <PrivateProfile profile={form} {...user} />
+            
+            <PrivateProfile privateProfile={form} name={user.name} dateMod={user.privateDateMod} image={user.image} />
 
         </section>
 

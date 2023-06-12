@@ -2,8 +2,8 @@
 
 
 .secHomePage {
-    height: 100%;
-    @include flexbox(center, column, 0);
+    @include flexbox(center, column, 0);    
+    min-height: calc($viewport-height - ($header-height + $navBar-height + $footer-height));
 
     div:first-child {
         @include container-img-texto($font-col, center, 45, 0);

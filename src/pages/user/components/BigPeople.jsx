@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Profile, PrivateProfile, Msgs, ChatBox } from "./";
 import { useFriends } from "../hooks/useFriends";
+import { NavLink } from "react-router-dom";
 
 
 export const BigPeople = ({ _id, profile, email, privateProfile, dateMod, privateDateMod, name, image, msgs }) => {
@@ -51,27 +52,27 @@ export const BigPeople = ({ _id, profile, email, privateProfile, dateMod, privat
 
         <section className="secBigPeople">
 
-            <div className="divPersonal">
-                <div>
-                    <h3>{name}</h3>
-                    <p>{email}</p>
-                </div>
-
-                <div>
-                    <img src={image} alt={`Foto de ${name}`} />
-                </div>
+            <div className="divUserName">
+                <p className="pDate">Ult. mod.: {dateMod} hrs.</p>
+                <h3>{name}</h3>
             </div>
 
-            <div className="divProfile">
-                <Profile profile={profile} dateMod={dateMod} />
+            <div className="divUserImage">
+                <NavLink to={`/detail/${_id}`} >
+                    <img src={image} alt={`Imagen de ${name}`} />
+                </NavLink>
+            </div>
+
+            {/* <div className="divProfile">
+                <Profile profile={profile} dateMod={dateMod} image={image} name={name} />
             </div>
 
             <div className="divPrivateProfile">
                 {
                     (privateProfile.length > 0) &&
-                    <PrivateProfile privateProfile={privateProfile} privateDateMod={privateDateMod} />
+                    <PrivateProfile privateProfile={privateProfile} privateDateMod={privateDateMod} image={image} name={name} />
                 }
-            </div>
+            </div> */}
 
             <div className="divBtns">
                 <button onClick={handleOnMsgs}><i className="fa-solid fa-envelope-circle-check"></i> Mensajes</button>

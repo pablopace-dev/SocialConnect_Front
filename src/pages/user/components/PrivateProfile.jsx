@@ -4,19 +4,22 @@ import { ProfileElement } from "./";
 
 export const PrivateProfile = ({ privateProfile, _id = Date.now(), name, privateDateMod, image }) => {
 
-    
+
     return (
         <section className="secPrivateProfile" key={'sec' + _id}>
 
             <header className="profHeader">
 
-                <p className="pDate">Ult. mod.: {privateDateMod} hrs.</p>
-                <h3>{name} <i className="fa-solid fa-mask"></i></h3>
+                <div className="divUserName">
+                    <p className="pDate">Ult. mod.: {privateDateMod} hrs.</p>
+                    <h3>{name} <i className="fa-solid fa-mask"></i></h3>
+                </div>
 
                 <div className="divUserImage">
                     <NavLink to={`/detail/${_id}`} >
                         <img src={image} alt={`Imagen de ${name}`} />
                     </NavLink>
+                    <button><i className="fa-regular fa-envelope"></i> Enviar mensaje</button>
                 </div>
 
             </header>

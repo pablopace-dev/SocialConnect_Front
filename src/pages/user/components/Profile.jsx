@@ -10,13 +10,16 @@ export const Profile = ({ profile, _id = Date.now(), name, dateMod, image }) => 
 
             <header className="profHeader">
 
-                <p className="pDate">Ult. mod.: {dateMod} hrs.</p>
-                <h3>{name}</h3>
+                <div className="divUserName">
+                    <p className="pDate">Ult. mod.: {dateMod} hrs.</p>
+                    <h3>{name}</h3>
+                </div>
 
                 <div className="divUserImage">
                     <NavLink to={`/detail/${_id}`} >
                         <img src={image} alt={`Imagen de ${name}`} />
                     </NavLink>
+                    <button><i className="fa-regular fa-envelope"></i> Enviar mensaje</button>
                 </div>
 
             </header>
@@ -39,6 +42,6 @@ export const Profile = ({ profile, _id = Date.now(), name, dateMod, image }) => 
 
             </main>
 
-        </section>
+        </section >
     );
 };

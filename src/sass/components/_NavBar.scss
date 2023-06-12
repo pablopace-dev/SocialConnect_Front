@@ -2,15 +2,11 @@
 
 nav {
     background-color: $bg-nav;
-    // position: absolute;
-    // width: 100%;
 
 
     .divNavContainer {
         @include grid(0.25fr 0.4fr 0.35fr, left, center, 0, 0);
         height: $navBar-height;
-        // width: 100%;
-        // position: fixed;
         padding-left: pixels-rem(5);
 
         .divBtnMenu {
@@ -18,7 +14,7 @@ nav {
             width: pixels-rem(15);
 
             button {
-                @include boton-ico();
+                @include boton-ico(prof-btn);
                 font-size: pixels-rem(22);
             }
         }
@@ -89,6 +85,7 @@ nav {
         position: absolute;
         padding: pixels-rem(5);
         box-shadow: 0 0 5px 1px black;
+        font-weight: 400;
         width: 100%;
         background-color: $bg;
 
@@ -105,6 +102,8 @@ nav {
                 display: block;
                 text-decoration: none;
                 color: $nav-font-col;
+                border-radius: pixels-rem(5);
+                transition: all 300ms;
             }
 
             a.isActive {

@@ -8,7 +8,7 @@
 
 @mixin grid($grd-col, $justify, $align, $padding, $gap) {
     display: grid;
-    grid-template-columns: $grd-col;    
+    grid-template-columns: $grd-col;
     justify-items: $justify;
     align-items: $align;
     padding: pixels-rem($padding);
@@ -25,55 +25,77 @@
     border-radius: pixels-rem($radius);
 }
 
+// --------------------
+//  BOTONES START
+// --------------------
 @mixin boton() {
-    background-color: $bg;
+    background-color: $button-bg;
     border-radius: 5px;
     border: none;
-    color: $nav-font-col;
+    color: $button;
     cursor: pointer;
+    transition: all 300ms ease;
 }
 
+@mixin boton-hover() {
+    color: $button-bg;
+    background-color: $button;
+    transform: translate(0, -3px);
+    box-shadow: 0 3px 5px $bg;
+}
+
+
+@mixin boton-link() {
+    text-decoration: none;
+    color: $button-link;
+}
+
+@mixin boton-link-hover() {
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+
 @mixin boton-multi() {
-    background-color: $bg-prof;
-    box-shadow: 0 0 5px black;
-    border-radius: 15px;
+    background-color: $button-multi-bg;    
+    border-radius: 5px;
     border: none;
-    color: $bg;
+    color: $button-multi;
     cursor: pointer;
 }
 
 @mixin boton-multi-hover() {
-    background-color: $bg;
-    color: $bg-prof;
-    box-shadow: 0 0 1px black;
+    background-color: $button-multi;
+    color: $button-multi-bg;
 }
 
-@mixin boton-ico() {
+
+@mixin boton-ico($color) {
     border-radius: pixels-rem(5);
     border: none;
-    color: $bg-font-col;
+    color: $color;
     font-size: pìxels-rem(8);
     background-color: transparent;
-    border: none;
     cursor: pointer;
 }
+
+@mixin boton-ico-hover() {
+    color: $prof-btn-hover;
+}
+
+// --------------------
+//  BOTONES END
+// --------------------
+
+
+// --------------------
+//  IMAGENES START
+// --------------------
 
 @mixin image($obj-fit) {
     width: 100%;
     height: 100%;
     object-fit: $obj-fit;
-}
-
-@mixin boton-hover() {
-    color: $nav-font-hover;
-    background-color: $nav-bg-hover;
-    box-shadow: 0 0 1px $bg;
-}
-
-
-@mixin boton-ico-hover() {
-    color: $nav-font-hover;
-    box-shadow: 0 0 1px $bg;
 }
 
 @mixin container-img-texto($text-color, $align-text, $font-size, $padding) {
@@ -124,3 +146,7 @@
         }
     }
 }
+
+// --------------------
+//  IMAGENES END
+// --------------------

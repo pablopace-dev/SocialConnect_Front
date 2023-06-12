@@ -1,10 +1,10 @@
 // @import './base/settings';
 
 .main {
-    @include flexbox(start, column, 0);
-    @include container(98%, 0);
+    // @include flexbox(start, column, 0);
+    @include container(98%, 0);    
     max-width: 992px;
-    // height: calc($viewport-height - ($header-height + $navBar-height + $footer-height));
+    min-height: calc($viewport-height - ($header-height + $navBar-height + $footer-height));
     // overflow-y: scroll;
 
     .divReconnect {

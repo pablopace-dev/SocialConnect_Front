@@ -23,7 +23,7 @@
         text-align: center;
 
         button {
-            @include boton-ico();
+            @include boton-ico(prof-btn);
             font-size: pixels-rem(20);
         }
 

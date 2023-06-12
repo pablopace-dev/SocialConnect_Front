@@ -4,7 +4,7 @@ article {
 
     margin-bottom: pixels-rem(15);
     @include border($nav-font-col, 15);
-    background-color: $bg-title;
+    background-color: $prof-title-bg;
 
     @import './LittlePeople';
 

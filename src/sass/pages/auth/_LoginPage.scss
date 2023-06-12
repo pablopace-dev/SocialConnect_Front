@@ -6,8 +6,7 @@
     color: $font-col;
 
     h2 {
-        margin-top: pixels-rem(30);
-        padding: pixels-rem(25);
+        padding: pixels-rem(50) pixels-rem(25) pixels-rem(30);
     }
 
     .errorForm {
@@ -19,7 +18,7 @@
 
 
     .divContainer {
-        
+
         @include container(85%, 0);
 
         form {
@@ -68,13 +67,11 @@
                 margin-top: pixels-rem(25);
 
                 a {
-                    text-decoration: none;
-                    color: $link;
-
+                    @include boton-link();
                 }
 
                 a:hover {
-                    text-decoration: underline;
+                    @include boton-link-hover();
                 }
             }
         }
@@ -88,18 +85,15 @@
             input:not([type="submit"]) {
                 padding: pixels-rem(3);
                 @include container(80%, 0);
-
             }
 
 
 
             input[type="submit"] {
-                // grid-column: 1 / 3;
                 @include container(60%, 0);
                 @include boton();
-                padding: pixels-rem(5);
+                padding: pixels-rem(7) pixels-rem(5);
                 margin-top: pixels-rem(10);
-
             }
         }
     }

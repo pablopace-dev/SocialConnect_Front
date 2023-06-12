@@ -23,7 +23,8 @@
             input[type="submit"],
             input[type="reset"] {
                 @include boton();
-                padding: pixels-rem(5);
+                padding: pixels-rem(7) pixels-rem(5);
+                width: pixels-rem(135);
                 margin-top: pixels-rem(10);
 
             }

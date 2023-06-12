@@ -1,82 +1,101 @@
-// @import '../../../base/settings';
-
 .secProfile,
 .secPrivateProfile {
-    // @include border($bg, 6);
-    // border-radius: pixels-rem(10);
-    // border: 2px ridge $bg;
-    // margin: pixels-rem(25) auto;
-    // padding: pixels-rem(5);
-    // background-color: $bg-prof;
-
-
+    background-image: linear-gradient(transparent, $prof-bg, transparent);
     border-bottom: 1px dotted $bg;
-    margin: pixels-rem(30) 0 pixels-rem(50);
-    background-image: linear-gradient(transparent, $bg-font-col, transparent);
+    margin: pixels-rem(30) 0 pixels-rem(70);
 
     .profHeader {
-        border-radius: pixels-rem(10);
-        background-image: linear-gradient(to right, $user-bg-header, transparent);
-        height: pixels-rem(75);
-        box-shadow: 0px 3px 10px black;
-        margin-bottom: pixels-rem(65);
 
-        h3 {
-            font-size: pixels-rem(22);
-            text-indent: pixels-rem(5);
-            color: $bg;
-            padding: pixels-rem(15);
-        }
+        .divUserName {
+            border-radius: pixels-rem(10);
+            background-image: linear-gradient(to right, $prof-header-bg, transparent);
+            height: pixels-rem(75);
+            box-shadow: 0px 3px 10px black;
+
+            h3 {
+                font-size: pixels-rem(22);
+                text-indent: pixels-rem(5);
+                color: $bg;
+                padding: pixels-rem(15);
+            }
 
 
-        p {
-            padding: pixels-rem(5);
-            margin-right: pixels-rem(5);
-            color: $user-date;
-            font-style: italic;
-            text-align: right;
-            font-size: pixels-rem(11);
+            p {
+                padding: pixels-rem(5);
+                margin-right: pixels-rem(5);
+                color: $user-date;
+                font-style: italic;
+                text-align: right;
+                font-size: pixels-rem(11);
+            }
         }
 
         .divUserImage {
-            border-radius: 100%;
-            box-shadow: 0px 3px 10px black;
-            position: absolute;
-            transform: translate(pixels-rem(-5), pixels-rem(-50));
-
-            right: pixels-rem(15);
-            width: pixels-rem(80);
-            height: pixels-rem(80);
-
-            transition: height 200ms, width 200ms, box-shadow 200ms, right 200ms;
+            display: grid;
+            grid-template-columns: 0.6fr 0.4fr;
+            transform: translate(pixels-rem(-5), pixels-rem(-45));
 
             a {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+                justify-self: right;
                 text-decoration: none;
+                border-radius: 100%;
+                box-shadow: 0px 3px 10px black;
+                width: pixels-rem(80);
+                height: pixels-rem(80);
 
                 img {
                     @include border($bg, 100);
                     @include image(cover);
+                    overflow: hidden;
+                    transition: all 200ms ease-out;
+                }
+
+                img:hover {
+                    box-shadow: 0px 0px 1px black;
+                    transform: scale(1.1, 1.1);
                 }
             }
-        }
 
-        .divUserImage:hover {
-            box-shadow: 0px 0px 1px black; 
-            width: pixels-rem(90);
-            height: pixels-rem(90);
-            right: pixels-rem(10);
+            button {
+                @include boton-ico($prof-btn);
+                margin-left: pixels-rem(10);
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                align-self: end;
+                justify-self: left;
+                font-size: pixels-rem(15);
+
+                i {
+                    font-size: pixels-rem(20);
+                }
+            }
+
+            button:hover {
+                @include boton-ico-hover();
+            }
         }
 
     }
 
     .profMain {
+        padding-bottom: pixels-rem(20);
+
+
 
         .divProfile {
+
+            h3 {
+                font-weight: 300;
+                text-align: center;
+                
+            }
 
             article {
 
                 .pText {
-                    margin: pixels-rem(15) 0;
+                    margin-bottom: pixels-rem(15);
                     text-align: left;
                     text-indent: pixels-rem(10);
                     font-size: pixels-rem(15);
@@ -84,43 +103,49 @@
                 }
 
                 .pTitle {
-                    margin: pixels-rem(20) auto 0;
+                    margin: 0 auto pixels-rem(15);
                     width: 80%;
-                    background-color: $bg-title;
-                    // background-image: linear-gradient(to Right, transparent, $form-title, transparent);
-                    border-left: 2px solid $bg;
-                    border-right: 2px solid $bg;
-                    box-shadow: 0 2px 5px $bg;
-                    padding: pixels-rem(6) 0;
+                    color: $prof-title;
+                    background-color: $prof-title-bg;
+                    border-left: 2px solid black;
+                    border-right: 2px solid black;
+                    padding: pixels-rem(10) pixels-rem(5);
                     border-radius: pixels-rem(10);
-                    font-weight: bold;
                     text-align: center;
                     font-size: pixels-rem(20);
                     font-weight: 400;
-                    color: $prof-title;
                 }
 
                 .pParagraph {
-                    padding: 0 pixels-rem(10);
+                    margin: 0 auto pixels-rem(15);
                     margin-top: pixels-rem(5);
                     font-style: italic;
-                    text-align: justify;
+                    text-align: center;
                     font-size: pixels-rem(14);
                     color: $prof-para;
                 }
 
                 .divImageContainer {
-                    margin: pixels-rem(30) auto;
-                    @include border($user-name, 5);
-                    background-color: $bg-img;
-                    color: $prof-title;
-                    width: 98%;
-                    height: pixels-rem(250);
+                    @include container(98%, 0);
+                    margin: 0 auto pixels-rem(15);
+                    border-radius: pixels-rem(10);
+                    background-color: $prof-img-bg;
+                    box-shadow: 0 0 2px rgb(41, 41, 41);
+                    padding: pixels-rem(10);
 
-                    img {
-                        @include image(contain);
+
+                    div {
+                        height: pixels-rem(250);
+                        margin: 0 auto;
+                        max-width: pixels-rem(380);
                         border-radius: pixels-rem(10);
-                        padding: pixels-rem(5);
+                        box-shadow: 0 0 4px rgb(41, 41, 41);
+
+                        img {
+                            @include image(cover);
+                            border-radius: pixels-rem(10);
+                        }
+
                     }
 
                 }
@@ -131,9 +156,11 @@
 }
 
 .secPrivateProfile {
-    background-image: linear-gradient(transparent, $user-bg-header-priv, transparent);
+    background-image: linear-gradient(transparent, $prof-priv-bg, transparent);
 
     .profHeader {
-        background-image: linear-gradient(to right, $user-bg-header-priv, transparent);
+        .divUserName {
+            background-image: linear-gradient(to right, $prof-priv-header-bg, transparent);
+        }
     }
 }

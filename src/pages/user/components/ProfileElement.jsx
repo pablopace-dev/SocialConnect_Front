@@ -40,12 +40,15 @@ export const ProfileElement = ({ el }) => {
 
             {
                 (el.typeInput == 'image') &&
-                <div key={'d' + el.id} className="divImageContainer">             
-                    <img
-                        name={'i' + el.name}
-                        id={'i' + el.id}
-                        src={(isLoading) ? '../../../assets/no-pic.png' : el.content}
-                    />
+                <div key={'d' + el.id} className="divImageContainer">
+
+                    <div>
+                        <img
+                            name={'i' + el.name}
+                            id={'i' + el.id}
+                            src={(isLoading) ? '../../../assets/no-pic.png' : el.content}
+                        />
+                    </div>
 
                 </div>
             }

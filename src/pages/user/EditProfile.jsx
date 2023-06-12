@@ -107,10 +107,9 @@ export const EditProfile = () => {
 
                             {(el.typeInput == 'paragraph') &&
                                 <div className="divElProfile">
-
                                     <label htmlFor={el.name}>Párrafo:</label>
                                     <textarea
-                                        className="btnParagraph"
+                                        className="btnParagraph"                                        
                                         name={el.name}
                                         id={el.id}
                                         placeholder='Párrafo...'
@@ -215,7 +214,7 @@ export const EditProfile = () => {
 
             <h2>Previsualización:</h2>
 
-            <Profile profile={form} {...user} />
+            <Profile profile={form} name={user.name} dateMod={user.dateMod} image={user.image} />
 
         </section>
 

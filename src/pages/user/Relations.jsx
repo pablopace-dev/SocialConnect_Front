@@ -34,13 +34,11 @@ export const Relations = () => {
                 <NavLink to='/'>&gt; Tu cuenta</NavLink><span> &gt; Mis relaciones:</span>
             </div>
 
-
             <h2>Mis Relaciones:</h2>
 
             <div className="imgContainer">
                 <img src="../../assets/relations.png" alt="Imagen de portada de perfiles" />
             </div>
-
 
             <div>
 
@@ -51,9 +49,6 @@ export const Relations = () => {
                 }
 
             </div>
-
-
-            <h2>Invitaciones:</h2>
 
         </section>
 
