@@ -6,7 +6,7 @@
 
     .divRoot {
         margin-top: pixels-rem(15);
-        font-weight: bold;
+        font-weight: 400;
 
         a {
             text-decoration: none;
@@ -17,6 +17,7 @@
 
     h2 {
         font-size: pixels-rem(25);
+        font-weight: 300;
         margin-top: pixels-rem(10);
         padding: pixels-rem(10);
         border-bottom: 1px dotted $bg;
@@ -25,16 +26,19 @@
     .errorEditData {
         color: $error-bad;
         text-align: center;
-        font-size: pixels-rem(18);
-        margin-top: pixels-rem(15);
+        font-size: pixels-rem(15);
+        font-weight: 300;
+        // margin-top: pixels-rem(5);
     }
 
     .divContainer {
         @include container(85%, 0);
+        max-width: 680px;
 
         h3 {
-            font-size: pixels-rem(18);          
-            text-align: center;            
+            font-size: pixels-rem(18);
+            font-weight: 400;
+            text-align: center;
             color: $bg;
             margin: pixels-rem(30) 0;
             padding: pixels-rem(5);
@@ -44,7 +48,8 @@
 
         form {
             @include grid(1fr, center, center, 0, 5);
-            margin: pixels-rem(20) 0;
+            max-width: 480px;
+            margin: pixels-rem(20) auto 0;
 
 
             label:not(.labelImg) {
@@ -58,8 +63,12 @@
                 border-radius: pixels-rem(5);
                 font-size: pixels-rem(12);
                 text-indent: pixels-rem(5);
-                @include border($bg, 5);
+                @include border($border, 5);
 
+            }
+
+            input[type="password"] {
+                max-width: 280px;
             }
 
             input[type="submit"],
@@ -70,6 +79,7 @@
                 text-decoration: none;
                 font-size: pixels-rem(15);
                 width: 100%;
+                max-width: 240px;
                 text-align: center;
             }
 
@@ -78,6 +88,7 @@
                 @include boton-hover();
             }
         }
+
     }
 
 

@@ -1,23 +1,22 @@
-// @import '../../../base/settings';
-
 article {
-
-    margin-bottom: pixels-rem(15);
-    @include border($nav-font-col, 15);
+    margin: 0 auto pixels-rem(15);
+    @include border($border, 15);
+    width: 100%;
+    justify-self: center;
+    max-width: 240px;
     background-color: $prof-title-bg;
 
     @import './LittlePeople';
 
     div {
-
         @include flexbox(center, column, 0);
 
         button {
-            width: 95%;
+            @include container(95%, 0);
             @include boton-multi();
             padding: pixels-rem(5);
             margin-bottom: pixels-rem(10);
-            font-size: pixels-rem(20);
+            font-size: pixels-rem(18);
 
             i {
                 color: $error-bad;
@@ -29,4 +28,10 @@ article {
         }
     }
 
+    p {
+        text-align: center;
+        font-weight: 400;
+        padding-bottom: pixels-rem(5);
+        color:$msg;
+    }
 }

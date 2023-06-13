@@ -6,14 +6,14 @@
 
         input[type="text"],
         input[type="password"] {
-            padding: pixels-rem(3);
             @include container(80%, 0);
-
+            @include border($bg, 5);            
+            padding: pixels-rem(5);
         }
 
         input[type="file"] {
             padding: pixels-rem(3);
-            @include boton();
+            @include boton();                        
         }
 
 

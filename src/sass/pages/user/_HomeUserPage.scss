@@ -43,6 +43,7 @@
             .aHomeUser {
                 @include boton();
                 @include container(70%, 0);
+                max-width: 320px;
                 display: block;
                 text-align: center;
                 padding: pixels-rem(10);

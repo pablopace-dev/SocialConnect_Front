@@ -136,13 +136,12 @@
 @mixin img-front() {
 
     .imgContainer {
-        @include container(100%, 0);
-        // position: absolute;
-        // z-index: -1;
+        @include container(100%, 0);                 
 
         img {
             @include image(contain);
-            @include img-blur();
+            @include img-blur();            
+            max-height: 280px;
         }
     }
 }

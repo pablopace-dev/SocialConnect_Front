@@ -196,9 +196,8 @@ export const EditPrivateProfile = () => {
                                 value="Guardar" />
                     }
 
-                    {
-                        (user.privateProfile.length > 0) && <NavLink to='/'>Cancelar</NavLink>
-                    }
+                    <NavLink to='/'>Cancelar</NavLink>
+
                 </div>
 
                 {
@@ -212,7 +211,7 @@ export const EditPrivateProfile = () => {
             }
 
             <h2>Previsualización:</h2>
-            
+
             <PrivateProfile privateProfile={form} name={user.name} dateMod={user.privateDateMod} image={user.image} />
 
         </section>

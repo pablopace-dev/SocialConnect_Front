@@ -1,4 +1,3 @@
-// @import '../../../base/settings';
 
 .divLittlePeople {
     @include flexbox(center, column, 0);
@@ -7,8 +6,8 @@
 
     .pLPName {
         text-align: center;
-        color: $nav-font-col;
-        font-size: pixels-rem(12);
+        color: $user-name;
+        font-size: pixels-rem(14);
         margin-bottom: pixels-rem(5);
     }
 
@@ -32,8 +31,8 @@
         height: pixels-rem(50);
 
         img {
-            @include image(contain);
-            @include border($body-bg, 100);
+            @include image(cover);
+            @include border($border, 100);
         }
     }
 

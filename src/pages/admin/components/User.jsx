@@ -117,13 +117,23 @@ export const User = ({ _id }) => {
                 <>
                     <header>
 
-                        <h3>{userAdm.name}</h3>
+                        {/* <h3>{userAdm.name}</h3>
+                        <div className="divUserImage">
+                            <NavLink to={`/detail/${_id}`} >
+                                <img src={userAdm.image} alt={`Imagen de ${userAdm.name}`} />
+                            </NavLink>
+                        </div> */}
+
+                        <div className="divUserName">
+                            <p className="pDate">Ult. mod.: {userAdm.dateMod} hrs.</p>
+                            <h3>{userAdm.name}</h3>
+                        </div>
+
                         <div className="divUserImage">
                             <NavLink to={`/detail/${_id}`} >
                                 <img src={userAdm.image} alt={`Imagen de ${userAdm.name}`} />
                             </NavLink>
                         </div>
-
                     </header>
 
 

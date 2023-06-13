@@ -17,7 +17,7 @@
     h2 {
         font-size: pixels-rem(25);
         margin-top: pixels-rem(10);
-        font-weight: 500;
+        font-weight: 400;
         padding: pixels-rem(10);
         border-bottom: 1px dotted $bg;
     }
@@ -39,7 +39,8 @@
 
     form {
         @include container(95%, 0);
-        margin-top: pixels-rem(20);
+        max-width: 640px;
+        margin-top: pixels-rem(20);        
 
         .divElProfile {            
             @include grid(0.2fr 0.6fr 0.2fr, right, center, 0, 5);
@@ -48,12 +49,12 @@
             textarea {
                 width: 100%;
                 background-color: $form-title;
+                color: $form-paragraph;
                 margin: pixels-rem(10) 0;
-                padding: pixels-rem(5);
-                border-radius: pixels-rem(5);
-                font-size: pixels-rem(12);                
-                text-indent: pixels-rem(5);
-                @include border($bg, 5);
+                padding: pixels-rem(8);
+                font-size: pixels-rem(12);                        
+                @include border($border, 5);
+                box-shadow: 0 1px 3px $border;
                 resize: none;
             }
 
@@ -108,9 +109,12 @@
 
 
         .divBtnsForm {
-            margin-top: pixels-rem(15);
+            margin: pixels-rem(15) auto 0;
             padding: pixels-rem(5);
-            @include border($error-bad, 10);
+            @include border($border, 10);
+            box-shadow: 0 1px 5px $border;
+            max-width: 480px;
+            color: $border;
 
             div {
                 @include flexbox(center, row, 5);
@@ -137,8 +141,9 @@
         }
 
         .divSubmit {
-            margin: pixels-rem(30) 0;
+            margin: pixels-rem(30) auto 0;
             @include flexbox(center, row, 5);
+            max-width: 360px;
 
             input[type="submit"],
             a {

@@ -176,7 +176,7 @@ export const RegisterPage = () => {
 
                         <button
                             onClick={handleOnLoginGoogle}
-                        ><i className="fa-brands fa-google"></i> Regístrate con tu cuenta de Google</button>
+                        ><i className="fa-brands fa-google"></i> Continúa con Google</button>
 
                         <p>Ya tienes una cuenta? <NavLink to='/login'>Loguéate</NavLink></p>
 

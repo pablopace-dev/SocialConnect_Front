@@ -61,74 +61,77 @@ export const Invites = () => {
 
             <p>{msg}</p>
 
+            <div className="divInvGrid">
+                <div className="divInvSent">
 
-            <div className="divInvSent">
+                    <h3>Enviadas:</h3>
+                    <div className="divInvPeople">
+                        {
+                            (myInvitesSent.length > 0) ?
 
-                <h3>Enviadas:</h3>
+                                myInvitesSent.map(inv =>
 
-                {
-                    (myInvitesSent.length > 0) ?
-
-                        myInvitesSent.map(inv =>
-
-                            < article key={`iS-${inv._id + Date.now()}`} >
-                                <LittlePeople date={inv.date} receiver={inv.name} image={inv.image} />
+                                    < article key={`iS-${inv._id + Date.now()}`} >
+                                        <LittlePeople date={inv.date} receiver={inv.name} image={inv.image} />
 
 
-                                <div className="divBtns">
-                                    <button
-                                        disabled={(isLoading) ? true : false}
-                                        onClick={() => handleRemove(inv._id)}
-                                    ><i className="fa-solid fa-heart-crack"></i> Retirar solicitud</button>
+                                        <div className="divBtns">
+                                            <button
+                                                disabled={(isLoading) ? true : false}
+                                                onClick={() => handleRemove(inv._id)}
+                                            ><i className="fa-solid fa-heart-crack"></i> Retirar solicitud</button>
+                                        </div>
+                                    </article>
+                                )
+
+                                :
+
+                                <div className="divNoInv">
+                                    <p>No has enviado solicitudes aún...</p>
+
+                                    <NavLink to='/meet'><i className="fa-regular fa-handshake"></i> Conocer Gente</NavLink>
                                 </div>
-                            </article>
-                        )
-
-                        :
-
-                        <div className="divNoInv">
-                            <p>No has enviado solicitudes aún...</p>
-
-                            <NavLink to='/meet'><i className="fa-regular fa-handshake"></i> Conocer Gente</NavLink>
-                        </div>
-                }
-            </div>
+                        }
+                    </div>
+                </div>
 
 
-            <div className="divInvReceived">
+                <div className="divInvReceived">
 
-                <h3>Recibidas:</h3>
+                    <h3>Recibidas:</h3>
+                    <div className="divInvPeople">
 
-                {
-                    (myInvitesReceived.length > 0) ?
+                        {
+                            (myInvitesReceived.length > 0) ?
 
-                        myInvitesReceived.map(inv =>
+                                myInvitesReceived.map(inv =>
 
-                            < article key={`iR-${inv._id + Date.now()}`} >
-                                <LittlePeople date={inv.date} sender={inv.name} image={inv.image} />
+                                    < article key={`iR-${inv._id + Date.now()}`} >
+                                        <LittlePeople date={inv.date} sender={inv.name} image={inv.image} />
 
-                                <div className="divBtns">
-                                    <button
-                                        disabled={(isLoading) ? true : false}
-                                        onClick={() => handleRespond(inv.sender, user._id, inv._id, true)}
-                                    ><i className="fa-solid fa-heart  fa-beat-fade"></i> Aceptar</button>
-                                    <button
-                                        disabled={(isLoading) ? true : false}
-                                        onClick={() => handleRespond(inv.sender, user._id, inv._id, false)}
-                                    ><i className="fa-solid fa-skull-crossbones"></i> Rechazar</button>
+                                        <div className="divBtns">
+                                            <button
+                                                disabled={(isLoading) ? true : false}
+                                                onClick={() => handleRespond(inv.sender, user._id, inv._id, true)}
+                                            ><i className="fa-solid fa-heart  fa-beat-fade"></i> Aceptar</button>
+                                            <button
+                                                disabled={(isLoading) ? true : false}
+                                                onClick={() => handleRespond(inv.sender, user._id, inv._id, false)}
+                                            ><i className="fa-solid fa-skull-crossbones"></i> Rechazar</button>
+                                        </div>
+                                    </article>
+                                )
+
+                                :
+
+                                <div className="divNoInv">
+                                    <p>No tienes invitaciones pendientes...</p>
                                 </div>
-                            </article>
-                        )
+                        }
 
-                        :
-
-                        <div className="divNoInv">
-                            <p>No tienes invitaciones pendientes...</p>
-                        </div>
-                }
-
+                    </div>
+                </div>
             </div>
-
 
         </section >
     )

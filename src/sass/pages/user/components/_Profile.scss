@@ -2,7 +2,8 @@
 .secPrivateProfile {
     background-image: linear-gradient(transparent, $prof-bg, transparent);
     border-bottom: 1px dotted $bg;
-    margin: pixels-rem(30) 0 pixels-rem(70);
+    max-width: 760px;    
+    margin: pixels-rem(30) auto pixels-rem(70);
 
     .profHeader {
 

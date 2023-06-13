@@ -178,7 +178,7 @@ export const EditProfile = () => {
                         <button className="btnTitle" onClick={(ev) => handleOnClick(ev, 'title')} ><i className="fa-solid fa-t"></i> Título</button>
                         <button className="btnParagraph" onClick={(ev) => handleOnClick(ev, 'paragraph')} ><i className="fa-solid fa-paragraph"></i> Párrafo</button>
                         <button className="btnText" onClick={(ev) => handleOnClick(ev, 'text')} ><i className="fa-solid fa-i-cursor"></i> Texto</button>
-                        <button className="btnImg" onClick={(ev) => handleOnClick(ev, 'image')} ><i className="fa-regular fa-image"></i>Imagen</button>
+                        <button className="btnImg" onClick={(ev) => handleOnClick(ev, 'image')} ><i className="fa-regular fa-image"></i> Imagen</button>
                     </div>
                 </div>
 
