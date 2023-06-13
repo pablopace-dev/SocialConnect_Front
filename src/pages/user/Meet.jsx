@@ -42,13 +42,12 @@ export const Meet = () => {
                 <NavLink to='/'>&gt; Tu cuenta</NavLink><span> &gt; Conocer gente:</span>
             </div>
 
-
-            <h2>Conocer Gente:</h2>
-
-            <div className="imgContainer">
-                <img src="../../assets/meet.png" alt="Imagen de portada de perfiles" />
+            <div className="divImgFront show">
+                <img src="../../assets/meet.png" alt="Imagen de portada de conocer gente" />
+                <div>
+                    <h2>...conocer gente</h2>
+                </div>
             </div>
-
 
             <h3>Aquí los tienes:</h3>
             <div className="divMeetPeople">

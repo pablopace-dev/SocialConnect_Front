@@ -13,7 +13,7 @@ nav {
             width: pixels-rem(15);
 
             button {
-                @include boton-ico(prof-btn);
+                @include boton-ico($nav-btn);
                 font-size: pixels-rem(22);
             }
         }
@@ -84,6 +84,7 @@ nav {
         position: absolute;
         padding: pixels-rem(5);
         box-shadow: 0 0 5px 1px black;
+        font-size: pixels-rem(17);
         font-weight: 400;
         width: 100%;
         max-width: 410px;
@@ -108,7 +109,7 @@ nav {
 
             a.isActive {
                 color: $nav-font-col-act;
-                @include border($nav-font-col, 5);
+                @include border($bg-font-col, 5);
             }
 
             a:hover {

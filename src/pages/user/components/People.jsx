@@ -47,7 +47,7 @@ export const People = ({ profile, isFriend }) => {
 
     return (
 
-        <article>
+        <article className="show">
             <LittlePeople name={profile.name} image={profile.image} />
             <div  >
 

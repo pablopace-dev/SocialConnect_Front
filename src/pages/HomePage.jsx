@@ -33,10 +33,10 @@ export const HomePage = () => {
 
     <section className="secHomePage">
 
-      <div >
+      <div className=" show">
         <img src="../../assets/bg1.png" alt="Imagen de portada" />
         <div>
-          <h1> <NavLink to='/login'>Social Connect</NavLink></h1>
+          <h1> <NavLink to='/profiles'>Social Connect</NavLink></h1>
         </div>
       </div>
 

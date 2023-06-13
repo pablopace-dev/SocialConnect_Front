@@ -1,8 +1,6 @@
-// @import '../base/settings';
-
-
 .secHomePage {
-    @include flexbox(center, column, 0);    
+    
+    @include flexbox(center, column, 0);
     min-height: calc($viewport-height - ($header-height + $navBar-height + $footer-height));
 
     div:first-child {
@@ -19,7 +17,7 @@
         div {
 
             h1 {
-                font-weight: bold;
+                font-weight: 700;
                 text-shadow: 0 0 5px $bg-font-col;
 
                 a {

@@ -1,9 +1,6 @@
-// @import '../../base/settings';
-
-
 .secUsers {
 
-    @include container(95%, 0);    
+    @include container(95%, 0);
 
     h2 {
         font-size: pixels-rem(25);

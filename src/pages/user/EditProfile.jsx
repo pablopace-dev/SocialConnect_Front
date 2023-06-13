@@ -42,13 +42,12 @@ export const EditProfile = () => {
                 <NavLink to='/'>&gt; Tu cuenta</NavLink><span> &gt; Editar perfil</span>
             </div>
 
-            <h2>Edita tu perfil Público:</h2>
-
-
-            <div className="imgContainer">
-                <img src="../../assets/bg-chat.png" alt="Imagen de portada de perfiles" />
+            <div className="divImgFront show">
+                <img src="../../assets/bg-chat.png" alt="Imagen de portada de editar perfil" />
+                <div>
+                    <h2>...tu perfil público</h2>
+                </div>
             </div>
-
 
             <form onSubmit={handleOnSubmit}>
                 <input type="hidden" name="_id" value={user._id} />
@@ -109,7 +108,7 @@ export const EditProfile = () => {
                                 <div className="divElProfile">
                                     <label htmlFor={el.name}>Párrafo:</label>
                                     <textarea
-                                        className="btnParagraph"                                        
+                                        className="btnParagraph"
                                         name={el.name}
                                         id={el.id}
                                         placeholder='Párrafo...'

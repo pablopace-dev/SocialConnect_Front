@@ -1,5 +1,5 @@
-
 .secEditProfile {
+
     @include container(95%, 10);
     color: $font-col;
 
@@ -10,23 +10,17 @@
         a {
             text-decoration: none;
             color: $font-col;
+            font-weight: 500;
         }
 
     }
 
-    h2 {
-        font-size: pixels-rem(25);
-        margin-top: pixels-rem(10);
-        font-weight: 400;
-        padding: pixels-rem(10);
-        border-bottom: 1px dotted $bg;
+    .divImgFront {
+        @include img-front($img-front, center, 35, 0);
     }
 
-
-    @include img-front();
-
     .errorProfile {
-        position: absolute;   
+        position: absolute;
         width: 95%;
         margin: 0 auto;
         @include border($error-bad, 5);
@@ -40,9 +34,9 @@
     form {
         @include container(95%, 0);
         max-width: 640px;
-        margin-top: pixels-rem(20);        
+        margin-top: pixels-rem(20);
 
-        .divElProfile {            
+        .divElProfile {
             @include grid(0.2fr 0.6fr 0.2fr, right, center, 0, 5);
 
             input:not([type="submit"]),
@@ -52,7 +46,7 @@
                 color: $form-paragraph;
                 margin: pixels-rem(10) 0;
                 padding: pixels-rem(8);
-                font-size: pixels-rem(12);                        
+                font-size: pixels-rem(12);
                 @include border($border, 5);
                 box-shadow: 0 1px 3px $border;
                 resize: none;

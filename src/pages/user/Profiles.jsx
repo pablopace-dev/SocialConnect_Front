@@ -20,10 +20,11 @@ export const Profiles = () => {
                 <NavLink to='/'>&gt; Tu cuenta</NavLink><span> &gt; Perfiles:</span>
             </div>
 
-            <h2>Perfiles:</h2>
-
-            <div className="imgContainer">
+            <div className="divImgFront show">
                 <img src="../../assets/profiles.png" alt="Imagen de portada de perfiles" />
+                <div>
+                    <h2>...perfiles</h2>
+                </div>
             </div>
 
             {profiles.map(profile =>

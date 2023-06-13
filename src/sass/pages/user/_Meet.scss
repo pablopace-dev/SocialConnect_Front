@@ -2,14 +2,6 @@
 
     @include container(95%, 0);
 
-    h2 {
-        font-size: pixels-rem(25);
-        margin-top: pixels-rem(10);
-        padding: pixels-rem(10);
-        font-weight: 300;
-        border-bottom: 1px dotted $bg;
-    }
-
     .divRoot {
         margin-top: pixels-rem(15);
         font-weight: 400;
@@ -17,12 +9,14 @@
         a {
             text-decoration: none;
             color: $font-col;
+            font-weight: 500;
         }
 
     }
 
-
-    @include img-front();
+    .divImgFront {
+        @include img-front($img-front, center, 35, 0);
+    }
 
     h3 {
         font-size: pixels-rem(20);
@@ -32,8 +26,8 @@
         margin: pixels-rem(30) 0;
     }
 
-    .divMeetPeople {        
-        @import './components/People';        
+    .divMeetPeople {
+        @import './components/People';
     }
 }
 

@@ -41,12 +41,12 @@ export const EditPrivateProfile = () => {
                 <NavLink to='/'>&gt; Tu cuenta</NavLink><span> &gt; Editar perfil</span>
             </div>
 
-            <h2>Edita tu perfil Privado:</h2>
-
-            <div className="imgContainer">
-                <img src="../../assets/bg-chat.png" alt="Imagen de portada de perfiles" />
+            <div className="divImgFront show">
+                <img src="../../assets/bg-chat.png" alt="Imagen de portada de editar perfil" />
+                <div>
+                    <h2>...tu perfil privado</h2>
+                </div>
             </div>
-
 
             <form onSubmit={(ev) => handleOnSubmit(ev, true)}>
                 <input type="hidden" name="_id" value={user._id} />

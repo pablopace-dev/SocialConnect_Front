@@ -38,7 +38,7 @@ export const HomeUserPage = () => {
 
         <h2>Tus Perfiles:</h2>
 
-        <section className='secUserProfile'>
+        <section className='secUserProfile  show'>
 
           <h3 className='h3HomeUser'>Público:</h3>
           <Profile profile={user.profile} {...user} />

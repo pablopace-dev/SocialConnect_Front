@@ -1,4 +1,5 @@
 .divMessage {
+    
     @include border($border, 10);
     padding: pixels-rem(5);
     margin: pixels-rem(8) 0;

@@ -2,14 +2,6 @@
 
     @include container(95%, 0);
 
-    h2 {
-        font-size: pixels-rem(25);
-        margin-top: pixels-rem(10);
-        font-weight: 300;
-        padding: pixels-rem(10);
-        border-bottom: 1px dotted $bg;
-    }
-
     .divRoot {
         margin-top: pixels-rem(15);
         font-weight: 400;
@@ -17,12 +9,13 @@
         a {
             text-decoration: none;
             color: $font-col;
+            font-weight: 500;
         }
-
     }
 
-
-    @include img-front();
+    .divImgFront {
+        @include img-front($img-front, center, 35, 0);
+    }
 
     .divGridPeople {
         @import './components/BigPeople';
@@ -36,14 +29,12 @@
     .secRelations {
 
         .divGridPeople {
-            // display: grid;
-            // grid-template-columns: 1fr 1fr;
-            display: flex;            
+            display: flex;
             flex-wrap: wrap;
 
             .divCols {
                 flex: 50%;
-                max-width: 50%;                
+                max-width: 50%;
             }
         }
     }

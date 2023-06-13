@@ -1,31 +1,24 @@
-// @import '../../base/settings';
-
 .secMessages {
     @include container(95%, 0);
 
-    h2 {
-        font-size: pixels-rem(25);
-        margin-top: pixels-rem(10);
-        padding: pixels-rem(10);
-        border-bottom: 1px dotted $bg;
-    }
-
     .divRoot {
         margin-top: pixels-rem(15);
-        font-weight: bold;
+        font-weight: 400;
 
         a {
             text-decoration: none;
             color: $font-col;
+            font-weight: 500;
         }
-
     }
 
-   
-    @include img-front();
+    .divImgFront {
+        @include img-front($img-front, center, 35, 0);
+    }
 
     h3 {
         font-size: pixels-rem(18);
+        font-weight: 400;
         background-color: $nav-font-col;
         text-align: center;
         box-shadow: 0 0 10px $prof-title-bg;
@@ -65,11 +58,13 @@
 
 
         // .divChild2 {
-            @import './components/Msgs';
-            .divMsgs {
-                grid-column: 2 / 3;
-                // grid-row: 1 / -1;                
-            }
+        @import './components/Msgs';
+
+        .divMsgs {
+            grid-column: 2 / 3;
+            // grid-row: 1 / -1;                
+        }
+
         //     @include flexbox(start, column, 0);
         // }
     }

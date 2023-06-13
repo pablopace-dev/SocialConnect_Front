@@ -1,9 +1,6 @@
-// @import '../../base/settings';
-
 .secAdmin {
 
     @include container(95%, 0);
-
 
     h1 {
         margin: pixels-rem(15) 0;

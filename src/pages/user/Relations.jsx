@@ -37,10 +37,11 @@ export const Relations = () => {
                 <NavLink to='/'>&gt; Tu cuenta</NavLink><span> &gt; Mis relaciones:</span>
             </div>
 
-            <h2>Mis Relaciones:</h2>
-
-            <div className="imgContainer">
-                <img src="../../assets/relations.png" alt="Imagen de portada de perfiles" />
+            <div className="divImgFront show">
+                <img src="../../assets/relations.png" alt="Imagen de portada de relaciones" />
+                <div>
+                    <h2>...mis relaciones</h2>
+                </div>
             </div>
 
             <div className="divGridPeople">

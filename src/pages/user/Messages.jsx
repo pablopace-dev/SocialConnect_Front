@@ -57,11 +57,11 @@ export const Messages = () => {
         <NavLink to='/'>&gt; Tu cuenta</NavLink><span> &gt; Mis mensajes:</span>
       </div>
 
-
-      <h2>Mis Mensajes:</h2>
-
-      <div className="imgContainer">
-        <img src="../../assets/msg.png" alt="Imagen de portada de perfiles" />
+      <div className="divImgFront show">
+        <img src="../../assets/msg.png" alt="Imagen de portada de mensajes" />
+        <div>
+          <h2>...mis mensajes</h2>
+        </div>
       </div>
 
 
