@@ -1,11 +1,10 @@
-
 .secRelations {
 
     @include container(95%, 0);
 
     h2 {
         font-size: pixels-rem(25);
-        margin-top: pixels-rem(10);  
+        margin-top: pixels-rem(10);
         font-weight: 300;
         padding: pixels-rem(10);
         border-bottom: 1px dotted $bg;
@@ -22,9 +21,23 @@
 
     }
 
-   
+
     @include img-front();
 
-    @import './components/BigPeople';
+    .divGridPeople {
+        @import './components/BigPeople';
+    }
 
+}
+
+
+@media screen and ($bp-mobile-landscape) {
+
+    .secRelations {
+        .divGridPeople {
+            display: grid;
+            column-gap: 10px;
+            grid-template-columns: 1fr 1fr;            
+        }
+    }
 }

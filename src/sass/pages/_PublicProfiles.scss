@@ -8,6 +8,8 @@
     h2 {
         margin-top: pixels-rem(15);
         padding: pixels-rem(15);
+        font-size: pixels-rem(25);
+        font-weight: 300;
     }
 
     @import './user/components/Profile';

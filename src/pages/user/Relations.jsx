@@ -40,7 +40,7 @@ export const Relations = () => {
                 <img src="../../assets/relations.png" alt="Imagen de portada de perfiles" />
             </div>
 
-            <div>
+            <div className="divGridPeople">
 
                 {
                     myProfiles.map(prof => (

@@ -1,17 +1,18 @@
-// @import '../../../base/settings';
-
 .divMsgs {
 
     @include container(95%, 5);
+
+    p {
+        margin-top: pixels-rem(15);
+        color: $user-name;
+    }
 
     @import './Message';
 
 
     section {
 
-        height: pixels-rem(180);
-
-        overflow-y: scroll;
+        // height: pixels-rem(180);
 
         div {
 

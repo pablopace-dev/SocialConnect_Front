@@ -63,17 +63,6 @@ export const BigPeople = ({ _id, profile, email, privateProfile, dateMod, privat
                 </NavLink>
             </div>
 
-            {/* <div className="divProfile">
-                <Profile profile={profile} dateMod={dateMod} image={image} name={name} />
-            </div>
-
-            <div className="divPrivateProfile">
-                {
-                    (privateProfile.length > 0) &&
-                    <PrivateProfile privateProfile={privateProfile} privateDateMod={privateDateMod} image={image} name={name} />
-                }
-            </div> */}
-
             <div className="divBtns">
                 <button onClick={handleOnMsgs}><i className="fa-solid fa-envelope-circle-check"></i> Mensajes</button>
                 <button onClick={handleOnChat}><i className="fa-regular fa-comments"></i> Chat</button>
@@ -92,7 +81,7 @@ export const BigPeople = ({ _id, profile, email, privateProfile, dateMod, privat
 
             {
                 (show.msgs) &&
-                <Msgs _id={_id} msgs={msgs} name={name} />
+                <Msgs _id={_id} msgs={msgs} name={name} handleOnMsgs={handleOnMsgs} />
             }
 
             {

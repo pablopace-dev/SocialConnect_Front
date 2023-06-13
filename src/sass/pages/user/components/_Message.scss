@@ -1,27 +1,36 @@
-// @import '../../../base/settings';
 
 .secMessage {
-    width: pixels-rem(320);
     margin: 0 auto;
-    position: static;
     background-color: $msg-bg;
-    @include border($bg, 5);
-    box-shadow: 2px 2px 10px black;
-    padding: pixels-rem(5);
-    z-index: 100;
+    @include border($border, 5);
+    box-shadow: 2px 2px 10px $border;
+    border-radius: pixels-rem(10);
+    padding: pixels-rem(5);    
+
+    .btnClose{
+        @include boton-ico($msg-btn);
+        font-size: pixels-rem(18);
+        float: right;
+    }
+
+    .btnClose:hover{
+        @include boton-ico-hover();
+
+    }
 
     h4 {
-        font-size: pixels-rem(17);
+        font-size: pixels-rem(20);
+        font-weight: 400;
         text-align: center;
         margin: pixels-rem(10) 0;
-        color: $nav-font-col;
+        color: $msg-title;
     }
 
     p {
         color: $nav-font-col-act;
 
         span {
-            font-weight: bold;
+            font-weight: 500;
             font-style: italic;
         }
     }
@@ -32,6 +41,7 @@
 
         textarea {
             width: 100%;
+            resize: none;
             height: pixels-rem(60);
             text-indent: pixels-rem(5);
             padding: pixels-rem(5);

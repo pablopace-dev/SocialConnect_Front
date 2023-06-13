@@ -1,7 +1,9 @@
-
-.secBigPeople {
-    margin: pixels-rem(25) 0;
-    @include border($bg, 5);
+.secBigPeople {    
+    @include container(98%, 10);
+    margin: pixels-rem(30) auto;
+    max-width: 420px;
+    box-shadow: 0 1px 3px $border;
+    border-radius: pixels-rem(10);
 
     .divUserName {
         border-radius: pixels-rem(10);
@@ -74,54 +76,15 @@
         }
     }
 
-    // .divPersonal {
-    //     border-bottom: 1px dotted $bg;
-    //     @include grid(0.7fr 0.3fr, left, center, 5, 0);
-    //     background-color: $bg;
-
-    //     div:first-child {
-    //         width: 100%;
-
-
-    //         h3 {
-    //             color: $prof-title;
-    //             font-size: pixels-rem(25);
-    //         }
-
-    //         p {
-    //             font-size: pixels-rem(15);
-    //             font-style: italic;
-    //             text-indent: pixels-rem(5);
-    //             color: $nav-font-col;
-    //         }
-    //     }
-
-    //     div {
-    //         width: pixels-rem(50);
-    //         height: pixels-rem(50);
-
-    //         img {
-    //             @include image(contain);
-    //             @include border($nav-font-col, 5);
-    //         }
-    //     }
-    // }
-
-    // .divProfile,
-    // .divPrivateProfile {
-    //     padding: pixels-rem(5);
-    //     @import './Profile';
-    // }
-
     .divBtns {
         @include flexbox(center, row, 5);
-        margin-bottom: pixels-rem(10);
+        padding-bottom: pixels-rem(10);
 
         button {
             @include boton-multi();
             font-size: pixels-rem(12);
             padding: pixels-rem(5);
-            width: pixels-rem(95);
+            width: pixels-rem(85);
 
             i {
                 color: $error-bad;

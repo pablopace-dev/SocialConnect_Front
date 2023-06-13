@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useSelector } from "react-redux";
 import { Message, Msg } from "./";
 
-export const Msgs = ({ msgs, _id, name }) => {
+export const Msgs = ({ msgs, _id, name, handleOnMsgs }) => {
 
     const [userMsgs, setUserMsgs] = useState([]);
     const { user } = useSelector((state) => state.auth);
@@ -23,14 +23,15 @@ export const Msgs = ({ msgs, _id, name }) => {
 
     }, [msgs]);
 
+
     return (
 
         <div className="divMsgs">
 
-            <Message _id={_id} name={name} />
+            <Message _id={_id} name={name} handleOnMsgs={handleOnMsgs} />
 
             <p>Mensajes:</p>
-            
+
             <section>
 
                 <div>

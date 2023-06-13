@@ -4,7 +4,7 @@ import { useState } from "react";
 import { onLoadMsgs } from "../../../store/slice/authSlice";
 
 
-export const Message = ({ name, _id, isAdmin }) => {
+export const Message = ({ name, _id, isAdmin, handleOnMsgs }) => {
 
     const { user } = useSelector((state) => state.auth);
     const [msgSent, setMsgSent] = useState('');
@@ -22,7 +22,6 @@ export const Message = ({ name, _id, isAdmin }) => {
         if (!response.ok)
             console.log('Error: ', response.msg)
 
-        console.log('msgs', response.msgs);
         dispatch(onLoadMsgs(response.msgs));
 
         ev.target.reset();
@@ -38,6 +37,12 @@ export const Message = ({ name, _id, isAdmin }) => {
     return (
 
         <section className="secMessage">
+            <button
+                onClick={handleOnMsgs}
+                className="btnClose">
+                <i className="fa-regular fa-circle-xmark"></i>
+            </button>
+
 
             <h4>Enviar Mensaje</h4>
 
@@ -55,7 +60,7 @@ export const Message = ({ name, _id, isAdmin }) => {
                 <input type="submit" value="Enviar" />
             </form>
 
-            <p className="pMsgSent">{msgSent}</p>         
+            <p className="pMsgSent">{msgSent}</p>
 
         </section>
 

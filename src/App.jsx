@@ -149,7 +149,7 @@ function App() {
           <NavLink
             to={url}
             target='_blank'
-          >© Pablo Pace</NavLink> - 2023 {`- (${(socket) && socket.id})`} </p>
+          >© Pablo Pace</NavLink> - 2023 {`- (${(socket?.id) && socket.id})`} </p>
       </footer>
 
     </>

@@ -33,23 +33,15 @@ export const Messages = () => {
     setMyUsers(newUsers);
   };
 
-
   const handleOnClick = (usr) => {
 
     const _id = usr.to || usr.from;
     const newUsr = myUsers.find(u => u.to == _id || u.from == _id);
-    console.log('_id',_id)
-    // const newUsr = {
-    //   show: true,
-    //   _id
-    // }
     newUsr.show = true;
     newUsr._id = _id;
     setShow(newUsr);
 
-  }
-
-
+  };
 
 
   useEffect(() => {
@@ -85,12 +77,11 @@ export const Messages = () => {
             </div>
           ))
         }
-        {/* <div className="divChild2"> */}
-          {
-            (show.show) &&
-            <Msgs _id={show._id} msgs={user.msgs} name={show.name} />
-          }
-        {/* </div> */}
+
+        {
+          (show.show) &&
+          <Msgs _id={show._id} msgs={user.msgs} name={show.name} />
+        }
       </div>
 
     </section>
