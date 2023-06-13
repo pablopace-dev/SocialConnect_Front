@@ -42,8 +42,7 @@
         textarea {
             width: 100%;
             resize: none;
-            height: pixels-rem(60);
-            text-indent: pixels-rem(5);
+            height: pixels-rem(60);            
             padding: pixels-rem(5);
             @include border($bg, 5);
         }

@@ -1,24 +1,29 @@
 .divMsgs {
 
+    padding-bottom: pixels-rem(10);
+    transition: all 500ms;
     @include container(95%, 5);
-
-    p {
-        margin-top: pixels-rem(15);
-        color: $user-name;
-    }
 
     @import './Message';
 
-
     section {
 
-        // height: pixels-rem(180);
+        p {
+            margin-top: pixels-rem(15);
+            color: $user-name;
+        }
+
+        .pNoMsgs {
+            text-align: center;
+            font-size: pixels-rem(14);
+            color: $msgs-nm;
+        }
 
         div {
-
+            overscroll-behavior: contain;
+            max-height: 320px;
+            overflow-y: scroll;
             @import './Msg';
         }
     }
-
-
 }

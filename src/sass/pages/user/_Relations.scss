@@ -34,10 +34,17 @@
 @media screen and ($bp-mobile-landscape) {
 
     .secRelations {
+
         .divGridPeople {
-            display: grid;
-            column-gap: 10px;
-            grid-template-columns: 1fr 1fr;            
+            // display: grid;
+            // grid-template-columns: 1fr 1fr;
+            display: flex;            
+            flex-wrap: wrap;
+
+            .divCols {
+                flex: 50%;
+                max-width: 50%;                
+            }
         }
     }
 }

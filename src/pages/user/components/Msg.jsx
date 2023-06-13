@@ -13,7 +13,7 @@ export const Msg = ({ date, msg, read, name, from }) => {
 
     return (
 
-        <div className="divMessage">
+        <div className="divMessage show">
 
             <div className="divHeader">
                 <p>{(from) ? `Para: ${name}` : 'De: tú'}</p>

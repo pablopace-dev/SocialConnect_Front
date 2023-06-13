@@ -11,13 +11,16 @@ export const Relations = () => {
     const { user } = useSelector((state) => state.auth)
     const { chats } = useSelector((state) => state.socket)
 
-    const [myProfiles, setMyProfiles] = useState([]);
+    const [myProfilesI, setMyProfilesI] = useState([]);
+    const [myProfilesD, setMyProfilesD] = useState([]);
 
 
     const filterProfiles = () => {
-        const tempProfiles = profiles.filter(prof => user.friends.includes(prof._id))
+        const tempProfilesI = profiles.filter((prof, ind) => user.friends.includes(prof._id) && ind % 2 === 0);
+        const tempProfilesD = profiles.filter((prof, ind) => user.friends.includes(prof._id) && ind % 2 !== 0);
 
-        setMyProfiles(tempProfiles);
+        setMyProfilesI(tempProfilesI);
+        setMyProfilesD(tempProfilesD);
     };
 
 
@@ -41,16 +44,23 @@ export const Relations = () => {
             </div>
 
             <div className="divGridPeople">
-
-                {
-                    myProfiles.map(prof => (
-                        (prof._id != user._id) && < BigPeople key={prof._id} {...prof} msgs={user.msgs} />
-                    ))
-                }
-
+                <div className="divCols">
+                    {
+                        myProfilesI.map(prof =>
+                            (prof._id != user._id) && < BigPeople key={prof._id} {...prof} msgs={user.msgs} />
+                        )
+                    }
+                </div>
+                <div className="divCols">
+                    {
+                        myProfilesD.map(prof =>
+                            (prof._id != user._id) && < BigPeople key={prof._id} {...prof} msgs={user.msgs} />
+                        )
+                    }
+                </div>
             </div>
 
-        </section>
+        </section >
 
     )
 }

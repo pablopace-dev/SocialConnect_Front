@@ -1,9 +1,9 @@
-.secBigPeople {    
+.secBigPeople {
     @include container(98%, 10);
-    margin: pixels-rem(30) auto;
+    margin: pixels-rem(50) auto;
     max-width: 420px;
     box-shadow: 0 1px 3px $border;
-    border-radius: pixels-rem(10);
+    border-radius: pixels-rem(10);    
 
     .divUserName {
         border-radius: pixels-rem(10);

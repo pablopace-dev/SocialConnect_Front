@@ -1,14 +1,16 @@
-// @import '../../../base/settings';
 
 .divMessage {
-    @include border($bg, 10);
+    @include border($border, 10);
     padding: pixels-rem(5);
     margin: pixels-rem(8) 0;
-    
+
 
     .divHeader {
         @include grid(1fr 1fr, left, center, 5, 0);
-        border-bottom: 1px dotted $bg;
+        border-bottom: 1px dotted $border;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        background-color: $msgs-bg;
 
         p:first-child {
             font-style: italic;

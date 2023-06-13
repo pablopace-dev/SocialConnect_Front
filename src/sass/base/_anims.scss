@@ -22,6 +22,27 @@
     animation: animloader 1s linear infinite;
 }
 
+.msg {
+    animation: card 1s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+}
+
+.fall {
+    animation: drop 1s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+}
+
+.spin {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 3px solid #ce1818;
+    border-right: 3px solid transparent;
+    animation: rotation 1s linear infinite;
+}
+
+.show {
+    animation: appear 1s ease-in-out;
+}
 
 
 @keyframes animloader {
@@ -46,3 +67,46 @@
     }
 }
 
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes card {
+    0% {
+        transform: translate3d(0, -200%, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes drop {
+    0% {
+        transform: translate3d(0, -100%, 0);        
+        // transform: scaleY(-1);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+        // transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
