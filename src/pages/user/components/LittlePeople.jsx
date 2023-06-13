@@ -4,7 +4,7 @@ export const LittlePeople = ({ date, name, image, sender, receiver }) => {
 
     return (
 
-        <div className="divLittlePeople">
+        <div className="show divLittlePeople">
             {/* {(date) && <p className="pLPDate">Fecha: {new Date(date).toLocaleString()}</p>} */}
             {(name) && <p className="pLPName">{name}</p>}
             {(sender) && <p className="pLPSender">De: {sender}</p>}

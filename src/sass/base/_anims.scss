@@ -44,6 +44,16 @@
     animation: appear 1s ease-in-out;
 }
 
+.unfold {
+    height: 100%;
+    opacity: 1;
+}
+
+.fold {
+    height: 0;
+    opacity: 0;
+}
+
 
 @keyframes animloader {
     0% {
@@ -89,17 +99,39 @@
 
 @keyframes drop {
     0% {
-        transform: translate3d(0, -100%, 0);        
-        // transform: scaleY(-1);
+        transform: translate3d(0, -100%, 0);
         opacity: 0;
     }
 
     100% {
         transform: translate3d(0, 0, 0);
-        // transform: scaleY(1);
         opacity: 1;
     }
 }
+
+// @keyframes fold {
+//     0% {
+//         transform: translate3d(0, -100%, 0);
+//         z-index: -1;
+//     }
+
+//     100% {
+//         transform: translate3d(0, 0, 0);
+//         z-index: auto;
+//     }
+// }
+
+// @keyframes unfold {
+//     0% {
+//         transform: translate3d(0,0, 0);
+//         z-index: auto;
+//     }
+
+//     100% {
+//         transform: translate3d(0, -100%, 0);
+//         z-index: -1;
+//     }
+// }
 
 @keyframes rotation {
     0% {

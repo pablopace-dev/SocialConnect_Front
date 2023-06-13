@@ -6,20 +6,40 @@
 
     @import './Message';
 
-    section {
-
-        p {
-            margin-top: pixels-rem(15);
-            color: $user-name;
-        }
+    .secMsgs {
 
         .pNoMsgs {
             text-align: center;
             font-size: pixels-rem(14);
             color: $msgs-nm;
+            margin: pixels-rem(10) 0;
         }
 
-        div {
+        .gridContainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: left;
+            align-items: end;
+
+            p {
+                margin-top: pixels-rem(15);
+                color: $user-name;
+            }
+
+            .btnFold {
+                @include boton-ico($msgs-btn);
+                font-size: pixels-rem(18);
+                justify-self: right;
+                transition: all 1s ease-in-out;
+            }
+
+            .btnFold:hover {
+                @include boton-ico-hover();
+            }
+
+        }
+
+        .divMsgsList {
             overscroll-behavior: contain;
             max-height: 320px;
             overflow-y: scroll;

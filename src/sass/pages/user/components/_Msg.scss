@@ -1,9 +1,7 @@
-
 .divMessage {
     @include border($border, 10);
     padding: pixels-rem(5);
     margin: pixels-rem(8) 0;
-
 
     .divHeader {
         @include grid(1fr 1fr, left, center, 5, 0);
@@ -12,9 +10,14 @@
         border-top-right-radius: 8px;
         background-color: $msgs-bg;
 
+        p {
+            margin-top: pixels-rem(15);
+            color: $user-name;
+        }
+
         p:first-child {
             font-style: italic;
-            font-weight: bold;
+            font-weight: 500;
         }
 
         p:last-child {

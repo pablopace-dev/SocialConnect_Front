@@ -45,6 +45,16 @@
   animation: appear 1s ease-in-out;
 }
 
+.unfold {
+  height: 100%;
+  opacity: 1;
+}
+
+.fold {
+  height: 0;
+  opacity: 0;
+}
+
 @keyframes animloader {
   0% {
     box-shadow: 14px 0 0 -2px, 38px 0 0 -2px, -14px 0 0 -2px, -38px 0 0 -2px;
@@ -108,7 +118,7 @@ body {
   font-family: "Roboto", sans-serif;
   min-width: 360px;
   background-color: #fafafa;
-  width: 100vw;
+  max-width: 100vw;
 }
 
 .header {
@@ -2814,7 +2824,7 @@ nav .divNav.mostrar {
   font-size: 1.125rem;
 }
 .secMeet .divMeetPeople article div button i {
-  color: rgb(177, 8, 8);
+  color: rgb(226, 225, 225);
 }
 .secMeet .divMeetPeople article div button:hover {
   background-color: rgb(230, 243, 248);
@@ -3061,7 +3071,7 @@ nav .divNav.mostrar {
   width: 5.3125rem;
 }
 .secRelations .divGridPeople .secBigPeople .divBtns button i {
-  color: rgb(177, 8, 8);
+  color: rgb(226, 225, 225);
 }
 .secRelations .divGridPeople .secBigPeople .divBtns button:hover {
   background-color: rgb(230, 243, 248);
@@ -3145,27 +3155,48 @@ nav .divNav.mostrar {
   text-align: center;
   color: rgb(250, 250, 250);
 }
-.secRelations .divGridPeople .secBigPeople .divMsgs section p {
-  margin-top: 0.9375rem;
-  color: rgb(9, 68, 136);
-}
-.secRelations .divGridPeople .secBigPeople .divMsgs section .pNoMsgs {
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .pNoMsgs {
   text-align: center;
   font-size: 0.875rem;
   color: rgb(78, 78, 78);
+  margin: 0.625rem 0;
 }
-.secRelations .divGridPeople .secBigPeople .divMsgs section div {
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: left;
+  align-items: end;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .gridContainer p {
+  margin-top: 0.9375rem;
+  color: rgb(9, 68, 136);
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .gridContainer .btnFold {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(87, 92, 88);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.125rem;
+  justify-self: right;
+  transition: all 1s ease-in-out;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .gridContainer .btnFold:hover {
+  color: rgb(11, 124, 177);
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .divMsgsList {
   overscroll-behavior: contain;
   max-height: 320px;
   overflow-y: scroll;
 }
-.secRelations .divGridPeople .secBigPeople .divMsgs section div .divMessage {
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .divMsgsList .divMessage {
   border: 1px solid rgb(155, 151, 151);
   border-radius: 0.625rem;
   padding: 0.3125rem;
   margin: 0.5rem 0;
 }
-.secRelations .divGridPeople .secBigPeople .divMsgs section div .divMessage .divHeader {
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .divMsgsList .divMessage .divHeader {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: left;
@@ -3177,18 +3208,22 @@ nav .divNav.mostrar {
   border-top-right-radius: 8px;
   background-color: rgb(226, 225, 225);
 }
-.secRelations .divGridPeople .secBigPeople .divMsgs section div .divMessage .divHeader p:first-child {
-  font-style: italic;
-  font-weight: bold;
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .divMsgsList .divMessage .divHeader p {
+  margin-top: 0.9375rem;
+  color: rgb(9, 68, 136);
 }
-.secRelations .divGridPeople .secBigPeople .divMsgs section div .divMessage .divHeader p:last-child {
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .divMsgsList .divMessage .divHeader p:first-child {
+  font-style: italic;
+  font-weight: 500;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .divMsgsList .divMessage .divHeader p:last-child {
   font-size: 0.75rem;
   text-align: right;
 }
-.secRelations .divGridPeople .secBigPeople .divMsgs section div .divMessage .divMsg {
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .divMsgsList .divMessage .divMsg {
   margin-top: 0.3125rem;
 }
-.secRelations .divGridPeople .secBigPeople .divMsgs section div .divMessage .divMsg p {
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .divMsgsList .divMessage .divMsg p {
   text-indent: 0.3125rem;
   color: rgb(90, 175, 196);
 }
@@ -3498,27 +3533,48 @@ nav .divNav.mostrar {
   text-align: center;
   color: rgb(250, 250, 250);
 }
-.secMessages .divCont .divMsgs section p {
-  margin-top: 0.9375rem;
-  color: rgb(9, 68, 136);
-}
-.secMessages .divCont .divMsgs section .pNoMsgs {
+.secMessages .divCont .divMsgs .secMsgs .pNoMsgs {
   text-align: center;
   font-size: 0.875rem;
   color: rgb(78, 78, 78);
+  margin: 0.625rem 0;
 }
-.secMessages .divCont .divMsgs section div {
+.secMessages .divCont .divMsgs .secMsgs .gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: left;
+  align-items: end;
+}
+.secMessages .divCont .divMsgs .secMsgs .gridContainer p {
+  margin-top: 0.9375rem;
+  color: rgb(9, 68, 136);
+}
+.secMessages .divCont .divMsgs .secMsgs .gridContainer .btnFold {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(87, 92, 88);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.125rem;
+  justify-self: right;
+  transition: all 1s ease-in-out;
+}
+.secMessages .divCont .divMsgs .secMsgs .gridContainer .btnFold:hover {
+  color: rgb(11, 124, 177);
+}
+.secMessages .divCont .divMsgs .secMsgs .divMsgsList {
   overscroll-behavior: contain;
   max-height: 320px;
   overflow-y: scroll;
 }
-.secMessages .divCont .divMsgs section div .divMessage {
+.secMessages .divCont .divMsgs .secMsgs .divMsgsList .divMessage {
   border: 1px solid rgb(155, 151, 151);
   border-radius: 0.625rem;
   padding: 0.3125rem;
   margin: 0.5rem 0;
 }
-.secMessages .divCont .divMsgs section div .divMessage .divHeader {
+.secMessages .divCont .divMsgs .secMsgs .divMsgsList .divMessage .divHeader {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: left;
@@ -3530,18 +3586,22 @@ nav .divNav.mostrar {
   border-top-right-radius: 8px;
   background-color: rgb(226, 225, 225);
 }
-.secMessages .divCont .divMsgs section div .divMessage .divHeader p:first-child {
-  font-style: italic;
-  font-weight: bold;
+.secMessages .divCont .divMsgs .secMsgs .divMsgsList .divMessage .divHeader p {
+  margin-top: 0.9375rem;
+  color: rgb(9, 68, 136);
 }
-.secMessages .divCont .divMsgs section div .divMessage .divHeader p:last-child {
+.secMessages .divCont .divMsgs .secMsgs .divMsgsList .divMessage .divHeader p:first-child {
+  font-style: italic;
+  font-weight: 500;
+}
+.secMessages .divCont .divMsgs .secMsgs .divMsgsList .divMessage .divHeader p:last-child {
   font-size: 0.75rem;
   text-align: right;
 }
-.secMessages .divCont .divMsgs section div .divMessage .divMsg {
+.secMessages .divCont .divMsgs .secMsgs .divMsgsList .divMessage .divMsg {
   margin-top: 0.3125rem;
 }
-.secMessages .divCont .divMsgs section div .divMessage .divMsg p {
+.secMessages .divCont .divMsgs .secMsgs .divMsgsList .divMessage .divMsg p {
   text-indent: 0.3125rem;
   color: rgb(90, 175, 196);
 }

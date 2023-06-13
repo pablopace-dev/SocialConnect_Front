@@ -5,7 +5,8 @@ import { Message, Msg } from "./";
 export const Msgs = ({ msgs, _id, name, handleOnMsgs }) => {
 
     const [userMsgs, setUserMsgs] = useState([]);
-    const [showMsgs, setShowMsgs] = useState(false)
+    const [showMsgs, setShowMsgs] = useState(false);
+    const [foldMsgs, setFoldMsgs] = useState(false);
     const { user } = useSelector((state) => state.auth);
     const { profiles } = useSelector((state) => state.users);
 
@@ -17,13 +18,15 @@ export const Msgs = ({ msgs, _id, name, handleOnMsgs }) => {
     };
 
 
+    const handleFold = () => setFoldMsgs(!foldMsgs);
+
+
     useEffect(() => {
 
         if (msgs)
             filterMessages();
 
     }, [msgs]);
-
 
 
     useEffect(() => {
@@ -42,10 +45,18 @@ export const Msgs = ({ msgs, _id, name, handleOnMsgs }) => {
 
             {
                 (showMsgs) &&
-                <section className="fall" >
-                    <p>Mensajes:</p>
+                <section className="fall secMsgs" >
 
-                    <div>
+                    <div className="gridContainer">
+                        <p>Mensajes:</p>
+                        <button
+                            onClick={handleFold}
+                            className="btnFold">
+                            <i className={`${(foldMsgs) ? "fa-regular fa-circle-up" : "fa-regular fa-circle-up fa-rotate-180"}`}></i>
+                        </button>
+                    </div>
+
+                    <div className={`divMsgsList ${(foldMsgs) ? "unfold" : "fold"}`}>
                         {
                             (userMsgs?.length > 0) ?
                                 userMsgs.map(msg =>
@@ -57,6 +68,7 @@ export const Msgs = ({ msgs, _id, name, handleOnMsgs }) => {
                                 </p>
                         }
                     </div>
+
                 </section>
             }
 
