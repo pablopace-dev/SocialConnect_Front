@@ -21,11 +21,11 @@
         font-size: pixels-rem(20);
         font-weight: 400;
         text-align: center;
-        margin: pixels-rem(10) 0;
+        margin: pixels-rem(10) 0 pixels-rem(20);
         color: $msg-title;
     }
 
-    p {
+    p {        
         color: $msg-to;
 
         span {

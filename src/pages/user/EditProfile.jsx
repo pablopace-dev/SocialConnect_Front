@@ -3,12 +3,14 @@ import { useSelector } from "react-redux";
 import { Profile } from "./components";
 import { NavLink } from 'react-router-dom';
 import { useProfiles } from "./hooks/useProfiles";
+import { useState } from "react";
 
 export const EditProfile = () => {
 
     const { user } = useSelector((state) => state.auth);
     const { isLoading } = useSelector((state) => state.users);
 
+    const [isLoadingPic, setIsLoadingPic] = useState(true);
 
     const {
         form,
@@ -34,6 +36,9 @@ export const EditProfile = () => {
     }, []);
 
 
+    const handleLoad = () => setIsLoadingPic(false);
+
+
     return (
 
         <section className="secEditProfile">
@@ -43,10 +48,21 @@ export const EditProfile = () => {
             </div>
 
             <div className="divImgFront show">
-                <img src="../../assets/bg-chat.png" alt="Imagen de portada de editar perfil" />
-                <div>
-                    <h2>...tu perfil público</h2>
-                </div>
+                {
+                    (isLoadingPic) &&
+                    <>
+                        <span className="spin"></span>
+                        <img src="../../assets/no-pic-l.png" alt="Imagen de fallo de carga de imagenes" />
+                    </>
+                }
+                <img onLoad={handleLoad} className="show"  src="../../assets/bg-chat.png" alt="Imagen de portada de editar perfil" />
+                {
+                    (!isLoadingPic) &&
+                    <div>
+                        <h2>...tu perfil público</h2>
+                    </div>
+                }
+
             </div>
 
             <form onSubmit={handleOnSubmit}>
@@ -213,7 +229,7 @@ export const EditProfile = () => {
 
             <h2>Previsualización:</h2>
 
-            <Profile profile={form} name={user.name} dateMod={user.dateMod} image={user.image} />
+            <Profile profile={form} name={user.name} dateMod={user.dateMod} image={user.image} noLink={true} />
 
         </section>
 

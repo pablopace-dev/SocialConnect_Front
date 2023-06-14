@@ -2,7 +2,7 @@ import { ProfileElement } from "./";
 import { NavLink } from "react-router-dom";
 
 
-export const Profile = ({ profile, _id = Date.now(), name, dateMod, image }) => {
+export const Profile = ({ profile, _id = Date.now(), name, dateMod, image, noLink = false }) => {
 
 
     return (
@@ -15,12 +15,23 @@ export const Profile = ({ profile, _id = Date.now(), name, dateMod, image }) => 
                     <h3>{name}</h3>
                 </div>
 
-                <div className="divUserImage">
-                    <NavLink to={`/detail/${_id}`} >
-                        <img src={image} alt={`Imagen de ${name}`} />
-                    </NavLink>
-                    <button><i className="fa-regular fa-envelope"></i> Enviar mensaje</button>
-                </div>
+
+                {
+                    (noLink) ?
+                        <div className="divUserImage">
+                            <NavLink >
+                                <img src={image} alt={`Imagen de ${name}`} />
+                            </NavLink>
+                        </div>
+                        :
+                        <div className="divUserImage">
+                            <NavLink to={`/detail/${_id}`} >
+                                <img src={image} alt={`Imagen de ${name}`} />
+                            </NavLink>
+                            <button><i className="fa-regular fa-envelope"></i> Enviar mensaje</button>
+                        </div>
+                }
+
 
             </header>
 

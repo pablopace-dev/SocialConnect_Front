@@ -1,99 +1,84 @@
-
 .divChatBox {
-    
-    position: fixed;
-    right: 0;
-    top: 0;
-    padding: pixels-rem(5);
-    // box-shadow: 0 0 5px 1px black;
-    width: 260px;
-    // left: 0;
-    // margin-top: pixels-rem(10);
-    background-color: $bg;
-    // grid-column: 2 / 3;
-    // grid-row: 1 / 100;
-    // height: 100%;
-    height: 59vh;
 
-    transform: translate3d(-105%, 0px, 0px);
-    transition: transform 0.20s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
-    z-index: 900;
+    padding-bottom: pixels-rem(1);
 
-    // height: pixels-rem(300);
-    @include border($bg-font-col, 5);
-
-    p {
+    .gridChatContainer {
+        @include container(98%, 0);
+        margin: pixels-rem(10) auto;
+        background-color: $chat-bg;
+        @include border($border, 5);
+        box-shadow: 2px 2px 10px $border;
+        border-radius: pixels-rem(10);
         padding: pixels-rem(5);
-        @include border($bg, 5);
-        background-color: $bg-font-col;
-
-        font-size: pixels-rem(15);
-    }
-
-    div {
-        min-height: 50vh;
-        // overflow-y: scroll;
-        background-color: #fafafa;
-        margin: 2px auto;
-
-        table {
-
-            // @include border($bg, 5);            
-
-            @include container(98%, 0);
-
-            tbody {
-
-                tr {
-                    width: 100%;
-
-                    .chat-spc {
-                        padding-bottom: pixels-rem(5);
-                    }
 
 
-                    .chat-name {
-                        font-size: pixels-rem(20);
-                        font-weight: bold;
-                        padding-bottom: pixels-rem(5);
-                    }
+        .pChatName {
+            padding: pixels-rem(5);
+            @include border($bg, 5);
+            background-color: $bg-font-col;
+            font-size: pixels-rem(20);
+        }
 
-                    .chat-date {
-                        font-size: pixels-rem(9);
-                        color: $prof-text;
-                    }
+        .chatTable {
+            display: block;
+            @include border($bg, 5);
+            min-height: 120px;
+            @include container(98%, 5);
+            background-color: $chat-msgs-bg;
+            max-height: 280px;
+            width: 100%;
+            padding: pixels-rem(5);
+            overflow-y: scroll;
 
-                    .chat-msg {
-                        font-size: pixels-rem(17);
-                        color: $user-name;
-                    }
+            .chat-spc {
+                padding-bottom: pixels-rem(5);
+            }
 
+            .chat-name {
+                font-size: pixels-rem(20);
+                font-weight: 400;
+                padding-bottom: pixels-rem(5);
+            }
 
-                    .chLeft {
-                        text-align: left;
-                    }
+            .chat-date {
+                font-size: pixels-rem(9);
+                color: $prof-text;
+                font-weight: 300;
+            }
 
-                    .chRight {
-                        text-align: right;
-                    }
+            .chat-msg {
+                font-size: pixels-rem(17);
+                color: $user-name;
+                font-weight: 300;
+            }
 
-                }
+            .chLeft {
+                text-align: left;                
+            }
 
+            .chRight {
+                text-align: right;                
             }
         }
-    }
 
-    form {
+        form {
 
-        @include border($bg, 5);
-        background-color: $bg-font-col;
+            @include border($bg, 5);
+            background-color: $bg-font-col;
 
-        @include grid(0.8fr 0.2fr, center, center, 1, 2);
+            @include grid(0.8fr 0.2fr, left, center, 2, 2);
 
-        input {
-            padding: pixels-rem(3);
+            input {
+                padding: pixels-rem(8) pixels-rem(5);
+                @include border($border, 5);
+                width: 100%;
+            }
+
+            input[type="submit"] {
+                @include boton();
+            }
+
         }
-
     }
 
 

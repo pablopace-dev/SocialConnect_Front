@@ -12,6 +12,7 @@ export const Messages = () => {
   const { profiles, invites } = useSelector((state) => state.users);
   const { user } = useSelector((state) => state.auth);
   const [show, setShow] = useState({});
+  const [isLoadingPic, setIsLoadingPic] = useState(true);
 
 
   const filterProfiles = () => {
@@ -44,6 +45,9 @@ export const Messages = () => {
   };
 
 
+  const handleLoad = () => setIsLoadingPic(false);
+
+
   useEffect(() => {
     filterProfiles();
 
@@ -58,10 +62,20 @@ export const Messages = () => {
       </div>
 
       <div className="divImgFront show">
-        <img src="../../assets/msg.png" alt="Imagen de portada de mensajes" />
-        <div>
-          <h2>...mis mensajes</h2>
-        </div>
+        {
+          (isLoadingPic) &&
+          <>
+            <span className="spin"></span>
+            <img src="../../assets/no-pic-l.png" alt="Imagen de fallo de carga de imagenes" />
+          </>
+        }
+        <img className="show" src="../../assets/msg.png" onLoad={handleLoad} alt="Imagen de portada de mensajes" />
+        {
+          (!isLoadingPic) &&
+          <div>
+            <h2>...tus mensajes</h2>
+          </div>
+        }
       </div>
 
 
@@ -70,8 +84,8 @@ export const Messages = () => {
       <div className="divCont">
         {
           myUsers.map(usr => (
-            <div className="divChild1">
-              < LittlePeople key={usr.date} {...usr} />
+            <div key={usr.date} className="divChild1">
+              < LittlePeople {...usr} />
               <button onClick={() => handleOnClick(usr)}>ver</button>
 
             </div>

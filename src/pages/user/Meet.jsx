@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 export const Meet = () => {
 
     const [myProfiles, setMyProfiles] = useState([]);
+    const [isLoadingPic, setIsLoadingPic] = useState(true);
 
     const { profiles, invites } = useSelector((state) => state.users)
     const { user } = useSelector((state) => state.auth)
@@ -18,20 +19,22 @@ export const Meet = () => {
     };
 
 
-    useEffect(() => {
-        filterProfiles();
+    // useEffect(() => {
+    //     filterProfiles();
 
-    }, [profiles]);
-
-    useEffect(() => {
-        filterProfiles();
-
-    }, [invites]);
+    // }, [profiles]);
 
     useEffect(() => {
         filterProfiles();
 
-    }, [user.friends]);
+    }, [invites, profiles, user?.friends]);
+
+    // useEffect(() => {
+    //     filterProfiles();
+
+    // }, [user.friends]);
+
+    const handleLoad = () => setIsLoadingPic(false);
 
 
     return (
@@ -42,11 +45,21 @@ export const Meet = () => {
                 <NavLink to='/'>&gt; Tu cuenta</NavLink><span> &gt; Conocer gente:</span>
             </div>
 
-            <div className="divImgFront show">
-                <img src="../../assets/meet.png" alt="Imagen de portada de conocer gente" />
-                <div>
-                    <h2>...conocer gente</h2>
-                </div>
+            <div className="divImgFront show" >
+                {
+                    (isLoadingPic) &&
+                    <>
+                        <span className="spin"></span>
+                        <img src="../../assets/no-pic-l.png" alt="Imagen de fallo de carga de imagenes" />
+                    </>
+                }
+                <img src="../../assets/meet.png" className="show" onLoad={handleLoad} alt="Imagen de portada de conocer gente" />
+                {
+                    (!isLoadingPic) &&
+                    <div>
+                        <h2>...conoce gente</h2>
+                    </div>
+                }
             </div>
 
             <h3>Aquí los tienes:</h3>

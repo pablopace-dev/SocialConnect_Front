@@ -8,6 +8,8 @@ export const Relations = () => {
 
 
     const { profiles, invites } = useSelector((state) => state.users)
+
+    const [isLoadingPic, setIsLoadingPic] = useState(true);
     const { user } = useSelector((state) => state.auth)
     const { chats } = useSelector((state) => state.socket)
 
@@ -24,6 +26,9 @@ export const Relations = () => {
     };
 
 
+    const handleLoad = () => setIsLoadingPic(false);
+
+
     useEffect(() => {
         filterProfiles();
 
@@ -38,10 +43,20 @@ export const Relations = () => {
             </div>
 
             <div className="divImgFront show">
-                <img src="../../assets/relations.png" alt="Imagen de portada de relaciones" />
-                <div>
-                    <h2>...mis relaciones</h2>
-                </div>
+                {
+                    (isLoadingPic) &&
+                    <>
+                        <span className="spin"></span>
+                        <img src="../../assets/no-pic-l.png" alt="Imagen de fallo de carga de imagenes" />
+                    </>
+                }
+                <img className="show" onLoad={handleLoad} src="../../assets/relations.png" alt="Imagen de portada de relaciones" />
+                {
+                    (!isLoadingPic) &&
+                    <div>
+                        <h2>...tus relaciones</h2>
+                    </div>
+                }
             </div>
 
             <div className="divGridPeople">

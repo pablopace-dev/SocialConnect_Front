@@ -1,5 +1,5 @@
 .secHomePage {
-    
+
     @include flexbox(center, column, 0);
     min-height: calc($viewport-height - ($header-height + $navBar-height + $footer-height));
 
@@ -8,6 +8,7 @@
 
         img {
             @include img-blur();
+            max-width: 760px;
         }
 
         img:hover {

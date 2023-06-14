@@ -155,53 +155,33 @@ export const ChatBox = ({ _id, name, show }) => {
 
     <div className={`divChatBox ${show && 'mostrarChatBox'}`} >
 
-      {/* <div className={`divChatBox${(chatActive != chat._id) ? " ocultar" : ""}`}> */}
+      <div className="gridChatContainer">
+        <p className="pChatName">{name}</p>
 
-      <p>{name}</p>
-      <div>
+        <section className="chatTable">
+          {(chat) ?
 
-        {/* <ScrollToBottom className="stb"> */}
-          < table >
+            (chat.chat) &&
 
-            <thead>
-            </thead>
+            chat.chat.map((ch, ind) =>
 
-            <tbody>
-              {(chat) ?
+              <p className={`pChat ${ch.orientation} chat-${ch.type}`}>
+                {ch.content}
+              </p>
+            )
+            :
 
-                (chat.chat) &&
+            <h2>NO hay chats</h2>
+          }
 
-                chat.chat.map((ch, ind) =>
+        </section>
 
-                  <tr key={ind + 'chat'} >
-                    <td className={`${ch.orientation} chat-${ch.type}`}>
-                      {
-                        ch.content
-                      }
-                    </td>
-                  </tr>
-                )
-                :
+        <form onSubmit={handleOnSubmit}>
+          <input autoComplete="off" type="text" name="text" placeholder="Escribe algo..." />
+          <input disabled={(chat.userDeleted) ? true : false} type="submit" value="Enviar" />
+        </form>
 
-                <h2>NO hay chats</h2>
-              }
-
-            </tbody>
-
-            <tfoot>
-            </tfoot>
-
-          </table >
-
-        {/* </ScrollToBottom> */}
       </div>
-
-      <form onSubmit={handleOnSubmit}>
-        <input autoComplete="off" type="text" name="text" placeholder="Escribe algo..." />
-        <input disabled={(chat.userDeleted) ? true : false} type="submit" value="Enviar" />
-      </form>
-
-
 
     </div >
 

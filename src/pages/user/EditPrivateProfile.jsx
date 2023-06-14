@@ -3,10 +3,12 @@ import { useSelector } from "react-redux";
 import { NavLink } from 'react-router-dom';
 import { useProfiles } from "./hooks/useProfiles";
 import { PrivateProfile } from "./components";
+import { useState } from "react";
 
 export const EditPrivateProfile = () => {
 
     const { user } = useSelector((state) => state.auth);
+    const [isLoadingPic, setIsLoadingPic] = useState(true);
     const { isLoading } = useSelector((state) => state.users);
 
     const {
@@ -30,7 +32,10 @@ export const EditPrivateProfile = () => {
     useEffect(() => {
         loadFormPrivate();
 
-    }, [])
+    }, []);
+
+
+    const handleLoad = () => setIsLoadingPic(false);
 
 
     return (
@@ -42,10 +47,20 @@ export const EditPrivateProfile = () => {
             </div>
 
             <div className="divImgFront show">
-                <img src="../../assets/bg-chat.png" alt="Imagen de portada de editar perfil" />
-                <div>
-                    <h2>...tu perfil privado</h2>
-                </div>
+                {
+                    (isLoadingPic) &&
+                    <>
+                        <span className="spin"></span>
+                        <img src="../../assets/no-pic-l.png" alt="Imagen de fallo de carga de imagenes" />
+                    </>
+                }
+                <img onLoad={handleLoad} className="show" src="../../assets/bg-chat.png" alt="Imagen de portada de editar perfil" />
+                {
+                    (!isLoadingPic) &&
+                    <div>
+                        <h2>...tu perfil privado</h2>
+                    </div>
+                }
             </div>
 
             <form onSubmit={(ev) => handleOnSubmit(ev, true)}>
@@ -177,7 +192,7 @@ export const EditPrivateProfile = () => {
                         <button className="btnTitle" onClick={(ev) => handleOnClick(ev, 'title')} ><i className="fa-solid fa-t"></i> Título</button>
                         <button className="btnParagraph" onClick={(ev) => handleOnClick(ev, 'paragraph')} ><i className="fa-solid fa-paragraph"></i> Párrafo</button>
                         <button className="btnText" onClick={(ev) => handleOnClick(ev, 'text')} ><i className="fa-solid fa-i-cursor"></i> Texto</button>
-                        <button className="btnImg" onClick={(ev) => handleOnClick(ev, 'image')} ><i className="fa-regular fa-image"></i>Imagen</button>
+                        <button className="btnImg" onClick={(ev) => handleOnClick(ev, 'image')} ><i className="fa-regular fa-image"></i> Imagen</button>
                     </div>
                 </div>
 
@@ -212,7 +227,7 @@ export const EditPrivateProfile = () => {
 
             <h2>Previsualización:</h2>
 
-            <PrivateProfile privateProfile={form} name={user.name} dateMod={user.privateDateMod} image={user.image} />
+            <PrivateProfile privateProfile={form} name={user.name} dateMod={user.privateDateMod} image={user.image} noLink={true} />
 
         </section>
 

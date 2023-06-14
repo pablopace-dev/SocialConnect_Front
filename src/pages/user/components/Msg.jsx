@@ -17,7 +17,7 @@ export const Msg = ({ date, msg, read, name, from }) => {
 
             <div className="divHeader">
                 <p>{(from) ? `Para: ${name}` : 'De: tú'}</p>
-                <p>{dateShort}</p>
+                <p className="msgDate">{dateShort} hrs</p>
             </div>
 
             <div className="divMsg">

@@ -134,21 +134,22 @@
 @mixin img-front($text-color: black, $align-text: center, $font-size: 10, $padding: 0) {
 
     position: relative;
-    box-shadow: 0 2px 3px $border;    
+    box-shadow: 0 2px 3px $border;
     @include border($border, 5);
     margin: pixels-rem(10) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    // .imgContainer {
-    // @include container(100%, 0);
-
+    span {
+        position: fixed;
+    }
 
     img {
         @include image(contain);
         @include img-blur();
         max-height: 280px;
     }
-
-    // }
 
     div {
         width: 100%;
@@ -162,7 +163,7 @@
         h2 {
             padding: pixels-rem($padding);
             font-size: pixels-rem($font-size);
-            text-shadow: 1px 1px 3px black;            
+            text-shadow: 1px 1px 3px black;
             font-weight: 400;
             text-align: $align-text;
         }

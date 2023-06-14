@@ -1,11 +1,11 @@
 .divMessage {
-    
+
     @include border($border, 10);
     padding: pixels-rem(5);
     margin: pixels-rem(8) 0;
 
     .divHeader {
-        @include grid(1fr 1fr, left, center, 5, 0);
+        @include grid(1fr 1fr, left, center, 5, 0);        
         border-bottom: 1px dotted $border;
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
@@ -20,10 +20,10 @@
             font-style: italic;
             font-weight: 500;
         }
-
-        p:last-child {
+        
+        .msgDate {
             font-size: pixels-rem(12);
-            text-align: right;
+            justify-self: right;
         }
     }
 
@@ -31,8 +31,9 @@
         margin-top: pixels-rem(5);
 
         p {
-            text-indent: pixels-rem(5);
-            color: $nav-font-col;
+            padding: pixels-rem(5);
+            font-weight: 400;
+            color: $msgs-text;
         }
     }
 
