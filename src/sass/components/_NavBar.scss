@@ -1,7 +1,7 @@
 
 nav {
     background-color: $bg-nav;
-
+    box-shadow: 0 2px 1px $border;
 
     .divNavContainer {
         @include grid(0.25fr 0.4fr 0.35fr, left, center, 0, 0);
@@ -83,7 +83,7 @@ nav {
     .divNav {
         position: absolute;
         padding: pixels-rem(5);
-        box-shadow: 0 0 5px 1px black;
+        box-shadow: 0 4px 5px $border;
         font-size: pixels-rem(17);
         font-weight: 400;
         width: 100%;
@@ -114,6 +114,7 @@ nav {
 
             a:hover {
                 @include boton-hover();
+                box-shadow: 0 0 3px black;
             }
         }
     }

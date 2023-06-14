@@ -14,8 +14,9 @@
 
         h3 {
             font-size: pixels-rem(22);
+            font-weight: 400;
             text-indent: pixels-rem(5);
-            color: $bg;
+            color: $user-name;
             padding: pixels-rem(15);
         }
 
@@ -88,7 +89,7 @@
             width: pixels-rem(85);
 
             i {
-                color: $msgs-bg;
+                color: $msg-ico;
             }
         }
 
@@ -119,6 +120,10 @@
             padding: pixels-rem(5);
             @include boton-multi();
             width: pixels-rem(120);
+        }
+
+        i {
+            color: $msg-ico-imp;
         }
 
         button:hover {

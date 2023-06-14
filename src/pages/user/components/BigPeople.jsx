@@ -75,7 +75,7 @@ export const BigPeople = ({ _id, profile, email, privateProfile, dateMod, privat
                 <div className="divWarning show">
                     <p>¿Estas seguro de romper este vínculo?</p>
                     <button onClick={() => handleRemoveFriend(_id)}><i className="fa-solid fa-heart-crack"></i> Sí, romperlo</button>
-                    <button onClick={handleOnWarning} >No, Cancelar</button>
+                    <button onClick={handleOnWarning} ><i className="fa-solid fa-ban"></i> No, lo pensaré</button>
                 </div>
             }
 
