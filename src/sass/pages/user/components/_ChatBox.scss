@@ -13,7 +13,7 @@
 
 
         .pChatName {
-            padding: pixels-rem(5);
+            padding: pixels-rem(7);
             @include border($bg, 5);
             background-color: $bg-font-col;
             font-size: pixels-rem(20);
@@ -25,40 +25,62 @@
             min-height: 120px;
             @include container(98%, 5);
             background-color: $chat-msgs-bg;
-            max-height: 280px;
-            width: 100%;
+            max-height: 220px;
+            
             padding: pixels-rem(5);
             overflow-y: scroll;
+
+            .chLeft {
+                color: $chat-msg-left;
+                text-align: left;
+                margin-left: pixels-rem(6);
+            }
+
+            .chRight {
+                color: $chat-msg-right;
+                text-align: right;                
+                margin-right: pixels-rem(6);
+            }
+
+            .chRight.chat-name {
+                color: $chat-user-right;
+            }
+
+            .chLeft.chat-name {
+                color: $chat-user-left;
+            }
 
             .chat-spc {
                 padding-bottom: pixels-rem(5);
             }
 
+            .lastMsg {
+                padding-bottom: pixels-rem(15);
+                color: $chat-msgs-bg;
+            }
+
             .chat-name {
-                font-size: pixels-rem(20);
+                font-size: pixels-rem(18);
                 font-weight: 400;
-                padding-bottom: pixels-rem(5);
+                margin: 0;
+                padding-top: pixels-rem(2);
+                padding-bottom: pixels-rem(2);
             }
 
             .chat-date {
-                font-size: pixels-rem(9);
-                color: $prof-text;
+                font-size: pixels-rem(8);
+                color: $chat-date;
                 font-weight: 300;
             }
 
-            .chat-msg {
-                font-size: pixels-rem(17);
-                color: $user-name;
+            .chat-msg {        
+                font-size: pixels-rem(15);
                 font-weight: 300;
+                padding-top: pixels-rem(3);
+                padding-bottom: pixels-rem(2);
             }
 
-            .chLeft {
-                text-align: left;                
-            }
 
-            .chRight {
-                text-align: right;                
-            }
         }
 
         form {
@@ -66,11 +88,12 @@
             @include border($bg, 5);
             background-color: $bg-font-col;
 
-            @include grid(0.8fr 0.2fr, left, center, 2, 2);
+            @include grid(0.75fr 0.25fr, left, center, 2, 2);
 
             input {
-                padding: pixels-rem(8) pixels-rem(5);
                 @include border($border, 5);
+                margin: pixels-rem(2) 0;
+                padding: pixels-rem(6) pixels-rem(5);
                 width: 100%;
             }
 

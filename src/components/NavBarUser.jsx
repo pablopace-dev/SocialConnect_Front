@@ -116,12 +116,11 @@ export const NavBarUser = () => {
             </div>
 
 
-            <div className={`divChat${(showChat) ? ' mostrarChat' : ''}`}>
+            <div className={`divChat ${(showChat) ? 'mostrarChat' : ''}`}>
                 <Friends />
-
             </div>
 
-            <div className={`divNav${(show) ? ' mostrar' : ''}`}>
+            <div className={`divNav ${(show) ? 'mostrar' : ''}`}>
 
                 <div>
 

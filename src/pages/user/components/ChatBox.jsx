@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux"
 import { useSocketStore } from "../../../hooks/useSocketStore";
-import ScrollToBottom from "react-scroll-to-bottom";
 
 
 export const ChatBox = ({ _id, name, show }) => {
@@ -16,6 +15,8 @@ export const ChatBox = ({ _id, name, show }) => {
 
   const { openChat, sendMsg, findChat } = useSocketStore();
 
+  const chatRef = useRef(null);
+  const submitRef = useRef(null);
 
 
   const prepChat = (data) => {
@@ -99,6 +100,9 @@ export const ChatBox = ({ _id, name, show }) => {
       chat: newChat
     });
 
+
+    chatRef.current?.scrollIntoView(false, { behavior: "smooth" });
+
   };
 
 
@@ -136,12 +140,10 @@ export const ChatBox = ({ _id, name, show }) => {
 
 
   useEffect(() => {
-
     prepChat(chats[chatIndex]);
+    // submitRef.current?.scrollIntoView({ behavior: "smooth" });    
 
   }, [chats[chatIndex]?.chat]);
-
-
 
 
   useEffect(() => {
@@ -153,32 +155,44 @@ export const ChatBox = ({ _id, name, show }) => {
 
   return (
 
-    <div className={`divChatBox ${show && 'mostrarChatBox'}`} >
+    <div className={`show divChatBox ${show && 'mostrarChatBox'}`} >
 
       <div className="gridChatContainer">
-        <p className="pChatName">{name}</p>
+        <p ref={submitRef} className="pChatName">{name}</p>
 
-        <section className="chatTable">
+        <section className="chatTable" >
           {(chat) ?
 
             (chat.chat) &&
 
             chat.chat.map((ch, ind) =>
 
-              <p className={`pChat ${ch.orientation} chat-${ch.type}`}>
-                {ch.content}
+              <p
+                // ref={(ind === chat.chat.length - 1) ? chatRef : null}
+                key={`ch${ind}`}
+                className={`pChat ${ch.orientation} chat-${ch.type}`}
+              >{ch.content}
               </p>
             )
             :
 
-            <h2>NO hay chats</h2>
-          }
-
+            <h2>No hay chats</h2>            
+          }          
+          <p className="lastMsg" ref={chatRef}>.</p>
         </section>
 
         <form onSubmit={handleOnSubmit}>
-          <input autoComplete="off" type="text" name="text" placeholder="Escribe algo..." />
-          <input disabled={(chat.userDeleted) ? true : false} type="submit" value="Enviar" />
+          <input
+            autoComplete="off"
+            autoFocus
+            type="text"
+            name="text"
+            placeholder="Escribe algo..." />
+
+          <input
+            disabled={(chat.userDeleted) ? true : false}
+            type="submit"
+            value="Enviar" />
         </form>
 
       </div>
