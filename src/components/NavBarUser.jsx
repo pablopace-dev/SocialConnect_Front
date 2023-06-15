@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { Friends } from '../pages/user/components';
+import { ChatBox, Friends } from '../pages/user/components';
+import { useFriends } from '../pages/user/hooks/useFriends';
 
 
 /**
@@ -16,17 +17,25 @@ import { Friends } from '../pages/user/components';
  */
 export const NavBarUser = () => {
 
-    const [show, setShow] = useState(false);
+    const [showMenu, setShowMenu] = useState(false);
     const [showChat, setShowChat] = useState(false);
 
     const navigate = useNavigate();
+
+    const {
+        handleOnOpenChat,
+        handleGetFriends,
+        msg,
+        show,
+        friends
+    } = useFriends();
 
     const { status, user, newMsgs, isLoading, isChecking } = useSelector((state) => state.auth);
     const { newInvites, newProfiles } = useSelector((state) => state.users);
     const { newChats, isReceiving, isSending, isConnecting, connState } = useSelector((state) => state.socket)
 
 
-    const handleOnShow = () => setShow(!show);
+    const handleOnShow = () => setShowMenu(!showMenu);
 
     const handleOnChat = () => setShowChat(!showChat);
 
@@ -36,7 +45,7 @@ export const NavBarUser = () => {
         <nav>
             <div className='divNavContainer'>
                 <div className='divBtnMenu'>
-                    <button onClick={handleOnShow}><i className={(show) ? "fa-solid fa-xmark fa-fade" : "fa-solid fa-bars"}></i></button>
+                    <button onClick={handleOnShow}><i className={(showMenu) ? "fa-solid fa-xmark fa-fade" : "fa-solid fa-bars"}></i></button>
                 </div>
 
 
@@ -116,11 +125,17 @@ export const NavBarUser = () => {
             </div>
 
 
-            <div className={`divChat ${(showChat) ? 'mostrarChat' : ''}`}>
-                <Friends />
+            <div className={`divFriends ${(showChat) ? 'mostrarFriends' : ''}`}>
+                <Friends friends={friends} show={show} msg={msg} handleGetFriends={handleGetFriends} handleOnOpenChat={handleOnOpenChat} />
+
             </div>
 
-            <div className={`divNav ${(show) ? 'mostrar' : ''}`}>
+
+            <div className={`divChat ${(show?._id && showChat )  ? 'mostrarChat' : ''}`}>
+                <ChatBox key={Date.now()} {...show} fromFriends={true} />
+            </div>
+
+            <div className={`divNav ${(showMenu) ? 'mostrar' : ''}`}>
 
                 <div>
 
@@ -230,7 +245,7 @@ export const NavBarUser = () => {
                 </div>
 
             </div>
-        </nav>
+        </nav >
 
     );
 };

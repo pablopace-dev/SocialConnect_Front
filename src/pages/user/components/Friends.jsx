@@ -1,22 +1,17 @@
-import { useSelector } from "react-redux";
-import { ChatBox, LittlePeople } from "./";
-import { useEffect, useState } from "react";
+import { LittlePeople } from "./";
+import { useEffect } from "react";
 import { useFriends } from "../hooks/useFriends";
-import { useUserStore } from "../../../hooks/useUserStore";
-
-export const Friends = () => {
 
 
-  const { chats } = useSelector((state) => state.socket)
+export const Friends = ({ friends, show, msg, handleGetFriends, handleOnOpenChat }) => {
 
-  const { loadProfiles } = useUserStore();
-  const {
-    handleRemoveFriend,
-    handleOnOpenChat,
-    handleGetFriends,
-    msg,
-    friends
-  } = useFriends();
+  // const {
+  //   handleOnOpenChat,
+  //   handleGetFriends,
+  //   msg,
+  //   show,
+  //   friends
+  // } = useFriends();
 
 
   useEffect(() => {
@@ -31,15 +26,14 @@ export const Friends = () => {
       {
         friends.map(fr =>
           <>
-            <article key={`fr-${Date.now() + fr.name}`} >
+            <article className="artFriends" key={`fr-${Date.now() + fr.name}`} >
               <LittlePeople name={fr.name} image={fr.image} />
 
               {
                 (fr.name) &&
                 <div className="divBtnsChat">
-                  {/* <button onClick={() => handleRemoveFriend(fr._id)}><i class="fa-solid fa-heart-crack"></i> Romper vínculo</button> */}
 
-                  {(fr.show)
+                  {(show?._id === fr._id)
                     ?
                     <button onClick={() => handleOnOpenChat(fr._id, false)}><i className="fa-solid fa-rectangle-xmark"></i></button>
                     :
@@ -48,19 +42,14 @@ export const Friends = () => {
                 </div>
               }
 
-
               <p className="pChatMsg">{msg}</p>
 
-
-
             </article>
-
-            {
-              (fr.show) && <ChatBox {...fr} />
-            }
           </>
         )
       }
+
+
     </ section>
 
   );

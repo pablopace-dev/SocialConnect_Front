@@ -26,7 +26,7 @@
             @include container(98%, 5);
             background-color: $chat-msgs-bg;
             max-height: 220px;
-            
+
             padding: pixels-rem(5);
             overflow-y: scroll;
 
@@ -38,7 +38,7 @@
 
             .chRight {
                 color: $chat-msg-right;
-                text-align: right;                
+                text-align: right;
                 margin-right: pixels-rem(6);
             }
 
@@ -73,7 +73,7 @@
                 font-weight: 300;
             }
 
-            .chat-msg {        
+            .chat-msg {
                 font-size: pixels-rem(15);
                 font-weight: 300;
                 padding-top: pixels-rem(3);
@@ -107,6 +107,13 @@
 
 }
 
-.divChatBox.mostrarChatBox {
-    transform: translate3d(0px, 0px, 0px);
+.divChatBox.fromFriends {
+    min-width: 260px;
+
+    .gridChatContainer {
+        .chatTable {
+            height: 420px;
+            max-height: 420px;
+        }
+    }
 }

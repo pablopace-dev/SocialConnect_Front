@@ -3,7 +3,8 @@ import { useSelector } from "react-redux"
 import { useSocketStore } from "../../../hooks/useSocketStore";
 
 
-export const ChatBox = ({ _id, name, show }) => {
+export const ChatBox = ({ _id, name, fromFriends = false }) => {
+
 
   const { chats, chatActive } = useSelector((state) => state.socket);
   const { user } = useSelector((state) => state.auth);
@@ -132,6 +133,9 @@ export const ChatBox = ({ _id, name, show }) => {
   };
 
   useEffect(() => {
+
+    if (!_id) return
+
     console.log('effect chatindex', chatIndex)
     if (chatIndex == -1 || !chatIndex)
       getIndex();
@@ -140,14 +144,16 @@ export const ChatBox = ({ _id, name, show }) => {
 
 
   useEffect(() => {
+
+    if (!_id) return
     prepChat(chats[chatIndex]);
-    // submitRef.current?.scrollIntoView({ behavior: "smooth" });    
 
   }, [chats[chatIndex]?.chat]);
 
 
   useEffect(() => {
-    // getIndex();
+
+    if (!_id) return
     openChat(user._id, _id);
 
   }, []);
@@ -155,7 +161,7 @@ export const ChatBox = ({ _id, name, show }) => {
 
   return (
 
-    <div className={`show divChatBox ${show && 'mostrarChatBox'}`} >
+    <div className={`${(!fromFriends) ? 'show' : 'fromFriends'} divChatBox`} >
 
       <div className="gridChatContainer">
         <p ref={submitRef} className="pChatName">{name}</p>
@@ -176,8 +182,8 @@ export const ChatBox = ({ _id, name, show }) => {
             )
             :
 
-            <h2>No hay chats</h2>            
-          }          
+            <h2>No hay chats</h2>
+          }
           <p className="lastMsg" ref={chatRef}>.</p>
         </section>
 

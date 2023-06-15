@@ -1,23 +1,28 @@
 .secUserFriends {
-    
+
     background-color: rgba(0, 0, 0, 0.7);
     border-top-right-radius: pixels-rem(15);
     border-bottom-right-radius: pixels-rem(15);
     border: 1px solid rgb(79, 210, 242);
     width: 100px;
 
-    article {
-        cursor: pointer;
+    .artFriends {        
         width: 100%;
 
         @import './LittlePeople';
+
+        .divLittlePeople {
+            .pLPName {
+                color: $frnd-font;
+            }
+        }
     }
 
     .divBtnsChat {
         text-align: center;
 
         button {
-            @include boton-ico(prof-btn);
+            @include boton-ico($frnd-ico);
             font-size: pixels-rem(20);
         }
 
@@ -25,7 +30,5 @@
             @include boton-ico-hover();
         }
     }
-
-    @import './ChatBox';
 
 }

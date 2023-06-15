@@ -12,6 +12,7 @@ export const useFriends = () => {
     const [msg, setMsg] = useState(null);
 
     const [friends, setFriends] = useState([]);
+    const [show, setShow] = useState({});
 
 
     const handleGetFriends = async () => {
@@ -21,7 +22,6 @@ export const useFriends = () => {
             const userData = getUserData(fr, profiles);
             newFriends.push({
                 _id: fr,
-                show: false,
                 ...userData
             })
         })
@@ -33,10 +33,19 @@ export const useFriends = () => {
 
     const handleOnOpenChat = async (friendID, show) => {
 
-        const newFriends = [...friends];
+        // const newFriends = [...friends];
 
-        newFriends.map(fr => fr._id == friendID ? fr.show = show : fr.show = fr.show)
-        setFriends(newFriends);
+        // newFriends.map(fr => fr._id == friendID ? fr.show = show : fr.show = fr.show)
+        // setFriends(newFriends);
+        console.log('fr', friendID, show);
+        if (show) {
+
+            const fr = friends.find(fr => fr._id === friendID);
+            setShow(fr);
+
+
+        } else
+            setShow({})
     };
 
 
@@ -64,6 +73,7 @@ export const useFriends = () => {
         handleGetFriends,
         handleOnOpenChat,
         friends,
+        show,
         msg
     };
 };

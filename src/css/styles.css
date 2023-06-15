@@ -237,29 +237,28 @@ nav .divNavContainer .divStatus div img {
   border: 1px solid rgb(140, 224, 252);
   border-radius: 6.25rem;
 }
-nav .divChat {
+nav .divFriends {
   margin-top: 0.0625rem;
   position: absolute;
   padding: 0.0625rem;
-  height: 60vh;
+  height: 540px;
   overflow-y: scroll;
-  width: 100%;
+  overscroll-behavior: contain;
   transform: translate3d(-105%, 0px, 0px);
   transition: transform 0.2s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
   z-index: 1001;
 }
-nav .divChat .secUserFriends {
+nav .divFriends .secUserFriends {
   background-color: rgba(0, 0, 0, 0.7);
   border-top-right-radius: 0.9375rem;
   border-bottom-right-radius: 0.9375rem;
   border: 1px solid rgb(79, 210, 242);
   width: 100px;
 }
-nav .divChat .secUserFriends article {
-  cursor: pointer;
+nav .divFriends .secUserFriends .artFriends {
   width: 100%;
 }
-nav .divChat .secUserFriends article .divLittlePeople {
+nav .divFriends .secUserFriends .artFriends .divLittlePeople {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -268,55 +267,65 @@ nav .divChat .secUserFriends article .divLittlePeople {
   background-color: transparent;
   padding: 0.625rem;
 }
-nav .divChat .secUserFriends article .divLittlePeople .pLPName {
+nav .divFriends .secUserFriends .artFriends .divLittlePeople .pLPName {
   text-align: center;
   color: rgb(9, 68, 136);
   font-size: 0.875rem;
   margin-bottom: 0.3125rem;
 }
-nav .divChat .secUserFriends article .divLittlePeople .pLPDate {
+nav .divFriends .secUserFriends .artFriends .divLittlePeople .pLPDate {
   text-align: center;
   color: rgb(2, 92, 83);
   font-size: 0.75rem;
   margin-bottom: 0.3125rem;
 }
-nav .divChat .secUserFriends article .divLittlePeople .pLPSender,
-nav .divChat .secUserFriends article .divLittlePeople .pLPReceiver {
+nav .divFriends .secUserFriends .artFriends .divLittlePeople .pLPSender,
+nav .divFriends .secUserFriends .artFriends .divLittlePeople .pLPReceiver {
   text-align: center;
   color: rgb(2, 92, 83);
   font-size: 1.0625rem;
   margin-bottom: 0.3125rem;
 }
-nav .divChat .secUserFriends article .divLittlePeople div {
+nav .divFriends .secUserFriends .artFriends .divLittlePeople div {
   width: 3.125rem;
   height: 3.125rem;
 }
-nav .divChat .secUserFriends article .divLittlePeople div img {
+nav .divFriends .secUserFriends .artFriends .divLittlePeople div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border: 1px solid rgb(155, 151, 151);
   border-radius: 6.25rem;
 }
-nav .divChat .secUserFriends .divBtnsChat {
+nav .divFriends .secUserFriends .artFriends .divLittlePeople .pLPName {
+  color: rgb(224, 224, 224);
+}
+nav .divFriends .secUserFriends .divBtnsChat {
   text-align: center;
 }
-nav .divChat .secUserFriends .divBtnsChat button {
+nav .divFriends .secUserFriends .divBtnsChat button {
   border-radius: 0.3125rem;
   border: none;
-  color: prof-btn;
+  color: rgb(177, 238, 127);
   font-size: pìxels-rem(8);
   background-color: transparent;
   cursor: pointer;
   font-size: 1.25rem;
 }
-nav .divChat .secUserFriends .divBtnsChat button:hover {
+nav .divFriends .secUserFriends .divBtnsChat button:hover {
   color: rgb(11, 124, 177);
 }
-nav .divChat .secUserFriends .divChatBox {
+nav .divChat {
+  position: fixed;
+  right: 0;
+  transform: translate3d(105%, 0px, 0px);
+  transition: transform 0.2s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+  z-index: 1001;
+}
+nav .divChat .divChatBox {
   padding-bottom: 0.0625rem;
 }
-nav .divChat .secUserFriends .divChatBox .gridChatContainer {
+nav .divChat .divChatBox .gridChatContainer {
   width: 98%;
   margin: 0rem auto;
   margin: 0.625rem auto;
@@ -327,14 +336,14 @@ nav .divChat .secUserFriends .divChatBox .gridChatContainer {
   border-radius: 0.625rem;
   padding: 0.3125rem;
 }
-nav .divChat .secUserFriends .divChatBox .gridChatContainer .pChatName {
+nav .divChat .divChatBox .gridChatContainer .pChatName {
   padding: 0.4375rem;
   border: 1px solid rgb(63, 139, 197);
   border-radius: 0.3125rem;
   background-color: rgb(140, 224, 252);
   font-size: 1.25rem;
 }
-nav .divChat .secUserFriends .divChatBox .gridChatContainer .chatTable {
+nav .divChat .divChatBox .gridChatContainer .chatTable {
   display: block;
   border: 1px solid rgb(63, 139, 197);
   border-radius: 0.3125rem;
@@ -346,48 +355,48 @@ nav .divChat .secUserFriends .divChatBox .gridChatContainer .chatTable {
   padding: 0.3125rem;
   overflow-y: scroll;
 }
-nav .divChat .secUserFriends .divChatBox .gridChatContainer .chatTable .chLeft {
+nav .divChat .divChatBox .gridChatContainer .chatTable .chLeft {
   color: rgb(61, 148, 45);
   text-align: left;
   margin-left: 0.375rem;
 }
-nav .divChat .secUserFriends .divChatBox .gridChatContainer .chatTable .chRight {
+nav .divChat .divChatBox .gridChatContainer .chatTable .chRight {
   color: rgb(78, 78, 78);
   text-align: right;
   margin-right: 0.375rem;
 }
-nav .divChat .secUserFriends .divChatBox .gridChatContainer .chatTable .chRight.chat-name {
+nav .divChat .divChatBox .gridChatContainer .chatTable .chRight.chat-name {
   color: rgb(53, 48, 48);
 }
-nav .divChat .secUserFriends .divChatBox .gridChatContainer .chatTable .chLeft.chat-name {
+nav .divChat .divChatBox .gridChatContainer .chatTable .chLeft.chat-name {
   color: rgb(25, 104, 12);
 }
-nav .divChat .secUserFriends .divChatBox .gridChatContainer .chatTable .chat-spc {
+nav .divChat .divChatBox .gridChatContainer .chatTable .chat-spc {
   padding-bottom: 0.3125rem;
 }
-nav .divChat .secUserFriends .divChatBox .gridChatContainer .chatTable .lastMsg {
+nav .divChat .divChatBox .gridChatContainer .chatTable .lastMsg {
   padding-bottom: 0.9375rem;
   color: rgb(247, 251, 255);
 }
-nav .divChat .secUserFriends .divChatBox .gridChatContainer .chatTable .chat-name {
+nav .divChat .divChatBox .gridChatContainer .chatTable .chat-name {
   font-size: 1.125rem;
   font-weight: 400;
   margin: 0;
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
 }
-nav .divChat .secUserFriends .divChatBox .gridChatContainer .chatTable .chat-date {
+nav .divChat .divChatBox .gridChatContainer .chatTable .chat-date {
   font-size: 0.5rem;
   color: rgb(206, 105, 105);
   font-weight: 300;
 }
-nav .divChat .secUserFriends .divChatBox .gridChatContainer .chatTable .chat-msg {
+nav .divChat .divChatBox .gridChatContainer .chatTable .chat-msg {
   font-size: 0.9375rem;
   font-weight: 300;
   padding-top: 0.1875rem;
   padding-bottom: 0.125rem;
 }
-nav .divChat .secUserFriends .divChatBox .gridChatContainer form {
+nav .divChat .divChatBox .gridChatContainer form {
   border: 1px solid rgb(63, 139, 197);
   border-radius: 0.3125rem;
   background-color: rgb(140, 224, 252);
@@ -398,14 +407,14 @@ nav .divChat .secUserFriends .divChatBox .gridChatContainer form {
   padding: 0.125rem;
   gap: 0.125rem;
 }
-nav .divChat .secUserFriends .divChatBox .gridChatContainer form input {
+nav .divChat .divChatBox .gridChatContainer form input {
   border: 1px solid rgb(155, 151, 151);
   border-radius: 0.3125rem;
   margin: 0.125rem 0;
   padding: 0.375rem 0.3125rem;
   width: 100%;
 }
-nav .divChat .secUserFriends .divChatBox .gridChatContainer form input[type=submit] {
+nav .divChat .divChatBox .gridChatContainer form input[type=submit] {
   background-color: rgb(4, 134, 255);
   border-radius: 5px;
   border: none;
@@ -413,10 +422,17 @@ nav .divChat .secUserFriends .divChatBox .gridChatContainer form input[type=subm
   cursor: pointer;
   transition: all 300ms ease;
 }
-nav .divChat .secUserFriends .divChatBox.mostrarChatBox {
-  transform: translate3d(0px, 0px, 0px);
+nav .divChat .divChatBox.fromFriends {
+  min-width: 260px;
+}
+nav .divChat .divChatBox.fromFriends .gridChatContainer .chatTable {
+  height: 420px;
+  max-height: 420px;
 }
 nav .divChat.mostrarChat {
+  transform: translate3d(0px, 0px, 0px);
+}
+nav .divFriends.mostrarFriends {
   transform: translate3d(0px, 0px, 0px);
 }
 nav .divNav {
@@ -3440,8 +3456,12 @@ nav .divNav.mostrar {
   cursor: pointer;
   transition: all 300ms ease;
 }
-.secRelations .divGridPeople .secBigPeople .divChatBox.mostrarChatBox {
-  transform: translate3d(0px, 0px, 0px);
+.secRelations .divGridPeople .secBigPeople .divChatBox.fromFriends {
+  min-width: 260px;
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox.fromFriends .gridChatContainer .chatTable {
+  height: 420px;
+  max-height: 420px;
 }
 .secRelations .divGridPeople .secBigPeople .divChatBox {
   width: 98%;
