@@ -68,17 +68,17 @@ nav {
 
         transform: translate3d(-105%, 0px, 0px);
         transition: transform 0.20s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
-        z-index: 1001;
+        z-index: 1002;
     }
 
     .divChat {                
-        position: fixed;    
+        position: absolute;    
         right: 0;
         // overflow-y: scroll;
         // overscroll-behavior: contain;
 
-        transform: translate3d(105%, 0px, 0px);
-        transition: transform 0.20s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+        transform: translate3d(-150%, 0px, 0px);
+        transition: transform 0.20s cubic-bezier(0.4, 1.04, 0.72, 0.98) 0s;
         z-index: 1001;
 
         @import '../pages/user/components/ChatBox';

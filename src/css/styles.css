@@ -246,7 +246,7 @@ nav .divFriends {
   overscroll-behavior: contain;
   transform: translate3d(-105%, 0px, 0px);
   transition: transform 0.2s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
-  z-index: 1001;
+  z-index: 1002;
 }
 nav .divFriends .secUserFriends {
   background-color: rgba(0, 0, 0, 0.7);
@@ -316,10 +316,10 @@ nav .divFriends .secUserFriends .divBtnsChat button:hover {
   color: rgb(11, 124, 177);
 }
 nav .divChat {
-  position: fixed;
+  position: absolute;
   right: 0;
-  transform: translate3d(105%, 0px, 0px);
-  transition: transform 0.2s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+  transform: translate3d(-150%, 0px, 0px);
+  transition: transform 0.2s cubic-bezier(0.4, 1.04, 0.72, 0.98) 0s;
   z-index: 1001;
 }
 nav .divChat .divChatBox {
