@@ -66,7 +66,7 @@ export const Messages = () => {
           (isLoadingPic) &&
           <>
             <span className="spin"></span>
-            <img src="../../assets/no-pic-l.png" alt="Imagen de fallo de carga de imagenes" />
+            <img className="imgSub" src="../../assets/no-pic-l.png" alt="Imagen de fallo de carga de imagenes" />
           </>
         }
         <img className="show" src="../../assets/msg.png" onLoad={handleLoad} alt="Imagen de portada de mensajes" />

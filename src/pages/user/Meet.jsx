@@ -50,7 +50,7 @@ export const Meet = () => {
                     (isLoadingPic) &&
                     <>
                         <span className="spin"></span>
-                        <img src="../../assets/no-pic-l.png" alt="Imagen de fallo de carga de imagenes" />
+                        <img className="imgSub" src="../../assets/no-pic-l.png" alt="Imagen de fallo de carga de imagenes" />
                     </>
                 }
                 <img src="../../assets/meet.png" className="show" onLoad={handleLoad} alt="Imagen de portada de conocer gente" />

@@ -2271,6 +2271,7 @@ nav .divNav.mostrar {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 280px;
 }
 .secProfiles .divImgFront span {
   position: fixed;
@@ -2285,6 +2286,9 @@ nav .divNav.mostrar {
   -webkit-mask-image: linear-gradient(transparent, #fafafa 80%, transparent);
   transition: all 500ms ease;
   max-height: 280px;
+}
+.secProfiles .divImgFront .imgSub {
+  position: fixed;
 }
 .secProfiles .divImgFront div {
   width: 100%;
@@ -2483,6 +2487,7 @@ nav .divNav.mostrar {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 280px;
 }
 .secEditProfile .divImgFront span {
   position: fixed;
@@ -2497,6 +2502,9 @@ nav .divNav.mostrar {
   -webkit-mask-image: linear-gradient(transparent, #fafafa 80%, transparent);
   transition: all 500ms ease;
   max-height: 280px;
+}
+.secEditProfile .divImgFront .imgSub {
+  position: fixed;
 }
 .secEditProfile .divImgFront div {
   width: 100%;
@@ -2854,6 +2862,7 @@ nav .divNav.mostrar {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 280px;
 }
 .secMeet .divImgFront span {
   position: fixed;
@@ -2868,6 +2877,9 @@ nav .divNav.mostrar {
   -webkit-mask-image: linear-gradient(transparent, #fafafa 80%, transparent);
   transition: all 500ms ease;
   max-height: 280px;
+}
+.secMeet .divImgFront .imgSub {
+  position: fixed;
 }
 .secMeet .divImgFront div {
   width: 100%;
@@ -3051,7 +3063,7 @@ nav .divNav.mostrar {
   border-radius: 0.3125rem;
 }
 .secEditPersonalData .divContainer form input[type=password] {
-  max-width: 280px;
+  max-width: 240px;
 }
 .secEditPersonalData .divContainer form input[type=submit],
 .secEditPersonalData .divContainer form a {
@@ -3099,6 +3111,7 @@ nav .divNav.mostrar {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 280px;
 }
 .secRelations .divImgFront span {
   position: fixed;
@@ -3113,6 +3126,9 @@ nav .divNav.mostrar {
   -webkit-mask-image: linear-gradient(transparent, #fafafa 80%, transparent);
   transition: all 500ms ease;
   max-height: 280px;
+}
+.secRelations .divImgFront .imgSub {
+  position: fixed;
 }
 .secRelations .divImgFront div {
   width: 100%;
@@ -3573,6 +3589,7 @@ nav .divNav.mostrar {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 280px;
 }
 .secMessages .divImgFront span {
   position: fixed;
@@ -3587,6 +3604,9 @@ nav .divNav.mostrar {
   -webkit-mask-image: linear-gradient(transparent, #fafafa 80%, transparent);
   transition: all 500ms ease;
   max-height: 280px;
+}
+.secMessages .divImgFront .imgSub {
+  position: fixed;
 }
 .secMessages .divImgFront div {
   width: 100%;

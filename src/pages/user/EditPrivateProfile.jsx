@@ -51,7 +51,7 @@ export const EditPrivateProfile = () => {
                     (isLoadingPic) &&
                     <>
                         <span className="spin"></span>
-                        <img src="../../assets/no-pic-l.png" alt="Imagen de fallo de carga de imagenes" />
+                        <img className="imgSub" src="../../assets/no-pic-l.png" alt="Imagen de fallo de carga de imagenes" />
                     </>
                 }
                 <img onLoad={handleLoad} className="show" src="../../assets/bg-chat.png" alt="Imagen de portada de editar perfil" />

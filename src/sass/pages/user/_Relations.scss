@@ -13,8 +13,9 @@
         }
     }
 
-    .divImgFront {
+    .divImgFront {        
         @include img-front($img-front, center, 35, 0);
+        height: 280px;
     }
 
     .divGridPeople {

@@ -150,6 +150,9 @@
         @include img-blur();
         max-height: 280px;
     }
+    .imgSub{
+        position: fixed;
+    }
 
     div {
         width: 100%;
