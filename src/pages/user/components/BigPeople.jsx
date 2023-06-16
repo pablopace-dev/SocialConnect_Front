@@ -86,7 +86,7 @@ export const BigPeople = ({ _id, profile, email, privateProfile, dateMod, privat
 
             {
                 (show.chat) &&
-                <ChatBox _id={_id} name={name} />
+                <ChatBox _id={_id} name={name} handleOnOpenChat={handleOnChat} />
             }
 
         </section>

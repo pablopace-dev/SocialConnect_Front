@@ -17,6 +17,16 @@
             @include border($bg, 5);
             background-color: $bg-font-col;
             font-size: pixels-rem(20);
+
+            .btnClose {
+                @include boton-ico($chat-btn);
+                font-size: pixels-rem(18);
+                float: right;
+            }
+
+            .btnClose:hover {
+                @include boton-ico-hover();
+            }
         }
 
         .chatTable {
@@ -114,6 +124,21 @@
         .chatTable {
             height: 420px;
             max-height: 420px;
+        }
+    }
+}
+
+
+@media screen and ($bp-mobile-landscape) {
+
+    .divChatBox.fromFriends {
+        min-width: 320px;
+
+        .gridChatContainer {
+            .chatTable {
+                height: 500px;
+                max-height: 500px;
+            }
         }
     }
 }

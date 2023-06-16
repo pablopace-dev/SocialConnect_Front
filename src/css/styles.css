@@ -318,7 +318,7 @@ nav .divFriends .secUserFriends .divBtnsChat button:hover {
 nav .divChat {
   position: absolute;
   right: 0;
-  transform: translate3d(-150%, 0px, 0px);
+  transform: translate3d(0px, -120%, 0px);
   transition: transform 0.2s cubic-bezier(0.4, 1.04, 0.72, 0.98) 0s;
   z-index: 1001;
 }
@@ -342,6 +342,19 @@ nav .divChat .divChatBox .gridChatContainer .pChatName {
   border-radius: 0.3125rem;
   background-color: rgb(140, 224, 252);
   font-size: 1.25rem;
+}
+nav .divChat .divChatBox .gridChatContainer .pChatName .btnClose {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(103, 141, 0);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.125rem;
+  float: right;
+}
+nav .divChat .divChatBox .gridChatContainer .pChatName .btnClose:hover {
+  color: rgb(11, 124, 177);
 }
 nav .divChat .divChatBox .gridChatContainer .chatTable {
   display: block;
@@ -429,6 +442,15 @@ nav .divChat .divChatBox.fromFriends .gridChatContainer .chatTable {
   height: 420px;
   max-height: 420px;
 }
+@media screen and (min-width:640px) {
+  nav .divChat .divChatBox.fromFriends {
+    min-width: 320px;
+  }
+  nav .divChat .divChatBox.fromFriends .gridChatContainer .chatTable {
+    height: 500px;
+    max-height: 500px;
+  }
+}
 nav .divChat.mostrarChat {
   transform: translate3d(0px, 0px, 0px);
 }
@@ -475,6 +497,12 @@ nav .divNav.mostrar {
   transform: translate3d(0px, 0px, 0px);
 }
 
+@media screen and (min-width:640px) {
+  nav .divFriends {
+    height: fit-content;
+    max-height: 860px;
+  }
+}
 .secHomePage {
   display: flex;
   align-items: center;
@@ -3377,6 +3405,19 @@ nav .divNav.mostrar {
   background-color: rgb(140, 224, 252);
   font-size: 1.25rem;
 }
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer .pChatName .btnClose {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(103, 141, 0);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.125rem;
+  float: right;
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer .pChatName .btnClose:hover {
+  color: rgb(11, 124, 177);
+}
 .secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer .chatTable {
   display: block;
   border: 1px solid rgb(63, 139, 197);
@@ -3462,6 +3503,15 @@ nav .divNav.mostrar {
 .secRelations .divGridPeople .secBigPeople .divChatBox.fromFriends .gridChatContainer .chatTable {
   height: 420px;
   max-height: 420px;
+}
+@media screen and (min-width:640px) {
+  .secRelations .divGridPeople .secBigPeople .divChatBox.fromFriends {
+    min-width: 320px;
+  }
+  .secRelations .divGridPeople .secBigPeople .divChatBox.fromFriends .gridChatContainer .chatTable {
+    height: 500px;
+    max-height: 500px;
+  }
 }
 .secRelations .divGridPeople .secBigPeople .divChatBox {
   width: 98%;

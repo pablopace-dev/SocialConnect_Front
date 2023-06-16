@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 import { useSocketStore } from "../../../hooks/useSocketStore";
 
 
-export const ChatBox = ({ _id, name, fromFriends = false }) => {
+export const ChatBox = ({ _id, name, fromFriends = false, handleOnOpenChat }) => {
 
 
   const { chats, chatActive } = useSelector((state) => state.socket);
@@ -121,7 +121,6 @@ export const ChatBox = ({ _id, name, fromFriends = false }) => {
   };
 
 
-
   const getIndex = () => {
 
     // const ind = openChat(user._id, _id);
@@ -164,7 +163,13 @@ export const ChatBox = ({ _id, name, fromFriends = false }) => {
     <div className={`${(!fromFriends) ? 'show' : 'fromFriends'} divChatBox`} >
 
       <div className="gridChatContainer">
-        <p ref={submitRef} className="pChatName">{name}</p>
+        <p ref={submitRef} className="pChatName">{name}
+          <button
+            onClick={handleOnOpenChat}
+            className="btnClose">
+            <i className="fa-regular fa-circle-xmark"></i>
+          </button>
+        </p>
 
         <section className="chatTable" >
           {(chat) ?

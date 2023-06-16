@@ -131,8 +131,8 @@ export const NavBarUser = () => {
             </div>
 
 
-            <div className={`divChat ${(show?._id && showChat )  ? 'mostrarChat' : ''}`}>
-                <ChatBox key={Date.now()} {...show} fromFriends={true} />
+            <div className={`divChat ${(show?._id && showChat) ? 'mostrarChat' : ''}`}>
+                <ChatBox key={Date.now()} {...show} fromFriends={true} handleOnOpenChat={handleOnOpenChat} />
             </div>
 
             <div className={`divNav ${(showMenu) ? 'mostrar' : ''}`}>

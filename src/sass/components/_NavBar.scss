@@ -71,13 +71,11 @@ nav {
         z-index: 1002;
     }
 
-    .divChat {                
-        position: absolute;    
+    .divChat {
+        position: absolute;
         right: 0;
-        // overflow-y: scroll;
-        // overscroll-behavior: contain;
 
-        transform: translate3d(-150%, 0px, 0px);
+        transform: translate3d(0px, -120%, 0px);
         transition: transform 0.20s cubic-bezier(0.4, 1.04, 0.72, 0.98) 0s;
         z-index: 1001;
 
@@ -86,11 +84,10 @@ nav {
 
 
     .divChat.mostrarChat {
-        // position: absolute;
         transform: translate3d(0px, 0px, 0px);
     }
 
-    .divFriends.mostrarFriends {        
+    .divFriends.mostrarFriends {
         transform: translate3d(0px, 0px, 0px);
     }
 
@@ -136,5 +133,15 @@ nav {
     .divNav.mostrar {
         transform: translate3d(0px, 0px, 0px);
     }
+}
 
+@media screen and ($bp-mobile-landscape) {
+
+    nav {
+        .divFriends {
+            height: fit-content;
+            max-height: 860px;
+
+        }
+    }
 }
