@@ -1,5 +1,5 @@
 nav {
-    background-color: $bg-nav;
+    background-color: $nav-bg;
     box-shadow: 0 2px 1px $border;
 
     .divNavContainer {
@@ -94,16 +94,16 @@ nav {
     .divNav {
         position: absolute;
         padding: pixels-rem(5);
-        box-shadow: 0 4px 5px $border;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4);
         font-size: pixels-rem(17);
         font-weight: 400;
         width: 100%;
-        max-width: 410px;
-        background-color: $bg;
+        max-width: 280px;
+        background-color: $nav-menu-bg;
 
         transform: translate3d(-105%, 0px, 0px);
         transition: transform 0.20s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
-        z-index: 1001;
+        z-index: 1003;
 
 
         ul {
@@ -125,7 +125,6 @@ nav {
 
             a:hover {
                 @include boton-hover();
-                box-shadow: 0 0 3px black;
             }
         }
     }

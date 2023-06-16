@@ -3,7 +3,8 @@ $bg-font-col: rgb(140, 224, 252);
 
 $font-col: rgb(21, 41, 60);
 
-$bg-nav: rgb(63, 139, 197);
+$nav-bg: rgb(63, 139, 197);
+$nav-menu-bg: rgba(63, 139, 197, 0.9);
 $nav-font-col: rgb(109, 210, 247);
 $nav-font-col-act: rgb(5, 28, 71);
 $nav-font-hover: rgb(16, 63, 75);
@@ -11,7 +12,7 @@ $nav-bg-hover: rgb(134, 184, 196);
 $nav-btn: rgb(250, 250, 250);
 
 $button-bg: rgb(4, 134, 255);
-$button: rgb(250, 250, 250);
+$button: rgba(250, 250, 250, 0.8);
 $button-link: rgb(207, 4, 4);
 $button-multi: rgb(230, 243, 248);
 $button-multi-bg: rgb(39, 150, 255);
