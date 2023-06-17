@@ -195,7 +195,6 @@ export const ChatBox = ({ _id, name, fromFriends = false, handleOnOpenChat }) =>
         <form onSubmit={handleOnSubmit}>
           <input
             autoComplete="off"
-            autoFocus
             type="text"
             name="text"
             placeholder="Escribe algo..." />
