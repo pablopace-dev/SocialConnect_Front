@@ -1,0 +1,24 @@
+// @import './base/settings';
+
+.footer {
+    height: $footer-height;
+    background-color: $bg;
+
+    @include flexbox(left, row, 0);
+
+    p {
+        font-size: pixels-rem(12);
+        color: $bg-font-col;
+        margin-left: pixels-rem(5);
+
+        a {
+            text-decoration: none;
+            color: $bg-font-col;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: yellowgreen;
+        }
+    }
+}

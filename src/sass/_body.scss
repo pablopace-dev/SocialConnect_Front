@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: pixels-rem(15);
+    font-family: 'Roboto', sans-serif;
+    min-width: 360px;
+    background-color: $body-bg;    
+    max-width: 100vw;
+}
+
+
+@media screen and ($bp-mobile-landscape) {
+    body {
+        // font-size: pixels-rem(14);
+    }
+}
+
+@media screen and ($bp-tablet-landscape) {
+    body {
+        // font-size: pixels-rem(16);
+    }
+}

@@ -1,0 +1,79 @@
+import { useSelector } from 'react-redux';
+import { fetchRemoveFriend } from '../helpers/fetchDataUser';
+import { useState } from 'react';
+import { useAuthStore } from '../../../hooks/useAuthStore';
+import { getUserData } from '../helpers/getUserData';
+
+export const useFriends = () => {
+
+    const { loadUser } = useAuthStore();
+    const { profiles } = useSelector((state) => state.users);
+    const { user } = useSelector((state) => state.auth);
+    const [msg, setMsg] = useState(null);
+
+    const [friends, setFriends] = useState([]);
+    const [show, setShow] = useState({});
+
+
+    const handleGetFriends = async () => {
+
+        const newFriends = [];
+        user.friends.map(fr => {
+            const userData = getUserData(fr, profiles);
+            newFriends.push({
+                _id: fr,
+                ...userData
+            })
+        })
+
+        setFriends(newFriends);
+
+    }
+
+
+    const handleOnOpenChat = async (friendID, show) => {
+
+        // const newFriends = [...friends];
+
+        // newFriends.map(fr => fr._id == friendID ? fr.show = show : fr.show = fr.show)
+        // setFriends(newFriends);
+        console.log('fr', friendID, show);
+        if (show) {
+
+            const fr = friends.find(fr => fr._id === friendID);
+            setShow(fr);
+
+
+        } else
+            setShow({})
+    };
+
+
+    const handleRemoveFriend = async (friendID) => {
+
+        const response = await fetchRemoveFriend(user._id, friendID);
+
+        if (!response.ok) {
+            setMsg('Algo ha ido mal al eliminar esta persona...');
+            return
+        }
+
+        setMsg('Se ha eliminado relación...');
+
+        setTimeout(() => {
+            setMsg(null);
+        }, 3000)
+
+        await loadUser(user.email);
+    };
+
+
+    return {
+        handleRemoveFriend,
+        handleGetFriends,
+        handleOnOpenChat,
+        friends,
+        show,
+        msg
+    };
+};

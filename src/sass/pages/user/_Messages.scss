@@ -1,0 +1,73 @@
+.secMessages {
+    @include container(95%, 0);
+
+    .divRoot {
+        margin-top: pixels-rem(15);
+        font-weight: 400;
+
+        a {
+            text-decoration: none;
+            color: $font-col;
+            font-weight: 500;
+        }
+    }
+
+    .divImgFront {
+        @include img-front($img-front, center, 35, 0);
+        height: 280px;
+    }
+
+    h3 {
+        font-size: pixels-rem(18);
+        font-weight: 400;
+        background-color: $nav-font-col;
+        text-align: center;
+        box-shadow: 0 0 10px $prof-title-bg;
+        color: $bg;
+        margin: pixels-rem(30) 0;
+        padding: pixels-rem(5);
+        border-bottom: 1px dotted $bg;
+        border-radius: pixels-rem(5);
+    }
+
+    .divCont {
+        @include grid(0.3fr 0.7fr, center, start, 2, 0);
+        border: 1px solid black;
+
+        .divChild1 {
+            @import './components/LittlePeople';
+            grid-column: 1 / 2;
+            @include flexbox(center, column, 0);
+
+
+            button {
+                width: 90%;
+                @include boton-multi();
+                padding: pixels-rem(5);
+                margin-bottom: pixels-rem(10);
+                font-size: pixels-rem(15);
+
+                i {
+                    color: $error-bad;
+                }
+            }
+
+            button:hover {
+                @include boton-multi-hover();
+            }
+        }
+
+
+        // .divChild2 {
+        @import './components/Msgs';
+
+        .divMsgs {
+            grid-column: 2 / 3;
+            // grid-row: 1 / -1;                
+        }
+
+        //     @include flexbox(start, column, 0);
+        // }
+    }
+
+}

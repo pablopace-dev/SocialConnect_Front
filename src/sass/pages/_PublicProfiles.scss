@@ -1,0 +1,17 @@
+// @import '../base/settings';
+
+.secPublicProfiles {
+
+    @include container(90%, 0);
+    color: $font-col;
+
+    h2 {
+        margin-top: pixels-rem(15);
+        padding: pixels-rem(15);
+        font-size: pixels-rem(25);
+        font-weight: 300;
+    }
+
+    @import './user/components/Profile';
+
+}

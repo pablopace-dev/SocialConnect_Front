@@ -1,0 +1,31 @@
+.secUserDetailAdmin {
+
+    @include container(95%, 0);
+
+    .arrow {
+        display: block;
+        font-size: pixels-rem(20);
+        text-decoration: none;
+        margin-top: pixels-rem(10);
+        color: $bg;
+
+        i {
+            font-size: pixels-rem(25);
+        }
+    }
+
+    @import './components/User';
+
+    h3 {
+        color: $bg;
+        font-size: pixels-rem(22);
+    }
+
+    h4 {
+        color: $prof-text;
+        font-size: pixels-rem(18);
+        padding: pixels-rem(10) pixels-rem(5);
+    }
+
+    @import '../user/components/Profile';
+}

@@ -1,0 +1,3927 @@
+@charset "UTF-8";
+.loader {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto;
+  position: relative;
+  color: rgb(63, 139, 197);
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite;
+}
+
+.loader-light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto;
+  position: relative;
+  color: rgb(140, 224, 252);
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite;
+}
+
+.msg {
+  animation: card 1s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+}
+
+.fall {
+  animation: drop 1s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+}
+
+.spin {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 5px solid #18a4ce;
+  border-right: 5px solid transparent;
+  animation: rotation 1s linear infinite;
+}
+
+.show {
+  animation: appear 1s ease-in-out;
+}
+
+.unfold {
+  height: 100%;
+  opacity: 1;
+}
+
+.fold {
+  height: 0;
+  opacity: 0;
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: 14px 0 0 -2px, 38px 0 0 -2px, -14px 0 0 -2px, -38px 0 0 -2px;
+  }
+  25% {
+    box-shadow: 14px 0 0 -2px, 38px 0 0 -2px, -14px 0 0 -2px, -38px 0 0 2px;
+  }
+  50% {
+    box-shadow: 14px 0 0 -2px, 38px 0 0 -2px, -14px 0 0 2px, -38px 0 0 -2px;
+  }
+  75% {
+    box-shadow: 14px 0 0 2px, 38px 0 0 -2px, -14px 0 0 -2px, -38px 0 0 -2px;
+  }
+  100% {
+    box-shadow: 14px 0 0 -2px, 38px 0 0 2px, -14px 0 0 -2px, -38px 0 0 -2px;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes card {
+  0% {
+    transform: translate3d(0, -200%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes drop {
+  0% {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 0.9375rem;
+  font-family: "Roboto", sans-serif;
+  min-width: 360px;
+  background-color: #fafafa;
+  max-width: 100vw;
+}
+
+.header {
+  height: 4.6875rem;
+  background-color: rgb(63, 139, 197);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.7fr 0.3fr;
+  justify-items: left;
+  align-items: center;
+  padding: 0rem;
+  gap: 0rem;
+}
+.header div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: row;
+  gap: 0.625rem;
+  margin-left: 0.3125rem;
+}
+.header div.divLogo,
+.header .divUserImage {
+  width: 2.1875rem;
+  height: 2.1875rem;
+}
+.header div.divLogo img,
+.header .divUserImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.header p {
+  font-size: 1.5625rem;
+  font-weight: 400;
+  color: rgb(140, 224, 252);
+}
+.header .divUserImage {
+  justify-self: right;
+  margin-right: 0.3125rem;
+}
+.header .divUserImage img {
+  border: 1px solid rgb(140, 224, 252);
+  border-radius: 6.25rem;
+}
+
+nav {
+  background-color: rgb(63, 139, 197);
+  box-shadow: 0 2px 1px rgb(155, 151, 151);
+}
+nav .divNavContainer {
+  display: grid;
+  grid-template-columns: 0.25fr 0.4fr 0.35fr;
+  justify-items: left;
+  align-items: center;
+  padding: 0rem;
+  gap: 0rem;
+  height: 2.1875rem;
+  padding-left: 0.3125rem;
+}
+nav .divNavContainer .divBtnMenu {
+  width: 0.9375rem;
+}
+nav .divNavContainer .divBtnMenu button {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(250, 250, 250);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.375rem;
+}
+nav .divNavContainer .divBtnMenu button:hover {
+  color: rgb(11, 124, 177);
+}
+nav .divNavContainer .divNotifications {
+  justify-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: right;
+  align-items: center;
+  padding: 0rem;
+  gap: 0.3125rem;
+  margin-right: 0.3125rem;
+}
+nav .divNavContainer .divNotifications div {
+  width: 1.5625rem;
+  height: 1.5625rem;
+}
+nav .divNavContainer .divNotifications div img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: 1px solid rgb(140, 224, 252);
+  border-radius: 6.25rem;
+}
+nav .divNavContainer .divStatus {
+  grid-column: 3/4;
+  justify-self: right;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: right;
+  align-items: center;
+  padding: 0rem;
+  gap: 0.125rem;
+  margin-right: 0.3125rem;
+}
+nav .divNavContainer .divStatus div {
+  width: 1.5625rem;
+  height: 1.5625rem;
+}
+nav .divNavContainer .divStatus div img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: 1px solid rgb(140, 224, 252);
+  border-radius: 6.25rem;
+}
+nav .divFriends {
+  margin-top: 0.0625rem;
+  position: absolute;
+  padding: 0.0625rem;
+  height: 540px;
+  overflow-y: scroll;
+  overscroll-behavior: contain;
+  transform: translate3d(-105%, 0px, 0px);
+  transition: transform 0.2s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+  z-index: 1002;
+}
+nav .divFriends .secUserFriends {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-top-right-radius: 0.9375rem;
+  border-bottom-right-radius: 0.9375rem;
+  border: 1px solid rgb(79, 210, 242);
+  width: 100px;
+}
+nav .divFriends .secUserFriends .artFriends {
+  width: 100%;
+}
+nav .divFriends .secUserFriends .artFriends .divLittlePeople {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0rem;
+  background-color: transparent;
+  padding: 0.625rem;
+}
+nav .divFriends .secUserFriends .artFriends .divLittlePeople .pLPName {
+  text-align: center;
+  color: rgb(9, 68, 136);
+  font-size: 0.875rem;
+  margin-bottom: 0.3125rem;
+}
+nav .divFriends .secUserFriends .artFriends .divLittlePeople .pLPDate {
+  text-align: center;
+  color: rgb(2, 92, 83);
+  font-size: 0.75rem;
+  margin-bottom: 0.3125rem;
+}
+nav .divFriends .secUserFriends .artFriends .divLittlePeople .pLPSender,
+nav .divFriends .secUserFriends .artFriends .divLittlePeople .pLPReceiver {
+  text-align: center;
+  color: rgb(2, 92, 83);
+  font-size: 1.0625rem;
+  margin-bottom: 0.3125rem;
+}
+nav .divFriends .secUserFriends .artFriends .divLittlePeople div {
+  width: 3.125rem;
+  height: 3.125rem;
+}
+nav .divFriends .secUserFriends .artFriends .divLittlePeople div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 6.25rem;
+}
+nav .divFriends .secUserFriends .artFriends .divLittlePeople .pLPName {
+  color: rgb(224, 224, 224);
+}
+nav .divFriends .secUserFriends .divBtnsChat {
+  text-align: center;
+}
+nav .divFriends .secUserFriends .divBtnsChat button {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(177, 238, 127);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+nav .divFriends .secUserFriends .divBtnsChat button:hover {
+  color: rgb(11, 124, 177);
+}
+nav .divChat {
+  position: absolute;
+  right: 0;
+  transform: translate3d(0px, -120%, 0px);
+  transition: transform 0.2s cubic-bezier(0.4, 1.04, 0.72, 0.98) 0s;
+  z-index: 1001;
+}
+nav .divChat .divChatBox {
+  padding-bottom: 0.0625rem;
+}
+nav .divChat .divChatBox .gridChatContainer {
+  width: 98%;
+  margin: 0rem auto;
+  margin: 0.625rem auto;
+  background-color: rgb(219, 237, 253);
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.3125rem;
+  box-shadow: 2px 2px 10px rgb(155, 151, 151);
+  border-radius: 0.625rem;
+  padding: 0.3125rem;
+}
+nav .divChat .divChatBox .gridChatContainer .pChatName {
+  padding: 0.4375rem;
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 0.3125rem;
+  background-color: rgb(140, 224, 252);
+  font-size: 1.25rem;
+}
+nav .divChat .divChatBox .gridChatContainer .pChatName .btnClose {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(103, 141, 0);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.125rem;
+  float: right;
+}
+nav .divChat .divChatBox .gridChatContainer .pChatName .btnClose:hover {
+  color: rgb(11, 124, 177);
+}
+nav .divChat .divChatBox .gridChatContainer .chatTable {
+  display: block;
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 0.3125rem;
+  min-height: 120px;
+  width: 98%;
+  margin: 0.3125rem auto;
+  background-color: rgb(247, 251, 255);
+  max-height: 220px;
+  padding: 0.3125rem;
+  overflow-y: scroll;
+}
+nav .divChat .divChatBox .gridChatContainer .chatTable .chLeft {
+  color: rgb(61, 148, 45);
+  text-align: left;
+  margin-left: 0.375rem;
+}
+nav .divChat .divChatBox .gridChatContainer .chatTable .chRight {
+  color: rgb(78, 78, 78);
+  text-align: right;
+  margin-right: 0.375rem;
+}
+nav .divChat .divChatBox .gridChatContainer .chatTable .chRight.chat-name {
+  color: rgb(53, 48, 48);
+}
+nav .divChat .divChatBox .gridChatContainer .chatTable .chLeft.chat-name {
+  color: rgb(25, 104, 12);
+}
+nav .divChat .divChatBox .gridChatContainer .chatTable .chat-spc {
+  padding-bottom: 0.3125rem;
+}
+nav .divChat .divChatBox .gridChatContainer .chatTable .lastMsg {
+  padding-bottom: 0.9375rem;
+  color: rgb(247, 251, 255);
+}
+nav .divChat .divChatBox .gridChatContainer .chatTable .chat-name {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin: 0;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+nav .divChat .divChatBox .gridChatContainer .chatTable .chat-date {
+  font-size: 0.5rem;
+  color: rgb(206, 105, 105);
+  font-weight: 300;
+}
+nav .divChat .divChatBox .gridChatContainer .chatTable .chat-msg {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  padding-top: 0.1875rem;
+  padding-bottom: 0.125rem;
+}
+nav .divChat .divChatBox .gridChatContainer form {
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 0.3125rem;
+  background-color: rgb(140, 224, 252);
+  display: grid;
+  grid-template-columns: 0.75fr 0.25fr;
+  justify-items: left;
+  align-items: center;
+  padding: 0.125rem;
+  gap: 0.125rem;
+}
+nav .divChat .divChatBox .gridChatContainer form input {
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.3125rem;
+  margin: 0.125rem 0;
+  padding: 0.375rem 0.3125rem;
+  width: 100%;
+}
+nav .divChat .divChatBox .gridChatContainer form input[type=submit] {
+  background-color: rgb(4, 134, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgba(250, 250, 250, 0.8);
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+nav .divChat .divChatBox.fromFriends {
+  min-width: 260px;
+}
+nav .divChat .divChatBox.fromFriends .gridChatContainer .chatTable {
+  height: 420px;
+  max-height: 420px;
+}
+@media screen and (min-width:640px) {
+  nav .divChat .divChatBox.fromFriends {
+    min-width: 320px;
+  }
+  nav .divChat .divChatBox.fromFriends .gridChatContainer .chatTable {
+    height: 500px;
+    max-height: 500px;
+  }
+}
+nav .divChat.mostrarChat {
+  transform: translate3d(0px, 0px, 0px);
+}
+nav .divFriends.mostrarFriends {
+  transform: translate3d(0px, 0px, 0px);
+}
+nav .divNav {
+  position: absolute;
+  padding: 0.3125rem;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  width: 100%;
+  max-width: 280px;
+  background-color: rgba(63, 139, 197, 0.9);
+  transform: translate3d(-105%, 0px, 0px);
+  transition: transform 0.2s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+  z-index: 1003;
+}
+nav .divNav ul {
+  list-style: none;
+}
+nav .divNav ul a {
+  padding: 0.3125rem;
+  display: block;
+  text-decoration: none;
+  color: rgb(109, 210, 247);
+  border-radius: 0.3125rem;
+  transition: all 300ms;
+}
+nav .divNav ul a.isActive {
+  color: rgb(5, 28, 71);
+  border: 1px solid rgb(140, 224, 252);
+  border-radius: 0.3125rem;
+}
+nav .divNav ul a:hover {
+  color: rgb(4, 134, 255);
+  background-color: rgba(250, 250, 250, 0.8);
+  transform: translate(0, -3px);
+  box-shadow: 0 3px 5px rgb(63, 139, 197);
+}
+nav .divNav.mostrar {
+  transform: translate3d(0px, 0px, 0px);
+}
+
+@media screen and (min-width:640px) {
+  nav .divFriends {
+    height: fit-content;
+    max-height: 860px;
+  }
+}
+.secHomePage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0rem;
+  min-height: calc(100vh - 8.75rem);
+}
+.secHomePage div:first-child {
+  position: relative;
+}
+.secHomePage div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.secHomePage div:first-child div {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(21, 41, 60);
+}
+.secHomePage div:first-child div h1 {
+  padding: 0rem;
+  font-size: 2.8125rem;
+  text-align: center;
+}
+.secHomePage div:first-child img {
+  opacity: 0.9;
+  filter: blur(1px);
+  mask-image: linear-gradient(transparent, #fafafa 80%, transparent);
+  -webkit-mask-image: linear-gradient(transparent, #fafafa 80%, transparent);
+  transition: all 500ms ease;
+  max-width: 760px;
+}
+.secHomePage div:first-child img:hover {
+  filter: blur(0);
+}
+.secHomePage div:first-child div h1 {
+  font-weight: 700;
+  text-shadow: 0 0 5px rgb(140, 224, 252);
+}
+.secHomePage div:first-child div h1 a {
+  text-decoration: none;
+  color: rgb(21, 41, 60);
+}
+.secHomePage div:first-child div h1 a:hover {
+  color: rgb(140, 224, 252);
+  text-shadow: 0 0 5px rgb(63, 139, 197);
+}
+
+.secPublicProfiles {
+  width: 90%;
+  margin: 0rem auto;
+  color: rgb(21, 41, 60);
+}
+.secPublicProfiles h2 {
+  margin-top: 0.9375rem;
+  padding: 0.9375rem;
+  font-size: 1.5625rem;
+  font-weight: 300;
+}
+.secPublicProfiles .secProfile,
+.secPublicProfiles .secPrivateProfile {
+  background-image: linear-gradient(transparent, rgb(228, 245, 253), transparent);
+  border-bottom: 1px dotted rgb(63, 139, 197);
+  max-width: 760px;
+  margin: 1.875rem auto 4.375rem;
+}
+.secPublicProfiles .secProfile .profHeader .divUserName,
+.secPublicProfiles .secPrivateProfile .profHeader .divUserName {
+  border-radius: 0.625rem;
+  background-image: linear-gradient(to right, rgb(6, 173, 195), transparent);
+  height: 4.6875rem;
+  box-shadow: 0px 3px 10px black;
+}
+.secPublicProfiles .secProfile .profHeader .divUserName h3,
+.secPublicProfiles .secPrivateProfile .profHeader .divUserName h3 {
+  font-size: 1.375rem;
+  font-weight: 500;
+  text-indent: 0.3125rem;
+  color: rgb(9, 68, 136);
+  padding: 0.9375rem;
+}
+.secPublicProfiles .secProfile .profHeader .divUserName p,
+.secPublicProfiles .secPrivateProfile .profHeader .divUserName p {
+  padding: 0.3125rem;
+  margin-right: 0.3125rem;
+  color: rgb(2, 92, 83);
+  font-style: italic;
+  text-align: right;
+  font-size: 0.6875rem;
+}
+.secPublicProfiles .secProfile .profHeader .divUserImage,
+.secPublicProfiles .secPrivateProfile .profHeader .divUserImage {
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  transform: translate(-0.3125rem, -2.8125rem);
+}
+.secPublicProfiles .secProfile .profHeader .divUserImage a,
+.secPublicProfiles .secPrivateProfile .profHeader .divUserImage a {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: right;
+  text-decoration: none;
+  border-radius: 100%;
+  box-shadow: 0px 3px 10px black;
+  width: 5rem;
+  height: 5rem;
+}
+.secPublicProfiles .secProfile .profHeader .divUserImage a img,
+.secPublicProfiles .secPrivateProfile .profHeader .divUserImage a img {
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 6.25rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  transition: all 200ms ease-out;
+}
+.secPublicProfiles .secProfile .profHeader .divUserImage a img:hover,
+.secPublicProfiles .secPrivateProfile .profHeader .divUserImage a img:hover {
+  box-shadow: 0px 0px 1px black;
+  transform: scale(1.1, 1.1);
+}
+.secPublicProfiles .secProfile .profHeader .divUserImage button,
+.secPublicProfiles .secPrivateProfile .profHeader .divUserImage button {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(7, 72, 102);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 0.625rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: end;
+  justify-self: left;
+  font-size: 0.9375rem;
+}
+.secPublicProfiles .secProfile .profHeader .divUserImage button i,
+.secPublicProfiles .secPrivateProfile .profHeader .divUserImage button i {
+  font-size: 1.25rem;
+}
+.secPublicProfiles .secProfile .profHeader .divUserImage button:hover,
+.secPublicProfiles .secPrivateProfile .profHeader .divUserImage button:hover {
+  color: rgb(11, 124, 177);
+}
+.secPublicProfiles .secProfile .profMain,
+.secPublicProfiles .secPrivateProfile .profMain {
+  padding-bottom: 1.25rem;
+}
+.secPublicProfiles .secProfile .profMain .divProfile h3,
+.secPublicProfiles .secPrivateProfile .profMain .divProfile h3 {
+  font-weight: 300;
+  text-align: center;
+}
+.secPublicProfiles .secProfile .profMain .divProfile article .pText,
+.secPublicProfiles .secPrivateProfile .profMain .divProfile article .pText {
+  margin-bottom: 0.9375rem;
+  text-align: left;
+  text-indent: 0.625rem;
+  font-size: 0.9375rem;
+  color: rgb(25, 93, 129);
+}
+.secPublicProfiles .secProfile .profMain .divProfile article .pTitle,
+.secPublicProfiles .secPrivateProfile .profMain .divProfile article .pTitle {
+  margin: 0 auto 0.9375rem;
+  width: 80%;
+  color: rgb(88, 91, 91);
+  background-color: rgb(242, 242, 242);
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  padding: 0.625rem 0.3125rem;
+  border-radius: 0.625rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.secPublicProfiles .secProfile .profMain .divProfile article .pParagraph,
+.secPublicProfiles .secPrivateProfile .profMain .divProfile article .pParagraph {
+  margin: 0 auto 0.9375rem;
+  margin-top: 0.3125rem;
+  font-style: italic;
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgb(57, 58, 61);
+}
+.secPublicProfiles .secProfile .profMain .divProfile article .divImageContainer,
+.secPublicProfiles .secPrivateProfile .profMain .divProfile article .divImageContainer {
+  width: 98%;
+  margin: 0rem auto;
+  margin: 0 auto 0.9375rem;
+  border-radius: 0.625rem;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0 0 2px rgb(41, 41, 41);
+  padding: 0.625rem;
+}
+.secPublicProfiles .secProfile .profMain .divProfile article .divImageContainer div,
+.secPublicProfiles .secPrivateProfile .profMain .divProfile article .divImageContainer div {
+  height: 15.625rem;
+  margin: 0 auto;
+  max-width: 23.75rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 4px rgb(41, 41, 41);
+}
+.secPublicProfiles .secProfile .profMain .divProfile article .divImageContainer div img,
+.secPublicProfiles .secPrivateProfile .profMain .divProfile article .divImageContainer div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.625rem;
+}
+.secPublicProfiles .secPrivateProfile {
+  background-image: linear-gradient(transparent, rgb(255, 230, 249), transparent);
+}
+.secPublicProfiles .secPrivateProfile .profHeader .divUserName {
+  background-image: linear-gradient(to right, rgb(247, 155, 224), transparent);
+}
+
+.secLogin,
+.secRegister {
+  color: rgb(21, 41, 60);
+}
+.secLogin h2,
+.secRegister h2 {
+  padding: 3.125rem 1.5625rem 1.875rem;
+  font-weight: 400;
+}
+.secLogin .errorForm,
+.secRegister .errorForm {
+  color: rgb(177, 8, 8);
+  text-align: center;
+  font-size: 1.125rem;
+  margin-top: 0.9375rem;
+}
+.secLogin .divContainer,
+.secRegister .divContainer {
+  width: 85%;
+  margin: 0rem auto;
+  max-width: 440px;
+}
+.secLogin .divContainer form,
+.secRegister .divContainer form {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 0rem;
+  gap: 0.9375rem;
+}
+.secLogin .divContainer form label,
+.secRegister .divContainer form label {
+  display: none;
+}
+.secLogin .divContainer form input[type=submit]:hover,
+.secLogin .divContainer form input[type=reset]:hover,
+.secRegister .divContainer form input[type=submit]:hover,
+.secRegister .divContainer form input[type=reset]:hover {
+  color: rgb(4, 134, 255);
+  background-color: rgba(250, 250, 250, 0.8);
+  transform: translate(0, -3px);
+  box-shadow: 0 3px 5px rgb(63, 139, 197);
+}
+.secLogin .divContainer form .errorLogin,
+.secLogin .divContainer form .errorRegister,
+.secRegister .divContainer form .errorLogin,
+.secRegister .divContainer form .errorRegister {
+  color: rgb(10, 17, 22);
+  text-align: center;
+}
+.secLogin .divContainer .divGoogle,
+.secRegister .divContainer .divGoogle {
+  margin-top: 1.875rem;
+  text-align: center;
+  font-weight: 300;
+}
+.secLogin .divContainer .divGoogle button,
+.secRegister .divContainer .divGoogle button {
+  width: 90%;
+  margin: 0rem auto;
+  max-width: 240px;
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 0.9375rem;
+  cursor: pointer;
+  background-color: whitesmoke;
+  padding: 0.625rem;
+  margin-top: 0.625rem;
+  box-shadow: 2px 2px 5px black;
+}
+.secLogin .divContainer .divGoogle button i,
+.secRegister .divContainer .divGoogle button i {
+  color: green;
+  font-size: 1rem;
+}
+.secLogin .divContainer .divGoogle p,
+.secRegister .divContainer .divGoogle p {
+  margin-top: 1.5625rem;
+}
+.secLogin .divContainer .divGoogle p a,
+.secRegister .divContainer .divGoogle p a {
+  text-decoration: none;
+  color: rgb(207, 4, 4);
+}
+.secLogin .divContainer .divGoogle p a:hover,
+.secRegister .divContainer .divGoogle p a:hover {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.secLogin .divContainer form input:not([type=submit]) {
+  padding: 0.1875rem;
+  width: 80%;
+  margin: 0rem auto;
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 0.3125rem;
+  padding: 0.3125rem;
+}
+.secLogin .divContainer form input[type=submit] {
+  width: 60%;
+  margin: 0rem auto;
+  background-color: rgb(4, 134, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgba(250, 250, 250, 0.8);
+  cursor: pointer;
+  transition: all 300ms ease;
+  padding: 0.4375rem 0.3125rem;
+  margin-top: 0.625rem;
+}
+
+.secRegister form input[type=text],
+.secRegister form input[type=password] {
+  width: 80%;
+  margin: 0rem auto;
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 0.3125rem;
+  padding: 0.3125rem;
+}
+.secRegister form input[type=file] {
+  padding: 0.1875rem;
+  background-color: rgb(4, 134, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgba(250, 250, 250, 0.8);
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.secRegister form .divFormBtns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 0.3125rem;
+  gap: 0.3125rem;
+}
+.secRegister form .divFormBtns input[type=submit],
+.secRegister form .divFormBtns input[type=reset] {
+  background-color: rgb(4, 134, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgba(250, 250, 250, 0.8);
+  cursor: pointer;
+  transition: all 300ms ease;
+  padding: 0.4375rem 0.3125rem;
+  width: 8.4375rem;
+  margin-top: 0.625rem;
+}
+
+.secUsers {
+  width: 95%;
+  margin: 0rem auto;
+}
+.secUsers h2 {
+  font-size: 1.5625rem;
+  margin-top: 0.625rem;
+  font-weight: 300;
+  padding: 0.625rem;
+  border-bottom: 1px dotted rgb(63, 139, 197);
+}
+.secUsers .artUser {
+  border-bottom: 1px dotted rgb(63, 139, 197);
+  margin: 1.875rem 0 3.125rem;
+  background-image: linear-gradient(transparent, rgb(140, 224, 252), transparent);
+}
+.secUsers .artUser .divUserName {
+  border-radius: 0.625rem;
+  background-image: linear-gradient(to right, rgb(6, 173, 195), transparent);
+  height: 4.6875rem;
+  box-shadow: 0px 3px 10px black;
+}
+.secUsers .artUser .divUserName h3 {
+  font-size: 1.375rem;
+  text-indent: 0.3125rem;
+  color: rgb(63, 139, 197);
+  padding: 0.9375rem;
+}
+.secUsers .artUser .divUserName p {
+  padding: 0.3125rem;
+  margin-right: 0.3125rem;
+  color: rgb(2, 92, 83);
+  font-style: italic;
+  text-align: right;
+  font-size: 0.6875rem;
+}
+.secUsers .artUser .divUserImage {
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  transform: translate(-0.3125rem, -2.8125rem);
+}
+.secUsers .artUser .divUserImage a {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: right;
+  text-decoration: none;
+  border-radius: 100%;
+  box-shadow: 0px 3px 10px black;
+  width: 5rem;
+  height: 5rem;
+}
+.secUsers .artUser .divUserImage a img {
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 6.25rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  transition: all 200ms ease-out;
+}
+.secUsers .artUser .divUserImage a img:hover {
+  box-shadow: 0px 0px 1px black;
+  transform: scale(1.1, 1.1);
+}
+.secUsers .artUser main .divUser {
+  width: 95%;
+  margin: 0rem auto;
+}
+.secUsers .artUser main .divUser p {
+  font-size: 0.75rem;
+  padding: 0.3125rem;
+}
+.secUsers .artUser main .divUser h4 {
+  font-size: 1.125rem;
+  color: rgb(25, 93, 129);
+  margin-top: 0.9375rem;
+}
+.secUsers .artUser main .divUser ul {
+  margin: 0.625rem 0;
+}
+.secUsers .artUser main .divUser ul li {
+  margin-left: 1.5625rem;
+}
+.secUsers .artUser main .divUser ul li a {
+  background-color: rgb(4, 134, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgba(250, 250, 250, 0.8);
+  cursor: pointer;
+  transition: all 300ms ease;
+  padding: 0.3125rem;
+  width: 9.375rem;
+  margin-top: 0.3125rem;
+  display: block;
+  text-decoration: none;
+}
+.secUsers .artUser main .divUser ul li a:hover {
+  color: rgb(4, 134, 255);
+  background-color: rgba(250, 250, 250, 0.8);
+  transform: translate(0, -3px);
+  box-shadow: 0 3px 5px rgb(63, 139, 197);
+}
+.secUsers .artUser main .divUser .secInvites article {
+  display: grid;
+  grid-template-columns: 0.45fr 0.5fr 0.05fr;
+  justify-items: center;
+  align-items: center;
+  padding: 0rem;
+  gap: 0rem;
+  border-bottom: 1px dotted rgb(63, 139, 197);
+}
+.secUsers .artUser main .divUser .secInvites article p {
+  font-size: 0.625rem;
+}
+.secUsers .artUser main .divUser .secInvites article p a {
+  background-color: rgb(4, 134, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgba(250, 250, 250, 0.8);
+  cursor: pointer;
+  transition: all 300ms ease;
+  padding: 0.3125rem;
+  width: 6.25rem;
+  display: inline-block;
+  text-decoration: none;
+}
+.secUsers .artUser main .divUser .secInvites article p a:hover {
+  color: rgb(4, 134, 255);
+  background-color: rgba(250, 250, 250, 0.8);
+  transform: translate(0, -3px);
+  box-shadow: 0 3px 5px rgb(63, 139, 197);
+}
+.secUsers .artUser main .divUser .secInvites article button {
+  border-radius: 0.3125rem;
+  border: none;
+  color: prof-btn;
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  color: rgb(177, 8, 8);
+}
+.secUsers .artUser main .divUser .secInvites article button:hover {
+  color: rgb(11, 124, 177);
+}
+.secUsers .artUser main .divUser .secInvites h5 {
+  font-size: 0.875rem;
+  text-indent: 0.3125rem;
+  margin: 0.625rem 0;
+}
+.secUsers .artUser main .divUser .secProfile,
+.secUsers .artUser main .divUser .secPrivateProfile {
+  background-image: linear-gradient(transparent, rgb(228, 245, 253), transparent);
+  border-bottom: 1px dotted rgb(63, 139, 197);
+  max-width: 760px;
+  margin: 1.875rem auto 4.375rem;
+}
+.secUsers .artUser main .divUser .secProfile .profHeader .divUserName,
+.secUsers .artUser main .divUser .secPrivateProfile .profHeader .divUserName {
+  border-radius: 0.625rem;
+  background-image: linear-gradient(to right, rgb(6, 173, 195), transparent);
+  height: 4.6875rem;
+  box-shadow: 0px 3px 10px black;
+}
+.secUsers .artUser main .divUser .secProfile .profHeader .divUserName h3,
+.secUsers .artUser main .divUser .secPrivateProfile .profHeader .divUserName h3 {
+  font-size: 1.375rem;
+  font-weight: 500;
+  text-indent: 0.3125rem;
+  color: rgb(9, 68, 136);
+  padding: 0.9375rem;
+}
+.secUsers .artUser main .divUser .secProfile .profHeader .divUserName p,
+.secUsers .artUser main .divUser .secPrivateProfile .profHeader .divUserName p {
+  padding: 0.3125rem;
+  margin-right: 0.3125rem;
+  color: rgb(2, 92, 83);
+  font-style: italic;
+  text-align: right;
+  font-size: 0.6875rem;
+}
+.secUsers .artUser main .divUser .secProfile .profHeader .divUserImage,
+.secUsers .artUser main .divUser .secPrivateProfile .profHeader .divUserImage {
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  transform: translate(-0.3125rem, -2.8125rem);
+}
+.secUsers .artUser main .divUser .secProfile .profHeader .divUserImage a,
+.secUsers .artUser main .divUser .secPrivateProfile .profHeader .divUserImage a {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: right;
+  text-decoration: none;
+  border-radius: 100%;
+  box-shadow: 0px 3px 10px black;
+  width: 5rem;
+  height: 5rem;
+}
+.secUsers .artUser main .divUser .secProfile .profHeader .divUserImage a img,
+.secUsers .artUser main .divUser .secPrivateProfile .profHeader .divUserImage a img {
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 6.25rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  transition: all 200ms ease-out;
+}
+.secUsers .artUser main .divUser .secProfile .profHeader .divUserImage a img:hover,
+.secUsers .artUser main .divUser .secPrivateProfile .profHeader .divUserImage a img:hover {
+  box-shadow: 0px 0px 1px black;
+  transform: scale(1.1, 1.1);
+}
+.secUsers .artUser main .divUser .secProfile .profHeader .divUserImage button,
+.secUsers .artUser main .divUser .secPrivateProfile .profHeader .divUserImage button {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(7, 72, 102);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 0.625rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: end;
+  justify-self: left;
+  font-size: 0.9375rem;
+}
+.secUsers .artUser main .divUser .secProfile .profHeader .divUserImage button i,
+.secUsers .artUser main .divUser .secPrivateProfile .profHeader .divUserImage button i {
+  font-size: 1.25rem;
+}
+.secUsers .artUser main .divUser .secProfile .profHeader .divUserImage button:hover,
+.secUsers .artUser main .divUser .secPrivateProfile .profHeader .divUserImage button:hover {
+  color: rgb(11, 124, 177);
+}
+.secUsers .artUser main .divUser .secProfile .profMain,
+.secUsers .artUser main .divUser .secPrivateProfile .profMain {
+  padding-bottom: 1.25rem;
+}
+.secUsers .artUser main .divUser .secProfile .profMain .divProfile h3,
+.secUsers .artUser main .divUser .secPrivateProfile .profMain .divProfile h3 {
+  font-weight: 300;
+  text-align: center;
+}
+.secUsers .artUser main .divUser .secProfile .profMain .divProfile article .pText,
+.secUsers .artUser main .divUser .secPrivateProfile .profMain .divProfile article .pText {
+  margin-bottom: 0.9375rem;
+  text-align: left;
+  text-indent: 0.625rem;
+  font-size: 0.9375rem;
+  color: rgb(25, 93, 129);
+}
+.secUsers .artUser main .divUser .secProfile .profMain .divProfile article .pTitle,
+.secUsers .artUser main .divUser .secPrivateProfile .profMain .divProfile article .pTitle {
+  margin: 0 auto 0.9375rem;
+  width: 80%;
+  color: rgb(88, 91, 91);
+  background-color: rgb(242, 242, 242);
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  padding: 0.625rem 0.3125rem;
+  border-radius: 0.625rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.secUsers .artUser main .divUser .secProfile .profMain .divProfile article .pParagraph,
+.secUsers .artUser main .divUser .secPrivateProfile .profMain .divProfile article .pParagraph {
+  margin: 0 auto 0.9375rem;
+  margin-top: 0.3125rem;
+  font-style: italic;
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgb(57, 58, 61);
+}
+.secUsers .artUser main .divUser .secProfile .profMain .divProfile article .divImageContainer,
+.secUsers .artUser main .divUser .secPrivateProfile .profMain .divProfile article .divImageContainer {
+  width: 98%;
+  margin: 0rem auto;
+  margin: 0 auto 0.9375rem;
+  border-radius: 0.625rem;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0 0 2px rgb(41, 41, 41);
+  padding: 0.625rem;
+}
+.secUsers .artUser main .divUser .secProfile .profMain .divProfile article .divImageContainer div,
+.secUsers .artUser main .divUser .secPrivateProfile .profMain .divProfile article .divImageContainer div {
+  height: 15.625rem;
+  margin: 0 auto;
+  max-width: 23.75rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 4px rgb(41, 41, 41);
+}
+.secUsers .artUser main .divUser .secProfile .profMain .divProfile article .divImageContainer div img,
+.secUsers .artUser main .divUser .secPrivateProfile .profMain .divProfile article .divImageContainer div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.625rem;
+}
+.secUsers .artUser main .divUser .secPrivateProfile {
+  background-image: linear-gradient(transparent, rgb(255, 230, 249), transparent);
+}
+.secUsers .artUser main .divUser .secPrivateProfile .profHeader .divUserName {
+  background-image: linear-gradient(to right, rgb(247, 155, 224), transparent);
+}
+.secUsers .artUser main .divWarning p {
+  color: rgb(177, 8, 8);
+  margin-top: 0.9375rem;
+  text-align: center;
+}
+.secUsers .artUser main .secMessage {
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.3125rem;
+  box-shadow: 2px 2px 10px rgb(155, 151, 151);
+  border-radius: 0.625rem;
+  padding: 0.3125rem;
+}
+.secUsers .artUser main .secMessage .btnClose {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(208, 228, 220);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.125rem;
+  float: right;
+}
+.secUsers .artUser main .secMessage .btnClose:hover {
+  color: rgb(11, 124, 177);
+}
+.secUsers .artUser main .secMessage h4 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0.625rem 0 1.25rem;
+  color: rgb(90, 175, 196);
+}
+.secUsers .artUser main .secMessage p {
+  color: rgb(108, 194, 159);
+}
+.secUsers .artUser main .secMessage p span {
+  font-weight: 500;
+  font-style: italic;
+}
+.secUsers .artUser main .secMessage form {
+  padding: 0.3125rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-direction: column;
+  gap: 0rem;
+}
+.secUsers .artUser main .secMessage form textarea {
+  width: 100%;
+  resize: none;
+  height: 3.75rem;
+  padding: 0.3125rem;
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 0.3125rem;
+}
+.secUsers .artUser main .secMessage form input {
+  margin: 0.5rem 0;
+  background-color: rgb(39, 150, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgb(230, 243, 248);
+  cursor: pointer;
+  padding: 0.3125rem;
+  width: 7.5rem;
+}
+.secUsers .artUser main .secMessage form input:hover {
+  color: rgb(4, 134, 255);
+  background-color: rgba(250, 250, 250, 0.8);
+  transform: translate(0, -3px);
+  box-shadow: 0 3px 5px rgb(63, 139, 197);
+}
+.secUsers .artUser main .secMessage .pMsgSent {
+  text-align: center;
+  color: rgb(250, 250, 250);
+}
+.secUsers .artUser .divBtns {
+  margin-top: 0.9375rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 0.3125rem;
+  gap: 0.125rem;
+}
+.secUsers .artUser .divBtns button {
+  background-color: rgb(39, 150, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgb(230, 243, 248);
+  cursor: pointer;
+  padding: 0.3125rem;
+  margin: 0 auto;
+  width: 90%;
+}
+.secUsers .artUser .divBtns button i {
+  color: rgb(177, 8, 8);
+}
+.secUsers .artUser .divBtns button:hover {
+  background-color: rgb(230, 243, 248);
+  color: rgb(39, 150, 255);
+}
+
+.secAdmin {
+  width: 95%;
+  margin: 0rem auto;
+}
+.secAdmin h1 {
+  margin: 0.9375rem 0;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgb(140, 224, 252);
+}
+.secAdmin div {
+  position: static;
+  z-index: -1;
+  opacity: 0.4;
+}
+.secAdmin div img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0.625rem;
+}
+
+.secUserDetailAdmin {
+  width: 95%;
+  margin: 0rem auto;
+}
+.secUserDetailAdmin .arrow {
+  display: block;
+  font-size: 1.25rem;
+  text-decoration: none;
+  margin-top: 0.625rem;
+  color: rgb(63, 139, 197);
+}
+.secUserDetailAdmin .arrow i {
+  font-size: 1.5625rem;
+}
+.secUserDetailAdmin .artUser {
+  border-bottom: 1px dotted rgb(63, 139, 197);
+  margin: 1.875rem 0 3.125rem;
+  background-image: linear-gradient(transparent, rgb(140, 224, 252), transparent);
+}
+.secUserDetailAdmin .artUser .divUserName {
+  border-radius: 0.625rem;
+  background-image: linear-gradient(to right, rgb(6, 173, 195), transparent);
+  height: 4.6875rem;
+  box-shadow: 0px 3px 10px black;
+}
+.secUserDetailAdmin .artUser .divUserName h3 {
+  font-size: 1.375rem;
+  text-indent: 0.3125rem;
+  color: rgb(63, 139, 197);
+  padding: 0.9375rem;
+}
+.secUserDetailAdmin .artUser .divUserName p {
+  padding: 0.3125rem;
+  margin-right: 0.3125rem;
+  color: rgb(2, 92, 83);
+  font-style: italic;
+  text-align: right;
+  font-size: 0.6875rem;
+}
+.secUserDetailAdmin .artUser .divUserImage {
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  transform: translate(-0.3125rem, -2.8125rem);
+}
+.secUserDetailAdmin .artUser .divUserImage a {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: right;
+  text-decoration: none;
+  border-radius: 100%;
+  box-shadow: 0px 3px 10px black;
+  width: 5rem;
+  height: 5rem;
+}
+.secUserDetailAdmin .artUser .divUserImage a img {
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 6.25rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  transition: all 200ms ease-out;
+}
+.secUserDetailAdmin .artUser .divUserImage a img:hover {
+  box-shadow: 0px 0px 1px black;
+  transform: scale(1.1, 1.1);
+}
+.secUserDetailAdmin .artUser main .divUser {
+  width: 95%;
+  margin: 0rem auto;
+}
+.secUserDetailAdmin .artUser main .divUser p {
+  font-size: 0.75rem;
+  padding: 0.3125rem;
+}
+.secUserDetailAdmin .artUser main .divUser h4 {
+  font-size: 1.125rem;
+  color: rgb(25, 93, 129);
+  margin-top: 0.9375rem;
+}
+.secUserDetailAdmin .artUser main .divUser ul {
+  margin: 0.625rem 0;
+}
+.secUserDetailAdmin .artUser main .divUser ul li {
+  margin-left: 1.5625rem;
+}
+.secUserDetailAdmin .artUser main .divUser ul li a {
+  background-color: rgb(4, 134, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgba(250, 250, 250, 0.8);
+  cursor: pointer;
+  transition: all 300ms ease;
+  padding: 0.3125rem;
+  width: 9.375rem;
+  margin-top: 0.3125rem;
+  display: block;
+  text-decoration: none;
+}
+.secUserDetailAdmin .artUser main .divUser ul li a:hover {
+  color: rgb(4, 134, 255);
+  background-color: rgba(250, 250, 250, 0.8);
+  transform: translate(0, -3px);
+  box-shadow: 0 3px 5px rgb(63, 139, 197);
+}
+.secUserDetailAdmin .artUser main .divUser .secInvites article {
+  display: grid;
+  grid-template-columns: 0.45fr 0.5fr 0.05fr;
+  justify-items: center;
+  align-items: center;
+  padding: 0rem;
+  gap: 0rem;
+  border-bottom: 1px dotted rgb(63, 139, 197);
+}
+.secUserDetailAdmin .artUser main .divUser .secInvites article p {
+  font-size: 0.625rem;
+}
+.secUserDetailAdmin .artUser main .divUser .secInvites article p a {
+  background-color: rgb(4, 134, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgba(250, 250, 250, 0.8);
+  cursor: pointer;
+  transition: all 300ms ease;
+  padding: 0.3125rem;
+  width: 6.25rem;
+  display: inline-block;
+  text-decoration: none;
+}
+.secUserDetailAdmin .artUser main .divUser .secInvites article p a:hover {
+  color: rgb(4, 134, 255);
+  background-color: rgba(250, 250, 250, 0.8);
+  transform: translate(0, -3px);
+  box-shadow: 0 3px 5px rgb(63, 139, 197);
+}
+.secUserDetailAdmin .artUser main .divUser .secInvites article button {
+  border-radius: 0.3125rem;
+  border: none;
+  color: prof-btn;
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  color: rgb(177, 8, 8);
+}
+.secUserDetailAdmin .artUser main .divUser .secInvites article button:hover {
+  color: rgb(11, 124, 177);
+}
+.secUserDetailAdmin .artUser main .divUser .secInvites h5 {
+  font-size: 0.875rem;
+  text-indent: 0.3125rem;
+  margin: 0.625rem 0;
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile {
+  background-image: linear-gradient(transparent, rgb(228, 245, 253), transparent);
+  border-bottom: 1px dotted rgb(63, 139, 197);
+  max-width: 760px;
+  margin: 1.875rem auto 4.375rem;
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profHeader .divUserName,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profHeader .divUserName {
+  border-radius: 0.625rem;
+  background-image: linear-gradient(to right, rgb(6, 173, 195), transparent);
+  height: 4.6875rem;
+  box-shadow: 0px 3px 10px black;
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profHeader .divUserName h3,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profHeader .divUserName h3 {
+  font-size: 1.375rem;
+  font-weight: 500;
+  text-indent: 0.3125rem;
+  color: rgb(9, 68, 136);
+  padding: 0.9375rem;
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profHeader .divUserName p,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profHeader .divUserName p {
+  padding: 0.3125rem;
+  margin-right: 0.3125rem;
+  color: rgb(2, 92, 83);
+  font-style: italic;
+  text-align: right;
+  font-size: 0.6875rem;
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profHeader .divUserImage,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profHeader .divUserImage {
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  transform: translate(-0.3125rem, -2.8125rem);
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profHeader .divUserImage a,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profHeader .divUserImage a {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: right;
+  text-decoration: none;
+  border-radius: 100%;
+  box-shadow: 0px 3px 10px black;
+  width: 5rem;
+  height: 5rem;
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profHeader .divUserImage a img,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profHeader .divUserImage a img {
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 6.25rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  transition: all 200ms ease-out;
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profHeader .divUserImage a img:hover,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profHeader .divUserImage a img:hover {
+  box-shadow: 0px 0px 1px black;
+  transform: scale(1.1, 1.1);
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profHeader .divUserImage button,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profHeader .divUserImage button {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(7, 72, 102);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 0.625rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: end;
+  justify-self: left;
+  font-size: 0.9375rem;
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profHeader .divUserImage button i,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profHeader .divUserImage button i {
+  font-size: 1.25rem;
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profHeader .divUserImage button:hover,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profHeader .divUserImage button:hover {
+  color: rgb(11, 124, 177);
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profMain,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profMain {
+  padding-bottom: 1.25rem;
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profMain .divProfile h3,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profMain .divProfile h3 {
+  font-weight: 300;
+  text-align: center;
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profMain .divProfile article .pText,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profMain .divProfile article .pText {
+  margin-bottom: 0.9375rem;
+  text-align: left;
+  text-indent: 0.625rem;
+  font-size: 0.9375rem;
+  color: rgb(25, 93, 129);
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profMain .divProfile article .pTitle,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profMain .divProfile article .pTitle {
+  margin: 0 auto 0.9375rem;
+  width: 80%;
+  color: rgb(88, 91, 91);
+  background-color: rgb(242, 242, 242);
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  padding: 0.625rem 0.3125rem;
+  border-radius: 0.625rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profMain .divProfile article .pParagraph,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profMain .divProfile article .pParagraph {
+  margin: 0 auto 0.9375rem;
+  margin-top: 0.3125rem;
+  font-style: italic;
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgb(57, 58, 61);
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profMain .divProfile article .divImageContainer,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profMain .divProfile article .divImageContainer {
+  width: 98%;
+  margin: 0rem auto;
+  margin: 0 auto 0.9375rem;
+  border-radius: 0.625rem;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0 0 2px rgb(41, 41, 41);
+  padding: 0.625rem;
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profMain .divProfile article .divImageContainer div,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profMain .divProfile article .divImageContainer div {
+  height: 15.625rem;
+  margin: 0 auto;
+  max-width: 23.75rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 4px rgb(41, 41, 41);
+}
+.secUserDetailAdmin .artUser main .divUser .secProfile .profMain .divProfile article .divImageContainer div img,
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profMain .divProfile article .divImageContainer div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.625rem;
+}
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile {
+  background-image: linear-gradient(transparent, rgb(255, 230, 249), transparent);
+}
+.secUserDetailAdmin .artUser main .divUser .secPrivateProfile .profHeader .divUserName {
+  background-image: linear-gradient(to right, rgb(247, 155, 224), transparent);
+}
+.secUserDetailAdmin .artUser main .divWarning p {
+  color: rgb(177, 8, 8);
+  margin-top: 0.9375rem;
+  text-align: center;
+}
+.secUserDetailAdmin .artUser main .secMessage {
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.3125rem;
+  box-shadow: 2px 2px 10px rgb(155, 151, 151);
+  border-radius: 0.625rem;
+  padding: 0.3125rem;
+}
+.secUserDetailAdmin .artUser main .secMessage .btnClose {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(208, 228, 220);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.125rem;
+  float: right;
+}
+.secUserDetailAdmin .artUser main .secMessage .btnClose:hover {
+  color: rgb(11, 124, 177);
+}
+.secUserDetailAdmin .artUser main .secMessage h4 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0.625rem 0 1.25rem;
+  color: rgb(90, 175, 196);
+}
+.secUserDetailAdmin .artUser main .secMessage p {
+  color: rgb(108, 194, 159);
+}
+.secUserDetailAdmin .artUser main .secMessage p span {
+  font-weight: 500;
+  font-style: italic;
+}
+.secUserDetailAdmin .artUser main .secMessage form {
+  padding: 0.3125rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-direction: column;
+  gap: 0rem;
+}
+.secUserDetailAdmin .artUser main .secMessage form textarea {
+  width: 100%;
+  resize: none;
+  height: 3.75rem;
+  padding: 0.3125rem;
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 0.3125rem;
+}
+.secUserDetailAdmin .artUser main .secMessage form input {
+  margin: 0.5rem 0;
+  background-color: rgb(39, 150, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgb(230, 243, 248);
+  cursor: pointer;
+  padding: 0.3125rem;
+  width: 7.5rem;
+}
+.secUserDetailAdmin .artUser main .secMessage form input:hover {
+  color: rgb(4, 134, 255);
+  background-color: rgba(250, 250, 250, 0.8);
+  transform: translate(0, -3px);
+  box-shadow: 0 3px 5px rgb(63, 139, 197);
+}
+.secUserDetailAdmin .artUser main .secMessage .pMsgSent {
+  text-align: center;
+  color: rgb(250, 250, 250);
+}
+.secUserDetailAdmin .artUser .divBtns {
+  margin-top: 0.9375rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 0.3125rem;
+  gap: 0.125rem;
+}
+.secUserDetailAdmin .artUser .divBtns button {
+  background-color: rgb(39, 150, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgb(230, 243, 248);
+  cursor: pointer;
+  padding: 0.3125rem;
+  margin: 0 auto;
+  width: 90%;
+}
+.secUserDetailAdmin .artUser .divBtns button i {
+  color: rgb(177, 8, 8);
+}
+.secUserDetailAdmin .artUser .divBtns button:hover {
+  background-color: rgb(230, 243, 248);
+  color: rgb(39, 150, 255);
+}
+.secUserDetailAdmin h3 {
+  color: rgb(63, 139, 197);
+  font-size: 1.375rem;
+}
+.secUserDetailAdmin h4 {
+  color: rgb(25, 93, 129);
+  font-size: 1.125rem;
+  padding: 0.625rem 0.3125rem;
+}
+.secUserDetailAdmin .secProfile,
+.secUserDetailAdmin .secPrivateProfile {
+  background-image: linear-gradient(transparent, rgb(228, 245, 253), transparent);
+  border-bottom: 1px dotted rgb(63, 139, 197);
+  max-width: 760px;
+  margin: 1.875rem auto 4.375rem;
+}
+.secUserDetailAdmin .secProfile .profHeader .divUserName,
+.secUserDetailAdmin .secPrivateProfile .profHeader .divUserName {
+  border-radius: 0.625rem;
+  background-image: linear-gradient(to right, rgb(6, 173, 195), transparent);
+  height: 4.6875rem;
+  box-shadow: 0px 3px 10px black;
+}
+.secUserDetailAdmin .secProfile .profHeader .divUserName h3,
+.secUserDetailAdmin .secPrivateProfile .profHeader .divUserName h3 {
+  font-size: 1.375rem;
+  font-weight: 500;
+  text-indent: 0.3125rem;
+  color: rgb(9, 68, 136);
+  padding: 0.9375rem;
+}
+.secUserDetailAdmin .secProfile .profHeader .divUserName p,
+.secUserDetailAdmin .secPrivateProfile .profHeader .divUserName p {
+  padding: 0.3125rem;
+  margin-right: 0.3125rem;
+  color: rgb(2, 92, 83);
+  font-style: italic;
+  text-align: right;
+  font-size: 0.6875rem;
+}
+.secUserDetailAdmin .secProfile .profHeader .divUserImage,
+.secUserDetailAdmin .secPrivateProfile .profHeader .divUserImage {
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  transform: translate(-0.3125rem, -2.8125rem);
+}
+.secUserDetailAdmin .secProfile .profHeader .divUserImage a,
+.secUserDetailAdmin .secPrivateProfile .profHeader .divUserImage a {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: right;
+  text-decoration: none;
+  border-radius: 100%;
+  box-shadow: 0px 3px 10px black;
+  width: 5rem;
+  height: 5rem;
+}
+.secUserDetailAdmin .secProfile .profHeader .divUserImage a img,
+.secUserDetailAdmin .secPrivateProfile .profHeader .divUserImage a img {
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 6.25rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  transition: all 200ms ease-out;
+}
+.secUserDetailAdmin .secProfile .profHeader .divUserImage a img:hover,
+.secUserDetailAdmin .secPrivateProfile .profHeader .divUserImage a img:hover {
+  box-shadow: 0px 0px 1px black;
+  transform: scale(1.1, 1.1);
+}
+.secUserDetailAdmin .secProfile .profHeader .divUserImage button,
+.secUserDetailAdmin .secPrivateProfile .profHeader .divUserImage button {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(7, 72, 102);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 0.625rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: end;
+  justify-self: left;
+  font-size: 0.9375rem;
+}
+.secUserDetailAdmin .secProfile .profHeader .divUserImage button i,
+.secUserDetailAdmin .secPrivateProfile .profHeader .divUserImage button i {
+  font-size: 1.25rem;
+}
+.secUserDetailAdmin .secProfile .profHeader .divUserImage button:hover,
+.secUserDetailAdmin .secPrivateProfile .profHeader .divUserImage button:hover {
+  color: rgb(11, 124, 177);
+}
+.secUserDetailAdmin .secProfile .profMain,
+.secUserDetailAdmin .secPrivateProfile .profMain {
+  padding-bottom: 1.25rem;
+}
+.secUserDetailAdmin .secProfile .profMain .divProfile h3,
+.secUserDetailAdmin .secPrivateProfile .profMain .divProfile h3 {
+  font-weight: 300;
+  text-align: center;
+}
+.secUserDetailAdmin .secProfile .profMain .divProfile article .pText,
+.secUserDetailAdmin .secPrivateProfile .profMain .divProfile article .pText {
+  margin-bottom: 0.9375rem;
+  text-align: left;
+  text-indent: 0.625rem;
+  font-size: 0.9375rem;
+  color: rgb(25, 93, 129);
+}
+.secUserDetailAdmin .secProfile .profMain .divProfile article .pTitle,
+.secUserDetailAdmin .secPrivateProfile .profMain .divProfile article .pTitle {
+  margin: 0 auto 0.9375rem;
+  width: 80%;
+  color: rgb(88, 91, 91);
+  background-color: rgb(242, 242, 242);
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  padding: 0.625rem 0.3125rem;
+  border-radius: 0.625rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.secUserDetailAdmin .secProfile .profMain .divProfile article .pParagraph,
+.secUserDetailAdmin .secPrivateProfile .profMain .divProfile article .pParagraph {
+  margin: 0 auto 0.9375rem;
+  margin-top: 0.3125rem;
+  font-style: italic;
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgb(57, 58, 61);
+}
+.secUserDetailAdmin .secProfile .profMain .divProfile article .divImageContainer,
+.secUserDetailAdmin .secPrivateProfile .profMain .divProfile article .divImageContainer {
+  width: 98%;
+  margin: 0rem auto;
+  margin: 0 auto 0.9375rem;
+  border-radius: 0.625rem;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0 0 2px rgb(41, 41, 41);
+  padding: 0.625rem;
+}
+.secUserDetailAdmin .secProfile .profMain .divProfile article .divImageContainer div,
+.secUserDetailAdmin .secPrivateProfile .profMain .divProfile article .divImageContainer div {
+  height: 15.625rem;
+  margin: 0 auto;
+  max-width: 23.75rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 4px rgb(41, 41, 41);
+}
+.secUserDetailAdmin .secProfile .profMain .divProfile article .divImageContainer div img,
+.secUserDetailAdmin .secPrivateProfile .profMain .divProfile article .divImageContainer div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.625rem;
+}
+.secUserDetailAdmin .secPrivateProfile {
+  background-image: linear-gradient(transparent, rgb(255, 230, 249), transparent);
+}
+.secUserDetailAdmin .secPrivateProfile .profHeader .divUserName {
+  background-image: linear-gradient(to right, rgb(247, 155, 224), transparent);
+}
+
+.secHomeUser {
+  color: rgb(21, 41, 60);
+  width: 95%;
+  margin: 0rem auto;
+}
+.secHomeUser .divRoot {
+  margin-top: 0.9375rem;
+  font-weight: 400;
+}
+.secHomeUser h1 {
+  text-align: center;
+  margin-top: 0.9375rem;
+  font-size: 1.875rem;
+  font-weight: 400;
+  color: rgb(9, 68, 136);
+}
+.secHomeUser .secUserProfiles h2 {
+  font-size: 1.375rem;
+  font-weight: 300;
+  margin-top: 1.25rem;
+  padding: 0.625rem;
+  border-bottom: 1px dotted rgb(63, 139, 197);
+}
+.secHomeUser .secUserProfiles .secUserProfile {
+  border-bottom: 2px dotted rgb(63, 139, 197);
+  margin-bottom: 0.9375rem;
+  padding-bottom: 0.3125rem;
+}
+.secHomeUser .secUserProfiles .secUserProfile .h3HomeUser {
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: italic;
+  margin-top: 0.9375rem;
+}
+.secHomeUser .secUserProfiles .secUserProfile .aHomeUser {
+  background-color: rgb(4, 134, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgba(250, 250, 250, 0.8);
+  cursor: pointer;
+  transition: all 300ms ease;
+  width: 70%;
+  margin: 0rem auto;
+  max-width: 320px;
+  display: block;
+  text-align: center;
+  padding: 0.625rem;
+  text-decoration: none;
+}
+.secHomeUser .secUserProfiles .secUserProfile .aHomeUser:hover {
+  color: rgb(4, 134, 255);
+  background-color: rgba(250, 250, 250, 0.8);
+  transform: translate(0, -3px);
+  box-shadow: 0 3px 5px rgb(63, 139, 197);
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile {
+  background-image: linear-gradient(transparent, rgb(228, 245, 253), transparent);
+  border-bottom: 1px dotted rgb(63, 139, 197);
+  max-width: 760px;
+  margin: 1.875rem auto 4.375rem;
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profHeader .divUserName,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profHeader .divUserName {
+  border-radius: 0.625rem;
+  background-image: linear-gradient(to right, rgb(6, 173, 195), transparent);
+  height: 4.6875rem;
+  box-shadow: 0px 3px 10px black;
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profHeader .divUserName h3,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profHeader .divUserName h3 {
+  font-size: 1.375rem;
+  font-weight: 500;
+  text-indent: 0.3125rem;
+  color: rgb(9, 68, 136);
+  padding: 0.9375rem;
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profHeader .divUserName p,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profHeader .divUserName p {
+  padding: 0.3125rem;
+  margin-right: 0.3125rem;
+  color: rgb(2, 92, 83);
+  font-style: italic;
+  text-align: right;
+  font-size: 0.6875rem;
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profHeader .divUserImage,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profHeader .divUserImage {
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  transform: translate(-0.3125rem, -2.8125rem);
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profHeader .divUserImage a,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profHeader .divUserImage a {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: right;
+  text-decoration: none;
+  border-radius: 100%;
+  box-shadow: 0px 3px 10px black;
+  width: 5rem;
+  height: 5rem;
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profHeader .divUserImage a img,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profHeader .divUserImage a img {
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 6.25rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  transition: all 200ms ease-out;
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profHeader .divUserImage a img:hover,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profHeader .divUserImage a img:hover {
+  box-shadow: 0px 0px 1px black;
+  transform: scale(1.1, 1.1);
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profHeader .divUserImage button,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profHeader .divUserImage button {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(7, 72, 102);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 0.625rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: end;
+  justify-self: left;
+  font-size: 0.9375rem;
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profHeader .divUserImage button i,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profHeader .divUserImage button i {
+  font-size: 1.25rem;
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profHeader .divUserImage button:hover,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profHeader .divUserImage button:hover {
+  color: rgb(11, 124, 177);
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profMain,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profMain {
+  padding-bottom: 1.25rem;
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profMain .divProfile h3,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profMain .divProfile h3 {
+  font-weight: 300;
+  text-align: center;
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profMain .divProfile article .pText,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profMain .divProfile article .pText {
+  margin-bottom: 0.9375rem;
+  text-align: left;
+  text-indent: 0.625rem;
+  font-size: 0.9375rem;
+  color: rgb(25, 93, 129);
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profMain .divProfile article .pTitle,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profMain .divProfile article .pTitle {
+  margin: 0 auto 0.9375rem;
+  width: 80%;
+  color: rgb(88, 91, 91);
+  background-color: rgb(242, 242, 242);
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  padding: 0.625rem 0.3125rem;
+  border-radius: 0.625rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profMain .divProfile article .pParagraph,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profMain .divProfile article .pParagraph {
+  margin: 0 auto 0.9375rem;
+  margin-top: 0.3125rem;
+  font-style: italic;
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgb(57, 58, 61);
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profMain .divProfile article .divImageContainer,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profMain .divProfile article .divImageContainer {
+  width: 98%;
+  margin: 0rem auto;
+  margin: 0 auto 0.9375rem;
+  border-radius: 0.625rem;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0 0 2px rgb(41, 41, 41);
+  padding: 0.625rem;
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profMain .divProfile article .divImageContainer div,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profMain .divProfile article .divImageContainer div {
+  height: 15.625rem;
+  margin: 0 auto;
+  max-width: 23.75rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 4px rgb(41, 41, 41);
+}
+.secHomeUser .secUserProfiles .secUserProfile .secProfile .profMain .divProfile article .divImageContainer div img,
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profMain .divProfile article .divImageContainer div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.625rem;
+}
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile {
+  background-image: linear-gradient(transparent, rgb(255, 230, 249), transparent);
+}
+.secHomeUser .secUserProfiles .secUserProfile .secPrivateProfile .profHeader .divUserName {
+  background-image: linear-gradient(to right, rgb(247, 155, 224), transparent);
+}
+.secHomeUser .secInvites {
+  width: 95%;
+  margin: 0rem auto;
+}
+.secHomeUser .secInvites h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: rgb(9, 68, 136);
+  margin-top: 1.5625rem;
+  padding: 0.625rem;
+  border-bottom: 1px dotted rgb(63, 139, 197);
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent,
+.secHomeUser .secInvites .divInvGrid .divInvReceived {
+  margin: 1.5625rem 0;
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent h3,
+.secHomeUser .secInvites .divInvGrid .divInvReceived h3 {
+  font-size: 1.375rem;
+  font-weight: 400;
+  color: rgb(9, 68, 136);
+  border-bottom: 1px dotted rgb(63, 139, 197);
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent .divInvPeople,
+.secHomeUser .secInvites .divInvGrid .divInvReceived .divInvPeople {
+  padding: 0.125rem;
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent .divInvPeople article .divLittlePeople,
+.secHomeUser .secInvites .divInvGrid .divInvReceived .divInvPeople article .divLittlePeople {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0rem;
+  background-color: transparent;
+  padding: 0.625rem;
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent .divInvPeople article .divLittlePeople .pLPName,
+.secHomeUser .secInvites .divInvGrid .divInvReceived .divInvPeople article .divLittlePeople .pLPName {
+  text-align: center;
+  color: rgb(9, 68, 136);
+  font-size: 0.875rem;
+  margin-bottom: 0.3125rem;
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent .divInvPeople article .divLittlePeople .pLPDate,
+.secHomeUser .secInvites .divInvGrid .divInvReceived .divInvPeople article .divLittlePeople .pLPDate {
+  text-align: center;
+  color: rgb(2, 92, 83);
+  font-size: 0.75rem;
+  margin-bottom: 0.3125rem;
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent .divInvPeople article .divLittlePeople .pLPSender,
+.secHomeUser .secInvites .divInvGrid .divInvSent .divInvPeople article .divLittlePeople .pLPReceiver,
+.secHomeUser .secInvites .divInvGrid .divInvReceived .divInvPeople article .divLittlePeople .pLPSender,
+.secHomeUser .secInvites .divInvGrid .divInvReceived .divInvPeople article .divLittlePeople .pLPReceiver {
+  text-align: center;
+  color: rgb(2, 92, 83);
+  font-size: 1.0625rem;
+  margin-bottom: 0.3125rem;
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent .divInvPeople article .divLittlePeople div,
+.secHomeUser .secInvites .divInvGrid .divInvReceived .divInvPeople article .divLittlePeople div {
+  width: 3.125rem;
+  height: 3.125rem;
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent .divInvPeople article .divLittlePeople div img,
+.secHomeUser .secInvites .divInvGrid .divInvReceived .divInvPeople article .divLittlePeople div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 6.25rem;
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent .divInvPeople article .divBtns,
+.secHomeUser .secInvites .divInvGrid .divInvReceived .divInvPeople article .divBtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.3125rem;
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent .divInvPeople article .divBtns button,
+.secHomeUser .secInvites .divInvGrid .divInvReceived .divInvPeople article .divBtns button {
+  background-color: rgb(39, 150, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgb(230, 243, 248);
+  cursor: pointer;
+  text-align: center;
+  padding: 0.3125rem;
+  width: 7.5rem;
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent .divInvPeople article .divBtns button i,
+.secHomeUser .secInvites .divInvGrid .divInvReceived .divInvPeople article .divBtns button i {
+  color: rgb(177, 8, 8);
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent .divInvPeople article .divBtns button:hover,
+.secHomeUser .secInvites .divInvGrid .divInvReceived .divInvPeople article .divBtns button:hover {
+  background-color: rgb(230, 243, 248);
+  color: rgb(39, 150, 255);
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent .divInvPeople .divNoInv,
+.secHomeUser .secInvites .divInvGrid .divInvReceived .divInvPeople .divNoInv {
+  grid-column: 1/3;
+  margin: 0 auto;
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent .divInvPeople .divNoInv p,
+.secHomeUser .secInvites .divInvGrid .divInvReceived .divInvPeople .divNoInv p {
+  margin: 0.9375rem auto;
+  font-style: italic;
+  color: rgb(10, 17, 22);
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent .divInvPeople .divNoInv a,
+.secHomeUser .secInvites .divInvGrid .divInvReceived .divInvPeople .divNoInv a {
+  display: block;
+  background-color: rgb(39, 150, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgb(230, 243, 248);
+  cursor: pointer;
+  text-align: center;
+  padding: 0.3125rem;
+  width: 12.5rem;
+  text-decoration: none;
+  font-size: 0.9375rem;
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent .divInvPeople .divNoInv a i,
+.secHomeUser .secInvites .divInvGrid .divInvReceived .divInvPeople .divNoInv a i {
+  color: rgb(177, 8, 8);
+}
+.secHomeUser .secInvites .divInvGrid .divInvSent .divInvPeople .divNoInv a:hover,
+.secHomeUser .secInvites .divInvGrid .divInvReceived .divInvPeople .divNoInv a:hover {
+  background-color: rgb(230, 243, 248);
+  color: rgb(39, 150, 255);
+}
+@media screen and (min-width:430px) {
+  .secHomeUser .divInvSent .divInvPeople,
+  .secHomeUser .divInvReceived .divInvPeople {
+    display: grid;
+    column-gap: 0.5rem;
+    row-gap: 0.625rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width:640px) {
+  .secHomeUser .secInvites .divInvGrid {
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.secProfiles {
+  width: 95%;
+  margin: 0rem auto;
+}
+.secProfiles .divRoot {
+  margin-top: 0.9375rem;
+  font-weight: 400;
+}
+.secProfiles .divRoot a {
+  text-decoration: none;
+  color: rgb(21, 41, 60);
+  font-weight: 500;
+}
+.secProfiles .divImgFront {
+  position: relative;
+  box-shadow: 0 2px 3px rgb(155, 151, 151);
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.3125rem;
+  margin: 0.625rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 280px;
+}
+.secProfiles .divImgFront span {
+  position: fixed;
+}
+.secProfiles .divImgFront img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.9;
+  filter: blur(1px);
+  mask-image: linear-gradient(transparent, #fafafa 80%, transparent);
+  -webkit-mask-image: linear-gradient(transparent, #fafafa 80%, transparent);
+  transition: all 500ms ease;
+  max-height: 280px;
+}
+.secProfiles .divImgFront .imgSub {
+  position: fixed;
+}
+.secProfiles .divImgFront div {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(245, 245, 245);
+}
+.secProfiles .divImgFront div h2 {
+  padding: 0rem;
+  font-size: 2.1875rem;
+  text-shadow: 1px 1px 3px black;
+  font-weight: 400;
+  text-align: center;
+}
+.secProfiles .secProfile,
+.secProfiles .secPrivateProfile {
+  background-image: linear-gradient(transparent, rgb(228, 245, 253), transparent);
+  border-bottom: 1px dotted rgb(63, 139, 197);
+  max-width: 760px;
+  margin: 1.875rem auto 4.375rem;
+}
+.secProfiles .secProfile .profHeader .divUserName,
+.secProfiles .secPrivateProfile .profHeader .divUserName {
+  border-radius: 0.625rem;
+  background-image: linear-gradient(to right, rgb(6, 173, 195), transparent);
+  height: 4.6875rem;
+  box-shadow: 0px 3px 10px black;
+}
+.secProfiles .secProfile .profHeader .divUserName h3,
+.secProfiles .secPrivateProfile .profHeader .divUserName h3 {
+  font-size: 1.375rem;
+  font-weight: 500;
+  text-indent: 0.3125rem;
+  color: rgb(9, 68, 136);
+  padding: 0.9375rem;
+}
+.secProfiles .secProfile .profHeader .divUserName p,
+.secProfiles .secPrivateProfile .profHeader .divUserName p {
+  padding: 0.3125rem;
+  margin-right: 0.3125rem;
+  color: rgb(2, 92, 83);
+  font-style: italic;
+  text-align: right;
+  font-size: 0.6875rem;
+}
+.secProfiles .secProfile .profHeader .divUserImage,
+.secProfiles .secPrivateProfile .profHeader .divUserImage {
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  transform: translate(-0.3125rem, -2.8125rem);
+}
+.secProfiles .secProfile .profHeader .divUserImage a,
+.secProfiles .secPrivateProfile .profHeader .divUserImage a {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: right;
+  text-decoration: none;
+  border-radius: 100%;
+  box-shadow: 0px 3px 10px black;
+  width: 5rem;
+  height: 5rem;
+}
+.secProfiles .secProfile .profHeader .divUserImage a img,
+.secProfiles .secPrivateProfile .profHeader .divUserImage a img {
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 6.25rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  transition: all 200ms ease-out;
+}
+.secProfiles .secProfile .profHeader .divUserImage a img:hover,
+.secProfiles .secPrivateProfile .profHeader .divUserImage a img:hover {
+  box-shadow: 0px 0px 1px black;
+  transform: scale(1.1, 1.1);
+}
+.secProfiles .secProfile .profHeader .divUserImage button,
+.secProfiles .secPrivateProfile .profHeader .divUserImage button {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(7, 72, 102);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 0.625rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: end;
+  justify-self: left;
+  font-size: 0.9375rem;
+}
+.secProfiles .secProfile .profHeader .divUserImage button i,
+.secProfiles .secPrivateProfile .profHeader .divUserImage button i {
+  font-size: 1.25rem;
+}
+.secProfiles .secProfile .profHeader .divUserImage button:hover,
+.secProfiles .secPrivateProfile .profHeader .divUserImage button:hover {
+  color: rgb(11, 124, 177);
+}
+.secProfiles .secProfile .profMain,
+.secProfiles .secPrivateProfile .profMain {
+  padding-bottom: 1.25rem;
+}
+.secProfiles .secProfile .profMain .divProfile h3,
+.secProfiles .secPrivateProfile .profMain .divProfile h3 {
+  font-weight: 300;
+  text-align: center;
+}
+.secProfiles .secProfile .profMain .divProfile article .pText,
+.secProfiles .secPrivateProfile .profMain .divProfile article .pText {
+  margin-bottom: 0.9375rem;
+  text-align: left;
+  text-indent: 0.625rem;
+  font-size: 0.9375rem;
+  color: rgb(25, 93, 129);
+}
+.secProfiles .secProfile .profMain .divProfile article .pTitle,
+.secProfiles .secPrivateProfile .profMain .divProfile article .pTitle {
+  margin: 0 auto 0.9375rem;
+  width: 80%;
+  color: rgb(88, 91, 91);
+  background-color: rgb(242, 242, 242);
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  padding: 0.625rem 0.3125rem;
+  border-radius: 0.625rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.secProfiles .secProfile .profMain .divProfile article .pParagraph,
+.secProfiles .secPrivateProfile .profMain .divProfile article .pParagraph {
+  margin: 0 auto 0.9375rem;
+  margin-top: 0.3125rem;
+  font-style: italic;
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgb(57, 58, 61);
+}
+.secProfiles .secProfile .profMain .divProfile article .divImageContainer,
+.secProfiles .secPrivateProfile .profMain .divProfile article .divImageContainer {
+  width: 98%;
+  margin: 0rem auto;
+  margin: 0 auto 0.9375rem;
+  border-radius: 0.625rem;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0 0 2px rgb(41, 41, 41);
+  padding: 0.625rem;
+}
+.secProfiles .secProfile .profMain .divProfile article .divImageContainer div,
+.secProfiles .secPrivateProfile .profMain .divProfile article .divImageContainer div {
+  height: 15.625rem;
+  margin: 0 auto;
+  max-width: 23.75rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 4px rgb(41, 41, 41);
+}
+.secProfiles .secProfile .profMain .divProfile article .divImageContainer div img,
+.secProfiles .secPrivateProfile .profMain .divProfile article .divImageContainer div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.625rem;
+}
+.secProfiles .secPrivateProfile {
+  background-image: linear-gradient(transparent, rgb(255, 230, 249), transparent);
+}
+.secProfiles .secPrivateProfile .profHeader .divUserName {
+  background-image: linear-gradient(to right, rgb(247, 155, 224), transparent);
+}
+
+.secEditProfile {
+  width: 95%;
+  margin: 0.625rem auto;
+  color: rgb(21, 41, 60);
+}
+.secEditProfile .divRoot {
+  margin-top: 0.9375rem;
+  font-weight: 400;
+}
+.secEditProfile .divRoot a {
+  text-decoration: none;
+  color: rgb(21, 41, 60);
+  font-weight: 500;
+}
+.secEditProfile .divImgFront {
+  position: relative;
+  box-shadow: 0 2px 3px rgb(155, 151, 151);
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.3125rem;
+  margin: 0.625rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 280px;
+}
+.secEditProfile .divImgFront span {
+  position: fixed;
+}
+.secEditProfile .divImgFront img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.9;
+  filter: blur(1px);
+  mask-image: linear-gradient(transparent, #fafafa 80%, transparent);
+  -webkit-mask-image: linear-gradient(transparent, #fafafa 80%, transparent);
+  transition: all 500ms ease;
+  max-height: 280px;
+}
+.secEditProfile .divImgFront .imgSub {
+  position: fixed;
+}
+.secEditProfile .divImgFront div {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(245, 245, 245);
+}
+.secEditProfile .divImgFront div h2 {
+  padding: 0rem;
+  font-size: 2.1875rem;
+  text-shadow: 1px 1px 3px black;
+  font-weight: 400;
+  text-align: center;
+}
+.secEditProfile .errorProfile {
+  position: absolute;
+  width: 95%;
+  margin: 0 auto;
+  border: 1px solid rgb(177, 8, 8);
+  border-radius: 0.3125rem;
+  padding: 0.625rem;
+  font-size: 1.0625rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  color: rgb(5, 28, 71);
+}
+.secEditProfile form {
+  width: 95%;
+  margin: 0rem auto;
+  max-width: 640px;
+  margin-top: 1.25rem;
+}
+.secEditProfile form .divElProfile {
+  display: grid;
+  grid-template-columns: 0.2fr 0.6fr 0.2fr;
+  justify-items: right;
+  align-items: center;
+  padding: 0rem;
+  gap: 0.3125rem;
+}
+.secEditProfile form .divElProfile input:not([type=submit]),
+.secEditProfile form .divElProfile textarea {
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+  color: rgb(70, 70, 70);
+  margin: 0.625rem 0;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.3125rem;
+  box-shadow: 0 1px 3px rgb(155, 151, 151);
+  resize: none;
+}
+.secEditProfile form .divElProfile label {
+  color: rgb(25, 93, 129);
+}
+.secEditProfile form .divElProfile div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: space-around;
+  align-items: center;
+  padding: 0rem;
+  gap: 0rem;
+  justify-self: left;
+}
+.secEditProfile form .divElProfile div button {
+  border-radius: 0.3125rem;
+  border: none;
+  color: prof-btn;
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  color: rgb(63, 139, 197);
+  padding: 0 0.125rem;
+}
+.secEditProfile form .divElProfile div button:nth-child(2) {
+  color: rgb(177, 8, 8);
+  border-left: 1px dotted rgb(63, 139, 197);
+  border-right: 1px dotted rgb(63, 139, 197);
+}
+.secEditProfile form .divElProfile div button:hover {
+  color: rgb(237, 237, 237);
+  text-shadow: 0 0 5px rgb(63, 139, 197);
+}
+.secEditProfile form .divElProfileSel {
+  display: grid;
+  grid-template-columns: 0.2fr 0.6fr 0.2fr;
+  justify-items: right;
+  align-items: center;
+  padding: 0rem;
+  gap: 0.3125rem;
+}
+.secEditProfile form .divElProfileSel label {
+  color: rgb(25, 93, 129);
+}
+.secEditProfile form .divElProfileSel .selected {
+  width: 100%;
+  color: rgb(109, 210, 247);
+  background-color: rgb(25, 93, 129);
+  margin: 0.625rem 0;
+  padding: 0.3125rem;
+  border-radius: 0.3125rem;
+  font-size: 0.75rem;
+  text-indent: 0.3125rem;
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 0.3125rem;
+}
+.secEditProfile form .divBtnsForm {
+  margin: 0.9375rem auto 0;
+  padding: 0.3125rem;
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.625rem;
+  box-shadow: 0 1px 5px rgb(155, 151, 151);
+  max-width: 480px;
+  color: rgb(155, 151, 151);
+}
+.secEditProfile form .divBtnsForm div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.3125rem;
+  margin-top: 0.9375rem;
+}
+.secEditProfile form .divBtnsForm div button {
+  background-color: rgb(39, 150, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgb(230, 243, 248);
+  cursor: pointer;
+  width: 7.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.3125rem;
+  transition: all 300ms ease-out;
+}
+.secEditProfile form .divBtnsForm div button i {
+  color: rgb(179, 44, 10);
+}
+.secEditProfile form .divBtnsForm div button:hover {
+  background-color: rgb(230, 243, 248);
+  color: rgb(39, 150, 255);
+}
+.secEditProfile form .divSubmit {
+  margin: 1.875rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.3125rem;
+  max-width: 360px;
+}
+.secEditProfile form .divSubmit input[type=submit],
+.secEditProfile form .divSubmit a {
+  background-color: rgb(4, 134, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgba(250, 250, 250, 0.8);
+  cursor: pointer;
+  transition: all 300ms ease;
+  padding: 0.3125rem;
+  margin-top: 0.625rem;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  width: 100%;
+  text-align: center;
+}
+.secEditProfile form .divSubmit input[type=submit]:hover,
+.secEditProfile form .divSubmit a:hover {
+  color: rgb(4, 134, 255);
+  background-color: rgba(250, 250, 250, 0.8);
+  transform: translate(0, -3px);
+  box-shadow: 0 3px 5px rgb(63, 139, 197);
+}
+.secEditProfile .secProfile,
+.secEditProfile .secPrivateProfile {
+  background-image: linear-gradient(transparent, rgb(228, 245, 253), transparent);
+  border-bottom: 1px dotted rgb(63, 139, 197);
+  max-width: 760px;
+  margin: 1.875rem auto 4.375rem;
+}
+.secEditProfile .secProfile .profHeader .divUserName,
+.secEditProfile .secPrivateProfile .profHeader .divUserName {
+  border-radius: 0.625rem;
+  background-image: linear-gradient(to right, rgb(6, 173, 195), transparent);
+  height: 4.6875rem;
+  box-shadow: 0px 3px 10px black;
+}
+.secEditProfile .secProfile .profHeader .divUserName h3,
+.secEditProfile .secPrivateProfile .profHeader .divUserName h3 {
+  font-size: 1.375rem;
+  font-weight: 500;
+  text-indent: 0.3125rem;
+  color: rgb(9, 68, 136);
+  padding: 0.9375rem;
+}
+.secEditProfile .secProfile .profHeader .divUserName p,
+.secEditProfile .secPrivateProfile .profHeader .divUserName p {
+  padding: 0.3125rem;
+  margin-right: 0.3125rem;
+  color: rgb(2, 92, 83);
+  font-style: italic;
+  text-align: right;
+  font-size: 0.6875rem;
+}
+.secEditProfile .secProfile .profHeader .divUserImage,
+.secEditProfile .secPrivateProfile .profHeader .divUserImage {
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  transform: translate(-0.3125rem, -2.8125rem);
+}
+.secEditProfile .secProfile .profHeader .divUserImage a,
+.secEditProfile .secPrivateProfile .profHeader .divUserImage a {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: right;
+  text-decoration: none;
+  border-radius: 100%;
+  box-shadow: 0px 3px 10px black;
+  width: 5rem;
+  height: 5rem;
+}
+.secEditProfile .secProfile .profHeader .divUserImage a img,
+.secEditProfile .secPrivateProfile .profHeader .divUserImage a img {
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 6.25rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  transition: all 200ms ease-out;
+}
+.secEditProfile .secProfile .profHeader .divUserImage a img:hover,
+.secEditProfile .secPrivateProfile .profHeader .divUserImage a img:hover {
+  box-shadow: 0px 0px 1px black;
+  transform: scale(1.1, 1.1);
+}
+.secEditProfile .secProfile .profHeader .divUserImage button,
+.secEditProfile .secPrivateProfile .profHeader .divUserImage button {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(7, 72, 102);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 0.625rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: end;
+  justify-self: left;
+  font-size: 0.9375rem;
+}
+.secEditProfile .secProfile .profHeader .divUserImage button i,
+.secEditProfile .secPrivateProfile .profHeader .divUserImage button i {
+  font-size: 1.25rem;
+}
+.secEditProfile .secProfile .profHeader .divUserImage button:hover,
+.secEditProfile .secPrivateProfile .profHeader .divUserImage button:hover {
+  color: rgb(11, 124, 177);
+}
+.secEditProfile .secProfile .profMain,
+.secEditProfile .secPrivateProfile .profMain {
+  padding-bottom: 1.25rem;
+}
+.secEditProfile .secProfile .profMain .divProfile h3,
+.secEditProfile .secPrivateProfile .profMain .divProfile h3 {
+  font-weight: 300;
+  text-align: center;
+}
+.secEditProfile .secProfile .profMain .divProfile article .pText,
+.secEditProfile .secPrivateProfile .profMain .divProfile article .pText {
+  margin-bottom: 0.9375rem;
+  text-align: left;
+  text-indent: 0.625rem;
+  font-size: 0.9375rem;
+  color: rgb(25, 93, 129);
+}
+.secEditProfile .secProfile .profMain .divProfile article .pTitle,
+.secEditProfile .secPrivateProfile .profMain .divProfile article .pTitle {
+  margin: 0 auto 0.9375rem;
+  width: 80%;
+  color: rgb(88, 91, 91);
+  background-color: rgb(242, 242, 242);
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  padding: 0.625rem 0.3125rem;
+  border-radius: 0.625rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.secEditProfile .secProfile .profMain .divProfile article .pParagraph,
+.secEditProfile .secPrivateProfile .profMain .divProfile article .pParagraph {
+  margin: 0 auto 0.9375rem;
+  margin-top: 0.3125rem;
+  font-style: italic;
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgb(57, 58, 61);
+}
+.secEditProfile .secProfile .profMain .divProfile article .divImageContainer,
+.secEditProfile .secPrivateProfile .profMain .divProfile article .divImageContainer {
+  width: 98%;
+  margin: 0rem auto;
+  margin: 0 auto 0.9375rem;
+  border-radius: 0.625rem;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0 0 2px rgb(41, 41, 41);
+  padding: 0.625rem;
+}
+.secEditProfile .secProfile .profMain .divProfile article .divImageContainer div,
+.secEditProfile .secPrivateProfile .profMain .divProfile article .divImageContainer div {
+  height: 15.625rem;
+  margin: 0 auto;
+  max-width: 23.75rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 4px rgb(41, 41, 41);
+}
+.secEditProfile .secProfile .profMain .divProfile article .divImageContainer div img,
+.secEditProfile .secPrivateProfile .profMain .divProfile article .divImageContainer div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.625rem;
+}
+.secEditProfile .secPrivateProfile {
+  background-image: linear-gradient(transparent, rgb(255, 230, 249), transparent);
+}
+.secEditProfile .secPrivateProfile .profHeader .divUserName {
+  background-image: linear-gradient(to right, rgb(247, 155, 224), transparent);
+}
+
+.secMeet {
+  width: 95%;
+  margin: 0rem auto;
+}
+.secMeet .divRoot {
+  margin-top: 0.9375rem;
+  font-weight: 400;
+}
+.secMeet .divRoot a {
+  text-decoration: none;
+  color: rgb(21, 41, 60);
+  font-weight: 500;
+}
+.secMeet .divImgFront {
+  position: relative;
+  box-shadow: 0 2px 3px rgb(155, 151, 151);
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.3125rem;
+  margin: 0.625rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 280px;
+}
+.secMeet .divImgFront span {
+  position: fixed;
+}
+.secMeet .divImgFront img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.9;
+  filter: blur(1px);
+  mask-image: linear-gradient(transparent, #fafafa 80%, transparent);
+  -webkit-mask-image: linear-gradient(transparent, #fafafa 80%, transparent);
+  transition: all 500ms ease;
+  max-height: 280px;
+}
+.secMeet .divImgFront .imgSub {
+  position: fixed;
+}
+.secMeet .divImgFront div {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(245, 245, 245);
+}
+.secMeet .divImgFront div h2 {
+  padding: 0rem;
+  font-size: 2.1875rem;
+  text-shadow: 1px 1px 3px black;
+  font-weight: 400;
+  text-align: center;
+}
+.secMeet h3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: left;
+  color: rgb(63, 139, 197);
+  margin: 1.875rem 0;
+}
+.secMeet .divMeetPeople article {
+  margin: 0 auto 0.9375rem;
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.9375rem;
+  width: 100%;
+  justify-self: center;
+  max-width: 240px;
+  background-color: rgb(242, 242, 242);
+}
+.secMeet .divMeetPeople article .divLittlePeople {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0rem;
+  background-color: transparent;
+  padding: 0.625rem;
+}
+.secMeet .divMeetPeople article .divLittlePeople .pLPName {
+  text-align: center;
+  color: rgb(9, 68, 136);
+  font-size: 0.875rem;
+  margin-bottom: 0.3125rem;
+}
+.secMeet .divMeetPeople article .divLittlePeople .pLPDate {
+  text-align: center;
+  color: rgb(2, 92, 83);
+  font-size: 0.75rem;
+  margin-bottom: 0.3125rem;
+}
+.secMeet .divMeetPeople article .divLittlePeople .pLPSender,
+.secMeet .divMeetPeople article .divLittlePeople .pLPReceiver {
+  text-align: center;
+  color: rgb(2, 92, 83);
+  font-size: 1.0625rem;
+  margin-bottom: 0.3125rem;
+}
+.secMeet .divMeetPeople article .divLittlePeople div {
+  width: 3.125rem;
+  height: 3.125rem;
+}
+.secMeet .divMeetPeople article .divLittlePeople div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 6.25rem;
+}
+.secMeet .divMeetPeople article div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0rem;
+}
+.secMeet .divMeetPeople article div button {
+  width: 95%;
+  margin: 0rem auto;
+  background-color: rgb(39, 150, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgb(230, 243, 248);
+  cursor: pointer;
+  padding: 0.3125rem;
+  margin-bottom: 0.625rem;
+  font-size: 1.125rem;
+}
+.secMeet .divMeetPeople article div button i {
+  color: rgb(226, 225, 225);
+}
+.secMeet .divMeetPeople article div button:hover {
+  background-color: rgb(230, 243, 248);
+  color: rgb(39, 150, 255);
+}
+.secMeet .divMeetPeople article p {
+  text-align: center;
+  font-weight: 400;
+  padding-bottom: 0.3125rem;
+  color: rgb(35, 149, 255);
+}
+
+@media screen and (min-width:640px) {
+  .secMeet .divMeetPeople {
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width:768px) {
+  .secMeet .divMeetPeople {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.secEditPersonalData {
+  width: 95%;
+  margin: 0.625rem auto;
+  color: rgb(21, 41, 60);
+}
+.secEditPersonalData .divRoot {
+  margin-top: 0.9375rem;
+  font-weight: 400;
+}
+.secEditPersonalData .divRoot a {
+  text-decoration: none;
+  color: rgb(21, 41, 60);
+  font-weight: 500;
+}
+.secEditPersonalData h2 {
+  font-size: 1.5625rem;
+  font-weight: 300;
+  margin-top: 0.625rem;
+  padding: 0.625rem;
+  border-bottom: 1px dotted rgb(63, 139, 197);
+}
+.secEditPersonalData .errorEditData {
+  color: rgb(177, 8, 8);
+  text-align: center;
+  font-size: 0.9375rem;
+  font-weight: 300;
+}
+.secEditPersonalData .divContainer {
+  width: 85%;
+  margin: 0rem auto;
+  max-width: 680px;
+}
+.secEditPersonalData .divContainer h3 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  text-align: center;
+  color: rgb(63, 139, 197);
+  margin: 1.875rem 0;
+  padding: 0.3125rem;
+  border-bottom: 1px dotted rgb(63, 139, 197);
+}
+.secEditPersonalData .divContainer form {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 0rem;
+  gap: 0.3125rem;
+  max-width: 480px;
+  margin: 1.25rem auto 0;
+}
+.secEditPersonalData .divContainer form label:not(.labelImg) {
+  display: none;
+}
+.secEditPersonalData .divContainer form input:not([type=submit]) {
+  width: 100%;
+  margin: 0.3125rem 0;
+  padding: 0.3125rem;
+  border-radius: 0.3125rem;
+  font-size: 0.75rem;
+  text-indent: 0.3125rem;
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.3125rem;
+}
+.secEditPersonalData .divContainer form input[type=password] {
+  max-width: 240px;
+}
+.secEditPersonalData .divContainer form input[type=submit],
+.secEditPersonalData .divContainer form a {
+  background-color: rgb(4, 134, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgba(250, 250, 250, 0.8);
+  cursor: pointer;
+  transition: all 300ms ease;
+  padding: 0.3125rem;
+  margin-top: 0.625rem;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  width: 100%;
+  max-width: 240px;
+  text-align: center;
+}
+.secEditPersonalData .divContainer form input[type=submit]:hover,
+.secEditPersonalData .divContainer form a:hover {
+  color: rgb(4, 134, 255);
+  background-color: rgba(250, 250, 250, 0.8);
+  transform: translate(0, -3px);
+  box-shadow: 0 3px 5px rgb(63, 139, 197);
+}
+
+.secRelations {
+  width: 95%;
+  margin: 0rem auto;
+}
+.secRelations .divRoot {
+  margin-top: 0.9375rem;
+  font-weight: 400;
+}
+.secRelations .divRoot a {
+  text-decoration: none;
+  color: rgb(21, 41, 60);
+  font-weight: 500;
+}
+.secRelations .divImgFront {
+  position: relative;
+  box-shadow: 0 2px 3px rgb(155, 151, 151);
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.3125rem;
+  margin: 0.625rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 280px;
+}
+.secRelations .divImgFront span {
+  position: fixed;
+}
+.secRelations .divImgFront img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.9;
+  filter: blur(1px);
+  mask-image: linear-gradient(transparent, #fafafa 80%, transparent);
+  -webkit-mask-image: linear-gradient(transparent, #fafafa 80%, transparent);
+  transition: all 500ms ease;
+  max-height: 280px;
+}
+.secRelations .divImgFront .imgSub {
+  position: fixed;
+}
+.secRelations .divImgFront div {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(245, 245, 245);
+}
+.secRelations .divImgFront div h2 {
+  padding: 0rem;
+  font-size: 2.1875rem;
+  text-shadow: 1px 1px 3px black;
+  font-weight: 400;
+  text-align: center;
+}
+.secRelations .divGridPeople .secBigPeople {
+  width: 98%;
+  margin: 0.625rem auto;
+  margin: 3.125rem auto;
+  max-width: 420px;
+  box-shadow: 0 1px 3px rgb(155, 151, 151);
+  border-radius: 0.625rem;
+}
+.secRelations .divGridPeople .secBigPeople .divUserName {
+  border-radius: 0.625rem;
+  background-image: linear-gradient(to right, rgb(6, 173, 195), transparent);
+  height: 4.6875rem;
+  box-shadow: 0px 3px 10px black;
+}
+.secRelations .divGridPeople .secBigPeople .divUserName h3 {
+  font-size: 1.375rem;
+  font-weight: 400;
+  text-indent: 0.3125rem;
+  color: rgb(9, 68, 136);
+  padding: 0.9375rem;
+}
+.secRelations .divGridPeople .secBigPeople .divUserName p {
+  padding: 0.3125rem;
+  margin-right: 0.3125rem;
+  color: rgb(2, 92, 83);
+  font-style: italic;
+  text-align: right;
+  font-size: 0.6875rem;
+}
+.secRelations .divGridPeople .secBigPeople .divUserImage {
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  transform: translate(-0.3125rem, -2.8125rem);
+}
+.secRelations .divGridPeople .secBigPeople .divUserImage a {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: right;
+  text-decoration: none;
+  border-radius: 100%;
+  box-shadow: 0px 3px 10px black;
+  width: 5rem;
+  height: 5rem;
+}
+.secRelations .divGridPeople .secBigPeople .divUserImage a img {
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 6.25rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  transition: all 200ms ease-out;
+}
+.secRelations .divGridPeople .secBigPeople .divUserImage a img:hover {
+  box-shadow: 0px 0px 1px black;
+  transform: scale(1.1, 1.1);
+}
+.secRelations .divGridPeople .secBigPeople .divUserImage button {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(7, 72, 102);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 0.625rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: end;
+  justify-self: left;
+  font-size: 0.9375rem;
+}
+.secRelations .divGridPeople .secBigPeople .divUserImage button i {
+  font-size: 1.25rem;
+}
+.secRelations .divGridPeople .secBigPeople .divUserImage button:hover {
+  color: rgb(11, 124, 177);
+}
+.secRelations .divGridPeople .secBigPeople .divBtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.3125rem;
+  padding-bottom: 0.625rem;
+}
+.secRelations .divGridPeople .secBigPeople .divBtns button {
+  background-color: rgb(39, 150, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgb(230, 243, 248);
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 0.3125rem;
+  width: 5.3125rem;
+}
+.secRelations .divGridPeople .secBigPeople .divBtns button i {
+  color: rgb(29, 231, 150);
+}
+.secRelations .divGridPeople .secBigPeople .divBtns button:hover {
+  background-color: rgb(230, 243, 248);
+  color: rgb(39, 150, 255);
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs {
+  padding-bottom: 0.625rem;
+  transition: all 500ms;
+  width: 95%;
+  margin: 0.3125rem auto;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMessage {
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.3125rem;
+  box-shadow: 2px 2px 10px rgb(155, 151, 151);
+  border-radius: 0.625rem;
+  padding: 0.3125rem;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMessage .btnClose {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(208, 228, 220);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.125rem;
+  float: right;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMessage .btnClose:hover {
+  color: rgb(11, 124, 177);
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMessage h4 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0.625rem 0 1.25rem;
+  color: rgb(90, 175, 196);
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMessage p {
+  color: rgb(108, 194, 159);
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMessage p span {
+  font-weight: 500;
+  font-style: italic;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMessage form {
+  padding: 0.3125rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-direction: column;
+  gap: 0rem;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMessage form textarea {
+  width: 100%;
+  resize: none;
+  height: 3.75rem;
+  padding: 0.3125rem;
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 0.3125rem;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMessage form input {
+  margin: 0.5rem 0;
+  background-color: rgb(39, 150, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgb(230, 243, 248);
+  cursor: pointer;
+  padding: 0.3125rem;
+  width: 7.5rem;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMessage form input:hover {
+  color: rgb(4, 134, 255);
+  background-color: rgba(250, 250, 250, 0.8);
+  transform: translate(0, -3px);
+  box-shadow: 0 3px 5px rgb(63, 139, 197);
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMessage .pMsgSent {
+  text-align: center;
+  color: rgb(250, 250, 250);
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .pNoMsgs {
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgb(78, 78, 78);
+  margin: 0.625rem 0;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: left;
+  align-items: end;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .gridContainer p {
+  margin-top: 0.9375rem;
+  color: rgb(9, 68, 136);
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .gridContainer .btnFold {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(87, 92, 88);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.125rem;
+  justify-self: right;
+  transition: all 1s ease-in-out;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .gridContainer .btnFold:hover {
+  color: rgb(11, 124, 177);
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .divMsgsList {
+  overscroll-behavior: contain;
+  max-height: 320px;
+  overflow-y: scroll;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .divMsgsList .divMessage {
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.625rem;
+  padding: 0.3125rem;
+  margin: 0.5rem 0;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .divMsgsList .divMessage .divHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: left;
+  align-items: center;
+  padding: 0.3125rem;
+  gap: 0rem;
+  border-bottom: 1px dotted rgb(155, 151, 151);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: rgb(226, 225, 225);
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .divMsgsList .divMessage .divHeader p {
+  margin-top: 0.9375rem;
+  color: rgb(9, 68, 136);
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .divMsgsList .divMessage .divHeader p:first-child {
+  font-style: italic;
+  font-weight: 500;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .divMsgsList .divMessage .divHeader .msgDate {
+  font-size: 0.75rem;
+  justify-self: right;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .divMsgsList .divMessage .divMsg {
+  margin-top: 0.3125rem;
+}
+.secRelations .divGridPeople .secBigPeople .divMsgs .secMsgs .divMsgsList .divMessage .divMsg p {
+  padding: 0.3125rem;
+  font-weight: 400;
+  color: rgb(90, 90, 90);
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox {
+  padding-bottom: 0.0625rem;
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer {
+  width: 98%;
+  margin: 0rem auto;
+  margin: 0.625rem auto;
+  background-color: rgb(219, 237, 253);
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.3125rem;
+  box-shadow: 2px 2px 10px rgb(155, 151, 151);
+  border-radius: 0.625rem;
+  padding: 0.3125rem;
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer .pChatName {
+  padding: 0.4375rem;
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 0.3125rem;
+  background-color: rgb(140, 224, 252);
+  font-size: 1.25rem;
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer .pChatName .btnClose {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(103, 141, 0);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.125rem;
+  float: right;
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer .pChatName .btnClose:hover {
+  color: rgb(11, 124, 177);
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer .chatTable {
+  display: block;
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 0.3125rem;
+  min-height: 120px;
+  width: 98%;
+  margin: 0.3125rem auto;
+  background-color: rgb(247, 251, 255);
+  max-height: 220px;
+  padding: 0.3125rem;
+  overflow-y: scroll;
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer .chatTable .chLeft {
+  color: rgb(61, 148, 45);
+  text-align: left;
+  margin-left: 0.375rem;
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer .chatTable .chRight {
+  color: rgb(78, 78, 78);
+  text-align: right;
+  margin-right: 0.375rem;
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer .chatTable .chRight.chat-name {
+  color: rgb(53, 48, 48);
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer .chatTable .chLeft.chat-name {
+  color: rgb(25, 104, 12);
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer .chatTable .chat-spc {
+  padding-bottom: 0.3125rem;
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer .chatTable .lastMsg {
+  padding-bottom: 0.9375rem;
+  color: rgb(247, 251, 255);
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer .chatTable .chat-name {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin: 0;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer .chatTable .chat-date {
+  font-size: 0.5rem;
+  color: rgb(206, 105, 105);
+  font-weight: 300;
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer .chatTable .chat-msg {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  padding-top: 0.1875rem;
+  padding-bottom: 0.125rem;
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer form {
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 0.3125rem;
+  background-color: rgb(140, 224, 252);
+  display: grid;
+  grid-template-columns: 0.75fr 0.25fr;
+  justify-items: left;
+  align-items: center;
+  padding: 0.125rem;
+  gap: 0.125rem;
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer form input {
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.3125rem;
+  margin: 0.125rem 0;
+  padding: 0.375rem 0.3125rem;
+  width: 100%;
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox .gridChatContainer form input[type=submit] {
+  background-color: rgb(4, 134, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgba(250, 250, 250, 0.8);
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox.fromFriends {
+  min-width: 260px;
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox.fromFriends .gridChatContainer .chatTable {
+  height: 420px;
+  max-height: 420px;
+}
+@media screen and (min-width:640px) {
+  .secRelations .divGridPeople .secBigPeople .divChatBox.fromFriends {
+    min-width: 320px;
+  }
+  .secRelations .divGridPeople .secBigPeople .divChatBox.fromFriends .gridChatContainer .chatTable {
+    height: 500px;
+    max-height: 500px;
+  }
+}
+.secRelations .divGridPeople .secBigPeople .divChatBox {
+  width: 98%;
+  margin: 0rem auto;
+  box-shadow: 0 0 0;
+  background-color: transparent;
+  position: relative;
+}
+.secRelations .divGridPeople .secBigPeople .divWarning {
+  text-align: center;
+  color: rgb(177, 8, 8);
+}
+.secRelations .divGridPeople .secBigPeople .divWarning button {
+  margin: 0.625rem 0.3125rem;
+  padding: 0.3125rem;
+  background-color: rgb(39, 150, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgb(230, 243, 248);
+  cursor: pointer;
+  width: 7.5rem;
+}
+.secRelations .divGridPeople .secBigPeople .divWarning i {
+  color: rgb(179, 48, 69);
+}
+.secRelations .divGridPeople .secBigPeople .divWarning button:hover {
+  background-color: rgb(230, 243, 248);
+  color: rgb(39, 150, 255);
+}
+
+@media screen and (min-width:640px) {
+  .secRelations .divGridPeople {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .secRelations .divGridPeople .divCols {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+.secMessages {
+  width: 95%;
+  margin: 0rem auto;
+}
+.secMessages .divRoot {
+  margin-top: 0.9375rem;
+  font-weight: 400;
+}
+.secMessages .divRoot a {
+  text-decoration: none;
+  color: rgb(21, 41, 60);
+  font-weight: 500;
+}
+.secMessages .divImgFront {
+  position: relative;
+  box-shadow: 0 2px 3px rgb(155, 151, 151);
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.3125rem;
+  margin: 0.625rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 280px;
+}
+.secMessages .divImgFront span {
+  position: fixed;
+}
+.secMessages .divImgFront img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.9;
+  filter: blur(1px);
+  mask-image: linear-gradient(transparent, #fafafa 80%, transparent);
+  -webkit-mask-image: linear-gradient(transparent, #fafafa 80%, transparent);
+  transition: all 500ms ease;
+  max-height: 280px;
+}
+.secMessages .divImgFront .imgSub {
+  position: fixed;
+}
+.secMessages .divImgFront div {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(245, 245, 245);
+}
+.secMessages .divImgFront div h2 {
+  padding: 0rem;
+  font-size: 2.1875rem;
+  text-shadow: 1px 1px 3px black;
+  font-weight: 400;
+  text-align: center;
+}
+.secMessages h3 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  background-color: rgb(109, 210, 247);
+  text-align: center;
+  box-shadow: 0 0 10px rgb(242, 242, 242);
+  color: rgb(63, 139, 197);
+  margin: 1.875rem 0;
+  padding: 0.3125rem;
+  border-bottom: 1px dotted rgb(63, 139, 197);
+  border-radius: 0.3125rem;
+}
+.secMessages .divCont {
+  display: grid;
+  grid-template-columns: 0.3fr 0.7fr;
+  justify-items: center;
+  align-items: start;
+  padding: 0.125rem;
+  gap: 0rem;
+  border: 1px solid black;
+}
+.secMessages .divCont .divChild1 {
+  grid-column: 1/2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0rem;
+}
+.secMessages .divCont .divChild1 .divLittlePeople {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0rem;
+  background-color: transparent;
+  padding: 0.625rem;
+}
+.secMessages .divCont .divChild1 .divLittlePeople .pLPName {
+  text-align: center;
+  color: rgb(9, 68, 136);
+  font-size: 0.875rem;
+  margin-bottom: 0.3125rem;
+}
+.secMessages .divCont .divChild1 .divLittlePeople .pLPDate {
+  text-align: center;
+  color: rgb(2, 92, 83);
+  font-size: 0.75rem;
+  margin-bottom: 0.3125rem;
+}
+.secMessages .divCont .divChild1 .divLittlePeople .pLPSender,
+.secMessages .divCont .divChild1 .divLittlePeople .pLPReceiver {
+  text-align: center;
+  color: rgb(2, 92, 83);
+  font-size: 1.0625rem;
+  margin-bottom: 0.3125rem;
+}
+.secMessages .divCont .divChild1 .divLittlePeople div {
+  width: 3.125rem;
+  height: 3.125rem;
+}
+.secMessages .divCont .divChild1 .divLittlePeople div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 6.25rem;
+}
+.secMessages .divCont .divChild1 button {
+  width: 90%;
+  background-color: rgb(39, 150, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgb(230, 243, 248);
+  cursor: pointer;
+  padding: 0.3125rem;
+  margin-bottom: 0.625rem;
+  font-size: 0.9375rem;
+}
+.secMessages .divCont .divChild1 button i {
+  color: rgb(177, 8, 8);
+}
+.secMessages .divCont .divChild1 button:hover {
+  background-color: rgb(230, 243, 248);
+  color: rgb(39, 150, 255);
+}
+.secMessages .divCont .divMsgs {
+  padding-bottom: 0.625rem;
+  transition: all 500ms;
+  width: 95%;
+  margin: 0.3125rem auto;
+}
+.secMessages .divCont .divMsgs .secMessage {
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.3125rem;
+  box-shadow: 2px 2px 10px rgb(155, 151, 151);
+  border-radius: 0.625rem;
+  padding: 0.3125rem;
+}
+.secMessages .divCont .divMsgs .secMessage .btnClose {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(208, 228, 220);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.125rem;
+  float: right;
+}
+.secMessages .divCont .divMsgs .secMessage .btnClose:hover {
+  color: rgb(11, 124, 177);
+}
+.secMessages .divCont .divMsgs .secMessage h4 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0.625rem 0 1.25rem;
+  color: rgb(90, 175, 196);
+}
+.secMessages .divCont .divMsgs .secMessage p {
+  color: rgb(108, 194, 159);
+}
+.secMessages .divCont .divMsgs .secMessage p span {
+  font-weight: 500;
+  font-style: italic;
+}
+.secMessages .divCont .divMsgs .secMessage form {
+  padding: 0.3125rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-direction: column;
+  gap: 0rem;
+}
+.secMessages .divCont .divMsgs .secMessage form textarea {
+  width: 100%;
+  resize: none;
+  height: 3.75rem;
+  padding: 0.3125rem;
+  border: 1px solid rgb(63, 139, 197);
+  border-radius: 0.3125rem;
+}
+.secMessages .divCont .divMsgs .secMessage form input {
+  margin: 0.5rem 0;
+  background-color: rgb(39, 150, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgb(230, 243, 248);
+  cursor: pointer;
+  padding: 0.3125rem;
+  width: 7.5rem;
+}
+.secMessages .divCont .divMsgs .secMessage form input:hover {
+  color: rgb(4, 134, 255);
+  background-color: rgba(250, 250, 250, 0.8);
+  transform: translate(0, -3px);
+  box-shadow: 0 3px 5px rgb(63, 139, 197);
+}
+.secMessages .divCont .divMsgs .secMessage .pMsgSent {
+  text-align: center;
+  color: rgb(250, 250, 250);
+}
+.secMessages .divCont .divMsgs .secMsgs .pNoMsgs {
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgb(78, 78, 78);
+  margin: 0.625rem 0;
+}
+.secMessages .divCont .divMsgs .secMsgs .gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: left;
+  align-items: end;
+}
+.secMessages .divCont .divMsgs .secMsgs .gridContainer p {
+  margin-top: 0.9375rem;
+  color: rgb(9, 68, 136);
+}
+.secMessages .divCont .divMsgs .secMsgs .gridContainer .btnFold {
+  border-radius: 0.3125rem;
+  border: none;
+  color: rgb(87, 92, 88);
+  font-size: pìxels-rem(8);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.125rem;
+  justify-self: right;
+  transition: all 1s ease-in-out;
+}
+.secMessages .divCont .divMsgs .secMsgs .gridContainer .btnFold:hover {
+  color: rgb(11, 124, 177);
+}
+.secMessages .divCont .divMsgs .secMsgs .divMsgsList {
+  overscroll-behavior: contain;
+  max-height: 320px;
+  overflow-y: scroll;
+}
+.secMessages .divCont .divMsgs .secMsgs .divMsgsList .divMessage {
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 0.625rem;
+  padding: 0.3125rem;
+  margin: 0.5rem 0;
+}
+.secMessages .divCont .divMsgs .secMsgs .divMsgsList .divMessage .divHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: left;
+  align-items: center;
+  padding: 0.3125rem;
+  gap: 0rem;
+  border-bottom: 1px dotted rgb(155, 151, 151);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: rgb(226, 225, 225);
+}
+.secMessages .divCont .divMsgs .secMsgs .divMsgsList .divMessage .divHeader p {
+  margin-top: 0.9375rem;
+  color: rgb(9, 68, 136);
+}
+.secMessages .divCont .divMsgs .secMsgs .divMsgsList .divMessage .divHeader p:first-child {
+  font-style: italic;
+  font-weight: 500;
+}
+.secMessages .divCont .divMsgs .secMsgs .divMsgsList .divMessage .divHeader .msgDate {
+  font-size: 0.75rem;
+  justify-self: right;
+}
+.secMessages .divCont .divMsgs .secMsgs .divMsgsList .divMessage .divMsg {
+  margin-top: 0.3125rem;
+}
+.secMessages .divCont .divMsgs .secMsgs .divMsgsList .divMessage .divMsg p {
+  padding: 0.3125rem;
+  font-weight: 400;
+  color: rgb(90, 90, 90);
+}
+.secMessages .divCont .divMsgs {
+  grid-column: 2/3;
+}
+
+.main {
+  width: 98%;
+  margin: 0rem auto;
+  max-width: 992px;
+  min-height: calc(100vh - 8.75rem);
+}
+.main .divReconnect {
+  width: 100%;
+  padding: 0.3125rem;
+  background-color: rgb(177, 8, 8);
+  color: rgb(237, 237, 237);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.3125rem;
+}
+.main .divReconnect p {
+  display: inline;
+}
+.main .divReconnect button {
+  background-color: rgb(4, 134, 255);
+  border-radius: 5px;
+  border: none;
+  color: rgba(250, 250, 250, 0.8);
+  cursor: pointer;
+  transition: all 300ms ease;
+  padding: 0.3125rem;
+}
+.main .divReconnect button:hover {
+  color: rgb(4, 134, 255);
+  background-color: rgba(250, 250, 250, 0.8);
+  transform: translate(0, -3px);
+  box-shadow: 0 3px 5px rgb(63, 139, 197);
+}
+
+.footer {
+  height: 1.875rem;
+  background-color: rgb(63, 139, 197);
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: row;
+  gap: 0rem;
+}
+.footer p {
+  font-size: 0.75rem;
+  color: rgb(140, 224, 252);
+  margin-left: 0.3125rem;
+}
+.footer p a {
+  text-decoration: none;
+  color: rgb(140, 224, 252);
+  font-weight: 500;
+}
+.footer p a:hover {
+  color: yellowgreen;
+}
+
+/*# sourceMappingURL=styles.css.map */

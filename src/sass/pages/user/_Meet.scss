@@ -1,0 +1,55 @@
+.secMeet {
+
+    @include container(95%, 0);
+
+    .divRoot {
+        margin-top: pixels-rem(15);
+        font-weight: 400;
+
+        a {
+            text-decoration: none;
+            color: $font-col;
+            font-weight: 500;
+        }
+
+    }
+
+    .divImgFront {
+        @include img-front($img-front, center, 35, 0);
+        height: 280px;
+    }
+
+    h3 {
+        font-size: pixels-rem(20);
+        font-weight: 400;
+        text-align: left;
+        color: $bg;
+        margin: pixels-rem(30) 0;
+    }
+
+    .divMeetPeople {
+        @import './components/People';
+    }
+}
+
+
+@media screen and ($bp-mobile-landscape) {
+
+    .secMeet {
+        .divMeetPeople {
+            display: grid;
+            column-gap: 10px;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@media screen and ($bp-tablet) {
+
+    .secMeet {
+        .divMeetPeople {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.divMessage {
+
+    @include border($border, 10);
+    padding: pixels-rem(5);
+    margin: pixels-rem(8) 0;
+
+    .divHeader {
+        @include grid(1fr 1fr, left, center, 5, 0);        
+        border-bottom: 1px dotted $border;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        background-color: $msgs-bg;
+
+        p {
+            margin-top: pixels-rem(15);
+            color: $user-name;
+        }
+
+        p:first-child {
+            font-style: italic;
+            font-weight: 500;
+        }
+        
+        .msgDate {
+            font-size: pixels-rem(12);
+            justify-self: right;
+        }
+    }
+
+    .divMsg {
+        margin-top: pixels-rem(5);
+
+        p {
+            padding: pixels-rem(5);
+            font-weight: 400;
+            color: $msgs-text;
+        }
+    }
+
+}

@@ -1,0 +1,42 @@
+.secRelations {
+
+    @include container(95%, 0);
+
+    .divRoot {
+        margin-top: pixels-rem(15);
+        font-weight: 400;
+
+        a {
+            text-decoration: none;
+            color: $font-col;
+            font-weight: 500;
+        }
+    }
+
+    .divImgFront {        
+        @include img-front($img-front, center, 35, 0);
+        height: 280px;
+    }
+
+    .divGridPeople {
+        @import './components/BigPeople';
+    }
+
+}
+
+
+@media screen and ($bp-mobile-landscape) {
+
+    .secRelations {
+
+        .divGridPeople {
+            display: flex;
+            flex-wrap: wrap;
+
+            .divCols {
+                flex: 50%;
+                max-width: 50%;
+            }
+        }
+    }
+}

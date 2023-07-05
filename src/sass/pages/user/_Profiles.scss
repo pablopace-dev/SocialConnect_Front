@@ -1,0 +1,22 @@
+.secProfiles {
+
+    @include container(95%, 0);
+
+    .divRoot {
+        margin-top: pixels-rem(15);
+        font-weight: 400;
+
+        a {
+            text-decoration: none;
+            color: $font-col;
+            font-weight: 500;
+        }
+    }
+
+    .divImgFront {
+        @include img-front($img-front, center, 35, 0);
+        height: 280px;
+    }
+
+    @import './components/Profile';
+}

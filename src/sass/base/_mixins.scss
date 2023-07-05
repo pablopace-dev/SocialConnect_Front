@@ -1,0 +1,178 @@
+@mixin flexbox($justify, $direction, $gap) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+    flex-direction: $direction;
+    gap: pixels-rem($gap);
+}
+
+@mixin grid($grd-col, $justify, $align, $padding, $gap) {
+    display: grid;
+    grid-template-columns: $grd-col;
+    justify-items: $justify;
+    align-items: $align;
+    padding: pixels-rem($padding);
+    gap: pixels-rem($gap);
+}
+
+@mixin container($width, $mrg-y) {
+    width: $width;
+    margin: pixels-rem($mrg-y) auto;
+}
+
+@mixin border($color, $radius) {
+    border: 1px solid $color;
+    border-radius: pixels-rem($radius);
+}
+
+// --------------------
+//  BOTONES START
+// --------------------
+@mixin boton() {
+    background-color: $button-bg;
+    border-radius: 5px;
+    border: none;
+    color: $button;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+@mixin boton-hover() {
+    color: $button-bg;
+    background-color: $button;
+    transform: translate(0, -3px);
+    box-shadow: 0 3px 5px $bg;
+}
+
+
+@mixin boton-link() {
+    text-decoration: none;
+    color: $button-link;
+}
+
+@mixin boton-link-hover() {
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+
+@mixin boton-multi() {
+    background-color: $button-multi-bg;
+    border-radius: 5px;
+    border: none;
+    color: $button-multi;
+    cursor: pointer;
+}
+
+@mixin boton-multi-hover() {
+    background-color: $button-multi;
+    color: $button-multi-bg;
+}
+
+
+@mixin boton-ico($color) {
+    border-radius: pixels-rem(5);
+    border: none;
+    color: $color;
+    font-size: pìxels-rem(8);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+@mixin boton-ico-hover() {
+    color: $prof-btn-hover;
+}
+
+// --------------------
+//  BOTONES END
+// --------------------
+
+
+// --------------------
+//  IMAGENES START
+// --------------------
+
+@mixin image($obj-fit) {
+    width: 100%;
+    height: 100%;
+    object-fit: $obj-fit;
+}
+
+@mixin container-img-texto($text-color, $align-text, $font-size, $padding) {
+
+    position: relative;
+
+    img {
+        @include image(fill);
+    }
+
+    div {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $text-color;
+
+        h1 {
+            padding: pixels-rem($padding);
+            font-size: pixels-rem($font-size);
+            text-align: $align-text;
+        }
+    }
+}
+
+@mixin img-blur() {
+    opacity: 0.9;
+    filter: blur(1px);
+    mask-image: linear-gradient(transparent, $body-bg 80%, transparent);
+    -webkit-mask-image: linear-gradient(transparent, $body-bg 80%, transparent);
+    transition: all 500ms ease;
+}
+
+@mixin img-front($text-color: black, $align-text: center, $font-size: 10, $padding: 0) {
+
+    position: relative;
+    box-shadow: 0 2px 3px $border;
+    @include border($border, 5);
+    margin: pixels-rem(10) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        position: fixed;
+    }
+
+    img {
+        @include image(contain);
+        @include img-blur();
+        max-height: 280px;
+    }
+    .imgSub{
+        position: fixed;
+    }
+
+    div {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $text-color;
+
+        h2 {
+            padding: pixels-rem($padding);
+            font-size: pixels-rem($font-size);
+            text-shadow: 1px 1px 3px black;
+            font-weight: 400;
+            text-align: $align-text;
+        }
+    }
+}
+
+// --------------------
+//  IMAGENES END
+// --------------------

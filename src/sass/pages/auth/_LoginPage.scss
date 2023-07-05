@@ -1,0 +1,103 @@
+.secLogin,
+.secRegister {
+
+    color: $font-col;
+
+    h2 {
+        padding: pixels-rem(50) pixels-rem(25) pixels-rem(30);
+        font-weight: 400;
+    }
+
+    .errorForm {
+        color: $error-bad;
+        text-align: center;
+        font-size: pixels-rem(18);
+        margin-top: pixels-rem(15);
+    }
+
+
+    .divContainer {
+
+        @include container(85%, 0);
+        max-width: 440px;
+
+        form {
+            @include grid(1fr, center, center, 0, 15);
+
+            label {
+                display: none;
+            }
+
+
+            input[type="submit"]:hover,
+            input[type="reset"]:hover {
+                @include boton-hover();
+            }
+
+            .errorLogin,
+            .errorRegister {
+                color: $error;
+                // grid-column: 1 / 3;
+                text-align: center;
+            }
+        }
+
+        .divGoogle {
+            margin-top: pixels-rem(30);
+            text-align: center;
+            font-weight: 300;
+
+            button {
+                @include container(90%, 0);
+                max-width: 240px;
+                @include border($bg, 15);
+                cursor: pointer;
+                background-color: whitesmoke;
+                padding: pixels-rem(10);
+                margin-top: pixels-rem(10);
+                box-shadow: 2px 2px 5px black;
+
+                i {
+                    color: green;
+                    font-size: pixels-rem(16);
+                }
+
+            }
+
+            p {
+                margin-top: pixels-rem(25);
+
+                a {
+                    @include boton-link();
+                }
+
+                a:hover {
+                    @include boton-link-hover();
+                }
+            }
+        }
+    }
+}
+
+.secLogin {
+    .divContainer {
+        form {
+
+            input:not([type="submit"]) {
+                padding: pixels-rem(3);
+                @include container(80%, 0);
+                @include border($bg, 5);
+                padding: pixels-rem(5);
+            }
+
+
+
+            input[type="submit"] {
+                @include container(60%, 0);
+                @include boton();
+                padding: pixels-rem(7) pixels-rem(5);
+                margin-top: pixels-rem(10);
+            }
+        }
+    }
+}

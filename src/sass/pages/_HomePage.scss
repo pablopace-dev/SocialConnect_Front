@@ -1,0 +1,36 @@
+.secHomePage {
+
+    @include flexbox(center, column, 0);
+    min-height: calc($viewport-height - ($header-height + $navBar-height + $footer-height));
+
+    div:first-child {
+        @include container-img-texto($font-col, center, 45, 0);
+
+        img {
+            @include img-blur();
+            max-width: 760px;
+        }
+
+        img:hover {
+            filter: blur(0);
+        }
+
+        div {
+
+            h1 {
+                font-weight: 700;
+                text-shadow: 0 0 5px $bg-font-col;
+
+                a {
+                    text-decoration: none;
+                    color: $font-col;
+                }
+
+                a:hover {
+                    color: $bg-font-col;
+                    text-shadow: 0 0 5px $bg;
+                }
+            }
+        }
+    }
+}

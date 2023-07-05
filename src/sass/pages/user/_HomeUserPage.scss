@@ -1,0 +1,64 @@
+.secHomeUser {
+
+    color: $font-col;
+    @include container(95%, 0);
+
+    .divRoot {
+        margin-top: pixels-rem(15);
+        font-weight: 400;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: pixels-rem(15);
+        font-size: pixels-rem(30);
+        font-weight: 400;
+        color: $user-name;
+    }
+
+    .secUserProfiles {
+
+        h2 {
+            font-size: pixels-rem(22);
+            font-weight: 300;
+            margin-top: pixels-rem(20);
+            padding: pixels-rem(10);
+            border-bottom: 1px dotted $bg;
+        }
+
+        .secUserProfile {
+            border-bottom: 2px dotted $bg;
+            margin-bottom: pixels-rem(15);
+            padding-bottom: pixels-rem(5);
+
+            .h3HomeUser {
+                font-size: pixels-rem(20);
+                font-weight: 400;
+                font-style: italic;
+                margin-top: pixels-rem(15);
+            }
+
+
+            .aHomeUser {
+                @include boton();
+                @include container(70%, 0);
+                max-width: 320px;
+                display: block;
+                text-align: center;
+                padding: pixels-rem(10);
+                text-decoration: none;
+            }
+
+            .aHomeUser:hover {
+                @include boton-hover();
+            }
+
+
+            @import './components/Profile';
+
+        }
+    }
+
+    @import './components/Invites';
+
+}

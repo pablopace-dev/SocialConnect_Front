@@ -1,0 +1,146 @@
+nav {
+    background-color: $nav-bg;
+    box-shadow: 0 2px 1px $border;
+
+    .divNavContainer {
+        @include grid(0.25fr 0.4fr 0.35fr, left, center, 0, 0);
+        height: $navBar-height;
+        padding-left: pixels-rem(5);
+
+        .divBtnMenu {
+
+            width: pixels-rem(15);
+
+            button {
+                @include boton-ico($nav-btn);
+                font-size: pixels-rem(22);
+            }
+        }
+
+
+        .divBtnMenu button:hover {
+            @include boton-ico-hover();
+        }
+
+        .divNotifications {
+            justify-self: center;
+            @include grid(1fr 1fr 1fr 1fr, right, center, 0, 5);
+            margin-right: pixels-rem(5);
+
+            div {
+                width: pixels-rem(25);
+                height: pixels-rem(25);
+
+                img {
+                    @include image(contain);
+                    @include border($bg-font-col, 100);
+                }
+            }
+        }
+
+        .divStatus {
+            grid-column: 3 / 4;
+            justify-self: right;
+            @include grid(1fr 1fr 1fr, right, center, 0, 2);
+            margin-right: pixels-rem(5);
+
+            div {
+                width: pixels-rem(25);
+                height: pixels-rem(25);
+
+                img {
+                    @include image(contain);
+                    @include border($bg-font-col, 100);
+                }
+            }
+        }
+    }
+
+
+    .divFriends {
+        margin-top: pixels-rem(1);
+        @import '../pages/user/components/Friends';
+        position: absolute;
+        padding: pixels-rem(1);
+        height: 540px;
+        overflow-y: scroll;
+        overscroll-behavior: contain;
+
+        transform: translate3d(-105%, 0px, 0px);
+        transition: transform 0.20s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+        z-index: 1002;
+    }
+
+    .divChat {
+        position: absolute;
+        right: 0;
+
+        transform: translate3d(0px, -120%, 0px);
+        transition: transform 0.20s cubic-bezier(0.4, 1.04, 0.72, 0.98) 0s;
+        z-index: 1001;
+
+        @import '../pages/user/components/ChatBox';
+    }
+
+
+    .divChat.mostrarChat {
+        transform: translate3d(0px, 0px, 0px);
+    }
+
+    .divFriends.mostrarFriends {
+        transform: translate3d(0px, 0px, 0px);
+    }
+
+    .divNav {
+        position: absolute;
+        padding: pixels-rem(5);
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4);
+        font-size: pixels-rem(17);
+        font-weight: 400;
+        width: 100%;
+        max-width: 280px;
+        background-color: $nav-menu-bg;
+
+        transform: translate3d(-105%, 0px, 0px);
+        transition: transform 0.20s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+        z-index: 1003;
+
+
+        ul {
+            list-style: none;
+
+            a {
+                padding: pixels-rem(5);
+                display: block;
+                text-decoration: none;
+                color: $nav-font-col;
+                border-radius: pixels-rem(5);
+                transition: all 300ms;
+            }
+
+            a.isActive {
+                color: $nav-font-col-act;
+                @include border($bg-font-col, 5);
+            }
+
+            a:hover {
+                @include boton-hover();
+            }
+        }
+    }
+
+    .divNav.mostrar {
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+@media screen and ($bp-mobile-landscape) {
+
+    nav {
+        .divFriends {
+            height: fit-content;
+            max-height: 860px;
+
+        }
+    }
+}
