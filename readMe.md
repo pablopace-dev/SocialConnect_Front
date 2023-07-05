@@ -15,13 +15,12 @@ Esta es una web SPA creada con NodeJS y React. Cuenta con 3 tipos de vistas:
 - react-dom: "^18.2.0"
 - react-redux: "^8.0.5"
 - react-router-dom: "^6.10.0"
-- react-scroll-to-bottom: "^4.2.0"
 - socket.io-client: "^4.6.1"
 
 ---
 ## Iniciar la App:
 Se debe ejecutar el comando **yarn**, y luego **yarn dev**. O sino, ejecutar **yarn build** .
-También es posible probar la aplicación desde la página de [Netlify](https://socialconnect-pp.netlify.app/)
+También es posible probar la aplicación desde [aquí](https://socialconnect-pp.netlify.app/).
 
 ---
 ## Concepto general:
@@ -50,18 +49,18 @@ Los usuarios tienen posibilidad de utilizar una cuenta de **Google** para loguea
 ## .env:
 
 - *Todos los datos de configuración que proporciona Firebase:*
-VITE_FBASE_API_KEY=
-VITE_FBASE_AUTH_DOMAIN=
-VITE_FBASE_PROJECT_ID=
-VITE_FBASE_STORAGE_BUCKET=
-VITE_FBASE_MESSAGING_SENDER_ID=
-VITE_FBASE_APP_ID=
+   * VITE_FBASE_API_KEY=
+   * VITE_FBASE_AUTH_DOMAIN= 
+   * VITE_FBASE_PROJECT_ID= 
+   * VITE_FBASE_STORAGE_BUCKET= 
+   * VITE_FBASE_MESSAGING_SENDER_ID= 
+   * VITE_FBASE_APP_ID= 
 
 - *La URL de conexión al back:*
-VITE_URL_BACK=
-VITE_URL_CHAT_BACK=
+   * VITE_URL_BACK=
+   * VITE_URL_CHAT_BACK=
 
 - *La cantidad de reconexiones permitida por el socket.io*
-VITE_RECONNECTION_ATTEMPTS=
+   * VITE_RECONNECTION_ATTEMPTS=
 
 *Todos estos datos se pasarán en un archivo adjunto.
