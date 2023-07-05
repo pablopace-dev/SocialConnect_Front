@@ -20,26 +20,16 @@ Esta es una web SPA creada con NodeJS y React. Cuenta con 3 tipos de vistas:
 
 ---
 ## Iniciar la App:
-Se debe ejecutar el comando **yarn**, y luego **yarn dev**. O sino, ejecutar **yarn build** y ver la app de la carpeta *dist*.
-También es posible probar la aplicación desde la página de [Netlify](https://socialconnect2637.netlify.app/)
+Se debe ejecutar el comando **yarn**, y luego **yarn dev**. O sino, ejecutar **yarn build** .
+También es posible probar la aplicación desde la página de [Netlify](https://socialconnect-pp.netlify.app/)
 
 ---
 ## Concepto general:
 Esta es una aplicación social, que permite a los usuarios interactuar entre ellos, siendo posible crear perfiles públicos con fotografías y texto, y perfiles privados a los que sólo tienen acceso los usuarios registrados.
 
-**Usuarios de prueba:**
-* email: *ana@correo.es*
-    * password: *123456*
-
-* email: *luis@correo.es*
-    * password: *123456*
-
-* email: *juanita@correo.es*
-    * password: *123456*
-
 **Usuario administrador:**
 * email: *pepe@correo.es*
-    * password: *123456*
+    * password: 
 
 Los usuarios registrados pueden enviar mensajes a los otros usuarios o establecer comunicaciones directas a través de un chat privado, siempre y cuando se haya enviado primero una solicitud de amistad y ésta haya sido aceptada.
 El usuario administrador puede ver todos los perfiles creados, tanto públicos como privados y editarlos. Tambíen puede enviarle mensaje a los usuarios o si lo considera necesario eliminar el usuario completamente de la app.
