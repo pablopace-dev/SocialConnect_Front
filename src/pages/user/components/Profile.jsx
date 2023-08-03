@@ -6,7 +6,7 @@ export const Profile = ({ profile, _id = Date.now(), name, dateMod, image, noLin
 
 
     return (
-        <section className="secProfile  show" key={'sec' + _id}>
+        <section className={`secProfile ${!noLink && 'show'}`} key={'sec' + _id}>
 
             <header className="profHeader">
 
